@@ -112,6 +112,65 @@ function Index() {
           </div>
         </section>
 
+        {/* 3-day notice */}
+        <section className="border-b-4 border-ink bg-accent py-16">
+          <div className="container-page grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <p className="eyebrow text-signal">Before the court papers</p>
+              <h2 className="mt-4 text-4xl sm:text-5xl">
+                Got a 3-day notice
+                <br />
+                to pay rent or quit?
+                <br />
+                <span className="text-signal">An eviction case may be next.</span>
+              </h2>
+              <p className="mt-5 max-w-lg text-muted-foreground">
+                Almost every eviction starts with a notice taped to your door or handed
+                to you — usually three days to pay what the landlord says you owe, or
+                move out. It is not a court order and it is not the end. It is the step
+                the landlord has to take before filing an unlawful detainer.
+              </p>
+              <p className="mt-4 max-w-lg text-muted-foreground">
+                This is the best moment to get organised. Save the notice, photograph the
+                door, keep every text and receipt, and write down what actually happened.
+                If the notice has the wrong amount, the wrong address, or was never
+                handed over properly, that can matter later in court.
+              </p>
+              <a
+                href="#deadline"
+                className="mt-8 inline-flex items-center gap-2 border-2 border-ink bg-background px-6 py-4 font-display uppercase shadow-slab transition-transform hover:-translate-y-1"
+              >
+                Already been served? Check your deadline
+                <ArrowRight className="size-5" />
+              </a>
+            </div>
+
+            <div className="slab p-6 sm:p-8">
+              <p className="eyebrow text-signal">How it usually goes</p>
+              <ol className="mt-4 space-y-4">
+                {NOTICE_TIMELINE.map((item, i) => (
+                  <li key={item.title} className="flex gap-4 border-b border-border pb-4">
+                    <span className="font-display text-2xl text-signal">{i + 1}</span>
+                    <span>
+                      <span className="block font-display text-lg uppercase leading-tight">
+                        {item.title}
+                      </span>
+                      <span className="mt-1 block text-sm text-muted-foreground">
+                        {item.text}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-5 text-sm text-muted-foreground">
+                A 3-day notice on its own is not something you file an answer to. The
+                answer comes once the court papers arrive — and we are ready for that day.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
         {/* What we actually do */}
         <section className="border-b-4 border-ink bg-background py-16">
           <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
