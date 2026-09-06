@@ -8,17 +8,17 @@ import { DeadlineCalculator } from "@/components/site/DeadlineCalculator";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Unlawfully Detained — Fight Your LA Eviction on Time" },
+      { title: "Unlawfully Detained — Answer Your LA Eviction Papers" },
       {
         name: "description",
         content:
-          "Served with an eviction in Los Angeles? You have 10 court days to answer. Check your exact deadline free, then turn your story into a court-ready filing.",
+          "Landlord trying to evict you in Los Angeles? We put your side of the story onto court-accepted pleading paper, and you can check your filing deadline free.",
       },
-      { property: "og:title", content: "Unlawfully Detained — Answer Your Eviction" },
+      { property: "og:title", content: "Unlawfully Detained — Stand Up and Fight" },
       {
         property: "og:description",
         content:
-          "10 court days to respond. Check your deadline free and get your answer onto court-accepted paper.",
+          "Your story, on proper 28-line pleading paper the California Superior Court accepts. Check your deadline free.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
