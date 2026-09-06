@@ -109,7 +109,7 @@ function Index() {
               </p>
             </div>
 
-            <div className="relative pb-10 pr-6 sm:pr-16">
+            <div className="relative pb-14 pr-16 sm:pr-28">
               <img
                 src={heroImage}
                 width={1280}
@@ -117,15 +117,19 @@ function Index() {
                 alt="An unlawful detainer summons and complaint from the Superior Court of California lying on a kitchen table next to house keys"
                 className="w-full border-2 border-ink-foreground/30 object-cover"
               />
-              <img
-                src={noticeImage}
-                width={912}
-                height={1200}
-                loading="lazy"
-                alt="A three day notice to pay rent or quit served on a tenant by a landlord"
-                className="absolute -bottom-2 right-0 w-32 rotate-6 border-2 border-ink shadow-slab sm:w-44"
-              />
-              <p className="absolute bottom-0 left-0 max-w-[70%] border-2 border-ink bg-signal px-4 py-3 font-display text-lg uppercase leading-tight text-signal-foreground">
+              <figure className="absolute -bottom-2 right-0 w-40 rotate-6 border-4 border-ink bg-background shadow-slab sm:w-56">
+                <img
+                  src={noticeImage}
+                  width={912}
+                  height={1200}
+                  alt="A three day notice to pay rent or quit served on a tenant by a landlord"
+                  className="w-full object-cover"
+                />
+                <figcaption className="bg-ink px-2 py-1 text-center font-display text-[10px] uppercase leading-tight text-ink-foreground sm:text-xs">
+                  3-day notice
+                </figcaption>
+              </figure>
+              <p className="absolute bottom-0 left-0 max-w-[60%] border-2 border-ink bg-signal px-4 py-3 font-display text-lg uppercase leading-tight text-signal-foreground">
                 Got papers? Answer them. Get it on record.
               </p>
             </div>
