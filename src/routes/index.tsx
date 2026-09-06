@@ -44,6 +44,25 @@ const DEFENSES = [
   "You were treated differently because of who you are",
 ];
 
+const NOTICE_TIMELINE = [
+  {
+    title: "The notice arrives",
+    text: "Three days to pay or leave, handed to you, left with someone else, or taped to the door.",
+  },
+  {
+    title: "The three days run out",
+    text: "Weekends and court holidays are not counted in the three days.",
+  },
+  {
+    title: "The landlord files in court",
+    text: "That filing is the unlawful detainer — the actual eviction lawsuit.",
+  },
+  {
+    title: "You get served court papers",
+    text: "A summons and complaint. Now the clock is on you: ten court days to answer.",
+  },
+];
+
 function Index() {
   return (
     <div className="min-h-screen">
