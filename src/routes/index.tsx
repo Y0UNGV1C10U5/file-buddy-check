@@ -5,6 +5,8 @@ import noticeImage from "@/assets/three-day-notice.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { DeadlineCalculator } from "@/components/site/DeadlineCalculator";
+import { EvictionTimeline } from "@/components/site/EvictionTimeline";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
