@@ -87,7 +87,7 @@ function Index() {
               </p>
             </div>
 
-            <div className="relative">
+            <div className="relative pb-10 pr-6 sm:pr-16">
               <img
                 src={heroImage}
                 width={1280}
@@ -95,10 +95,19 @@ function Index() {
                 alt="An unlawful detainer summons and complaint from the Superior Court of California lying on a kitchen table next to house keys"
                 className="w-full border-2 border-ink-foreground/30 object-cover"
               />
-              <p className="absolute bottom-0 left-0 max-w-[85%] border-2 border-ink bg-signal px-4 py-3 font-display text-lg uppercase leading-tight text-signal-foreground">
+              <img
+                src={noticeImage}
+                width={912}
+                height={1200}
+                loading="lazy"
+                alt="A three day notice to pay rent or quit served on a tenant by a landlord"
+                className="absolute -bottom-2 right-0 w-32 rotate-6 border-2 border-ink shadow-slab sm:w-44"
+              />
+              <p className="absolute bottom-0 left-0 max-w-[70%] border-2 border-ink bg-signal px-4 py-3 font-display text-lg uppercase leading-tight text-signal-foreground">
                 Got papers? Answer them. Get it on record.
               </p>
             </div>
+
           </div>
         </section>
 
