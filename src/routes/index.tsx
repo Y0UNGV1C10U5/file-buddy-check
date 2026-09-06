@@ -55,16 +55,18 @@ function Index() {
             <div>
               <p className="eyebrow text-signal">Los Angeles County · eviction defense</p>
               <h1 className="mt-4 text-6xl leading-[0.88] sm:text-7xl lg:text-8xl">
-                You have
+                Landlord
                 <br />
-                <span className="text-signal">10 court days.</span>
+                trying to
                 <br />
-                Not 5.
+                <span className="text-signal">evict you?</span>
+                <br />
+                Stand up and fight.
               </h1>
               <p className="mt-6 max-w-lg text-lg opacity-85">
-                The law changed on January 1, 2025. Most websites still say five days.
-                Miss the real date and you can lose a case you would have won — without
-                ever telling your side.
+                Those papers are called an unlawful detainer. If you say nothing, the
+                court hears only your landlord. Tell your side — we take your story and
+                put it on the exact paper the court accepts.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -90,7 +92,7 @@ function Index() {
                 src={heroImage}
                 width={1280}
                 height={1600}
-                alt="A tenant standing in the doorway of her Los Angeles apartment at night holding her eviction papers"
+                alt="An unlawful detainer summons and complaint from the Superior Court of California lying on a kitchen table next to house keys"
                 className="w-full border-2 border-ink-foreground/30 object-cover"
               />
               <p className="absolute bottom-0 left-0 max-w-[85%] border-2 border-ink bg-signal px-4 py-3 font-display text-lg uppercase leading-tight text-signal-foreground">
