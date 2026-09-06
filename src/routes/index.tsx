@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, Gavel, ShieldCheck, Upload } from "lucide-react";
 import heroImage from "@/assets/unlawful-detainer-papers.jpg";
+import noticeImage from "@/assets/three-day-notice.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { DeadlineCalculator } from "@/components/site/DeadlineCalculator";
