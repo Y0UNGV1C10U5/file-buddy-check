@@ -61,6 +61,8 @@ export const SERVICE_METHODS: ServiceMethodInfo[] = [
   },
 ];
 
+const PERSONAL_SERVICE: ServiceMethodInfo = SERVICE_METHODS[0]!;
+
 /* ------------------------------------------------------------------ */
 /* Date helpers — all operate on local calendar dates, time stripped.  */
 /* ------------------------------------------------------------------ */
@@ -213,7 +215,7 @@ const WEEKDAY_LABEL = [
 ];
 
 export function formatLongDate(date: Date): string {
-  return `${WEEKDAY_LABEL[date.getDay()]}, ${date.toLocaleDateString("en-US", {
+  return `${WEEKDAY_LABEL[date.getDay()] ?? ""}, ${date.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
@@ -235,8 +237,8 @@ export function calculateDeadline(
   methodId: ServiceMethod,
   today: Date = new Date(),
 ): DeadlineResult {
-  const method =
-    SERVICE_METHODS.find((m) => m.id === methodId) ?? SERVICE_METHODS[0];
+  const method: ServiceMethodInfo =
+    SERVICE_METHODS.find((m) => m.id === methodId) ?? PERSONAL_SERVICE;
 
   const completionDate = addDays(serviceDate, method.completionDays);
 
@@ -251,7 +253,7 @@ export function calculateDeadline(
         date: cursor,
         counted: false,
         courtDayNumber: null,
-        reason: WEEKDAY_LABEL[cursor.getDay()],
+        reason: WEEKDAY_LABEL[cursor.getDay()] ?? "Weekend",
       });
     } else if (holiday) {
       days.push({
@@ -273,7 +275,7 @@ export function calculateDeadline(
     cursor = addDays(cursor, 1);
   }
 
-  const deadline = days[days.length - 1].date;
+  const deadline = days[days.length - 1]!.date;
   const midnightToday = new Date(
     today.getFullYear(),
     today.getMonth(),
