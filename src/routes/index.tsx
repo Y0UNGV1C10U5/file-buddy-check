@@ -262,6 +262,25 @@ function Index() {
           </div>
         </section>
 
+        {/* Timeline comparison */}
+        <section className="border-y-4 border-ink bg-background py-16">
+          <div className="container-page">
+            <p className="eyebrow text-signal">Two calendars</p>
+            <h2 className="mt-2 max-w-3xl text-4xl sm:text-5xl">
+              What happens if you stay quiet — and what happens if you answer.
+            </h2>
+            <p className="mt-4 max-w-2xl text-muted-foreground">
+              Both are worst-case counts, in plain calendar days from the day the papers
+              reached you. Real cases vary by court and by county.
+            </p>
+            <div className="mt-10">
+              <EvictionTimeline />
+            </div>
+          </div>
+        </section>
+
+
+
         {/* Flow */}
         <section className="border-y-4 border-ink bg-accent py-16">
           <div className="container-page">
