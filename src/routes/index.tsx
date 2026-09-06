@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, Gavel, ShieldCheck, Upload } from "lucide-react";
-import heroImage from "@/assets/hero-tenant.jpg";
+import heroImage from "@/assets/unlawful-detainer-papers.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { DeadlineCalculator } from "@/components/site/DeadlineCalculator";
@@ -8,17 +8,17 @@ import { DeadlineCalculator } from "@/components/site/DeadlineCalculator";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Unlawfully Detained — Fight Your LA Eviction on Time" },
+      { title: "Unlawfully Detained — Answer Your LA Eviction Papers" },
       {
         name: "description",
         content:
-          "Served with an eviction in Los Angeles? You have 10 court days to answer. Check your exact deadline free, then turn your story into a court-ready filing.",
+          "Landlord trying to evict you in Los Angeles? We put your side of the story onto court-accepted pleading paper, and you can check your filing deadline free.",
       },
-      { property: "og:title", content: "Unlawfully Detained — Answer Your Eviction" },
+      { property: "og:title", content: "Unlawfully Detained — Stand Up and Fight" },
       {
         property: "og:description",
         content:
-          "10 court days to respond. Check your deadline free and get your answer onto court-accepted paper.",
+          "Your story, on proper 28-line pleading paper the California Superior Court accepts. Check your deadline free.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -55,16 +55,18 @@ function Index() {
             <div>
               <p className="eyebrow text-signal">Los Angeles County · eviction defense</p>
               <h1 className="mt-4 text-6xl leading-[0.88] sm:text-7xl lg:text-8xl">
-                You have
+                Landlord
                 <br />
-                <span className="text-signal">10 court days.</span>
+                trying to
                 <br />
-                Not 5.
+                <span className="text-signal">evict you?</span>
+                <br />
+                Stand up and fight.
               </h1>
               <p className="mt-6 max-w-lg text-lg opacity-85">
-                The law changed on January 1, 2025. Most websites still say five days.
-                Miss the real date and you can lose a case you would have won — without
-                ever telling your side.
+                Those papers are called an unlawful detainer. If you say nothing, the
+                court hears only your landlord. Tell your side — we take your story and
+                put it on the exact paper the court accepts.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -89,13 +91,59 @@ function Index() {
               <img
                 src={heroImage}
                 width={1280}
-                height={1600}
-                alt="A tenant standing in the doorway of her Los Angeles apartment at night holding her eviction papers"
+                height={1120}
+                alt="An unlawful detainer summons and complaint from the Superior Court of California lying on a kitchen table next to house keys"
                 className="w-full border-2 border-ink-foreground/30 object-cover"
               />
               <p className="absolute bottom-0 left-0 max-w-[85%] border-2 border-ink bg-signal px-4 py-3 font-display text-lg uppercase leading-tight text-signal-foreground">
                 Got papers? Answer them. Get it on record.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What we actually do */}
+        <section className="border-b-4 border-ink bg-background py-16">
+          <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="eyebrow text-signal">In plain English</p>
+              <h2 className="mt-4 text-4xl sm:text-5xl">
+                We get your
+                <br />
+                side of the story
+                <br />
+                <span className="text-signal">onto pleading paper.</span>
+              </h2>
+            </div>
+            <div className="space-y-6">
+              <div className="slab p-6">
+                <p className="font-display text-2xl uppercase">
+                  What is pleading paper?
+                </p>
+                <p className="mt-3 text-muted-foreground">
+                  It is the special page courts use — 28 numbered lines down the left
+                  side, your name and case details in a set spot at the top, wide
+                  margins, one particular font and spacing. A court clerk can reject
+                  papers that are not on it, even when everything you wrote is true.
+                </p>
+              </div>
+              <div className="slab p-6">
+                <p className="font-display text-2xl uppercase">What we do</p>
+                <p className="mt-3 text-muted-foreground">
+                  You tell us what happened in your own words — no legal language
+                  needed. We turn that into a written answer laid out on proper
+                  pleading paper, in the format the Superior Court of California
+                  accepts, so it can be filed and put on the record.
+                </p>
+              </div>
+              <div className="slab p-6">
+                <p className="font-display text-2xl uppercase">What we are not</p>
+                <p className="mt-3 text-muted-foreground">
+                  We are not lawyers and we do not argue your case or tell you what to
+                  claim. We do the paperwork part: your words, correctly formatted,
+                  filed on time.
+                </p>
+              </div>
             </div>
           </div>
         </section>
