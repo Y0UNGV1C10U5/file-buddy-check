@@ -1,10 +1,10 @@
 # Roadmap — CA tenant eviction-response app (LA County first)
 
 ## Open
-- [ ] Brand name round 2: puns on "unlawful detainer", eviction / anti-eviction, "keep my home" — awaiting user pick
-- [ ] Marketing site: Home, Pricing, FAQ, How it works (mobile-first, black/white/red)
-- [ ] Deadline calculator (deterministic: service date + method, 10 court days per AB 2347, excl. weekends + CA judicial holidays, clock starts day after service)
-- [ ] Legal footer on every page (not a law firm / LDA disclosure)
+- [x] Name chosen: Unlawfully Detained
+- [x] Marketing site: Home, Pricing, FAQ, How it works (mobile-first, black/white/red)
+- [x] Deadline calculator (deterministic: service date + method, 10 court days per AB 2347, excl. weekends + CA judicial holidays, clock starts day after service)
+- [x] Legal footer on every page (not a law firm / LDA disclosure)
 
 ## Later
 - [ ] Accounts + storage (Lovable Cloud)
