@@ -34,12 +34,10 @@ function CaptionBox({ caption }: { caption: CaptionFields }) {
 export function PleadingSheet({
   caption,
   blocks,
-  title,
   className = "",
 }: {
   caption: CaptionFields;
   blocks: Block[];
-  title: string;
   className?: string;
 }) {
   const pages = paginate(blocks, LINES_PER_PAGE);

@@ -212,7 +212,6 @@ function BuildPage() {
               <PleadingSheet
                 caption={caption}
                 blocks={blocks}
-                title={DEMO_PLEADING.title}
               />
             ) : (
               <div className="paper-sheet border-2 border-ink p-4 sm:p-6">
