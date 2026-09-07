@@ -52,7 +52,7 @@ export async function buildDocx(blocks: Block[]): Promise<Blob> {
           page: {
             size: { width: 12240, height: 15840 },
             margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 },
-􀀀          },
+},
           lineNumbers: {
             countBy: 1,
             start: 1,
