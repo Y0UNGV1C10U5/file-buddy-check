@@ -73,7 +73,7 @@ export function answerBodyBlocks(
     blocks.push(blank());
     blocks.push({
       text: options.enhance
-        ? `${n++}. Defendant alleges that ${p.charAt(0).toLowerCase()}${p.slice(1)}`
+        ? `${n++}. Defendant alleges that ${p.startsWith("I ") ? p : `${p.charAt(0).toLowerCase()}${p.slice(1)}`}`
         : `${n++}. ${p}`,
     });
   }

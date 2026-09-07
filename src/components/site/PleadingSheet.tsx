@@ -51,14 +51,8 @@ export function PleadingSheet({
           key={pageIndex}
           className="paper-sheet border border-paper-ink/40 px-4 py-5 shadow-[0_10px_30px_-12px_rgba(26,26,26,0.45)] sm:px-7 sm:py-8"
         >
-          {pageIndex === 0 ? (
-            <>
-              <CaptionBox caption={caption} />
-              <h3 className="court-type mt-3 text-center text-[10px] font-bold uppercase tracking-wide sm:text-sm">
-                {title}
-              </h3>
-            </>
-          ) : null}
+          {pageIndex === 0 ? <CaptionBox caption={caption} /> : null}
+
 
           {/* 28 numbered lines: double rule left, single rule right */}
           <div
