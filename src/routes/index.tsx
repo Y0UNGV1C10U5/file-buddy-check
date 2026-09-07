@@ -98,11 +98,12 @@ function Index() {
                   Check my deadline <ArrowRight className="size-5" />
                 </a>
                 <Link
-                  to="/how-it-works"
+                  to="/answer"
                   className="inline-flex items-center border-2 border-ink-foreground px-6 py-4 font-display text-lg uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
                 >
-                  How it works
+                  Build my answer
                 </Link>
+
               </div>
               <p className="mt-6 eyebrow opacity-60">
                 Free to check · No account · No card

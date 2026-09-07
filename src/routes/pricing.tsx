@@ -54,11 +54,12 @@ const PLANS = [
       "Live preview before you pay",
       "Filing checklist for your courthouse",
     ],
-    cta: "Coming soon",
-    to: "/" as const,
-    hash: "deadline",
+    cta: "Build my answer",
+    to: "/answer" as const,
+    hash: "",
     emphasis: true,
   },
+
   {
     name: "Unlimited",
     price: "$97",
@@ -77,6 +78,39 @@ const PLANS = [
     emphasis: false,
   },
 ];
+
+const ADDONS = [
+  {
+    name: "Fight Kit — Discovery Pack",
+    price: "$149",
+    cadence: "one time, after your answer is filed",
+    pitch: "Make the landlord answer questions, under oath, on a clock.",
+    features: [
+      "Request for Admissions written from your story",
+      "Request for Production of documents — the lease, ledger, repair records",
+      "Form Interrogatories UD-106 filled in for your case",
+      "Proof of service for each one",
+      "Plain-English guide to what to do with the replies",
+    ],
+    note:
+      "More than half of landlords miss the reply window. Anything they fail to deny on time can be treated as admitted.",
+  },
+  {
+    name: "AI coach",
+    price: "$79",
+    cadence: "one case · 50,000 words of coaching",
+    pitch: "Someone to explain the letters at 2am, in normal words.",
+    features: [
+      "Ask what any court document means",
+      "Help turning what happened into clear, dated sentences",
+      "Reminders of what is due and when",
+      "Never invents a rule — if it is not sure, it says so and points you to free legal aid",
+    ],
+    note:
+      "Guidance only. Our coach is not a lawyer and does not give legal advice or tell you what to claim.",
+  },
+];
+
 
 function Pricing() {
   return (
@@ -138,11 +172,38 @@ function Pricing() {
             ))}
           </div>
 
+          <div className="mt-16 border-t-4 border-ink pt-12">
+            <p className="eyebrow text-signal">Add-ons</p>
+            <h2 className="mt-2 text-4xl sm:text-5xl">After you answer.</h2>
+            <div className="mt-8 grid gap-8 md:grid-cols-2">
+              {ADDONS.map((addon) => (
+                <div key={addon.name} className="flex flex-col border-2 border-ink bg-card p-7 shadow-slab">
+                  <p className="eyebrow text-signal">{addon.name}</p>
+                  <p className="mt-3 font-display text-5xl leading-none">{addon.price}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{addon.cadence}</p>
+                  <p className="mt-4 font-semibold">{addon.pitch}</p>
+                  <ul className="mt-5 flex-1 space-y-3 text-sm">
+                    {addon.features.map((feature) => (
+                      <li key={feature} className="flex gap-2">
+                        <Check className="mt-0.5 size-4 shrink-0 text-signal" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 border-t-2 border-ink pt-4 text-xs uppercase tracking-wide text-muted-foreground">
+                    {addon.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <p className="mt-10 max-w-2xl text-sm text-muted-foreground">
             Cannot afford it? You should not go without help. Court self-help centers and
             Stay Housed LA assist tenants for free, and we will always point you there.
           </p>
         </section>
+
       </main>
       <SiteFooter />
     </div>
