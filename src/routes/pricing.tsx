@@ -139,11 +139,38 @@ function Pricing() {
             ))}
           </div>
 
+          <div className="mt-16 border-t-4 border-ink pt-12">
+            <p className="eyebrow text-signal">Add-ons</p>
+            <h2 className="mt-2 text-4xl sm:text-5xl">After you answer.</h2>
+            <div className="mt-8 grid gap-8 md:grid-cols-2">
+              {ADDONS.map((addon) => (
+                <div key={addon.name} className="flex flex-col border-2 border-ink bg-card p-7 shadow-slab">
+                  <p className="eyebrow text-signal">{addon.name}</p>
+                  <p className="mt-3 font-display text-5xl leading-none">{addon.price}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{addon.cadence}</p>
+                  <p className="mt-4 font-semibold">{addon.pitch}</p>
+                  <ul className="mt-5 flex-1 space-y-3 text-sm">
+                    {addon.features.map((feature) => (
+                      <li key={feature} className="flex gap-2">
+                        <Check className="mt-0.5 size-4 shrink-0 text-signal" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 border-t-2 border-ink pt-4 text-xs uppercase tracking-wide text-muted-foreground">
+                    {addon.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <p className="mt-10 max-w-2xl text-sm text-muted-foreground">
             Cannot afford it? You should not go without help. Court self-help centers and
             Stay Housed LA assist tenants for free, and we will always point you there.
           </p>
         </section>
+
       </main>
       <SiteFooter />
     </div>
