@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnswerRouteImport } from './routes/answer'
+import { Route as BuildRouteImport } from './routes/build'
+import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -24,6 +26,16 @@ const IndexRoute = IndexRouteImport.update({
 const AnswerRoute = AnswerRouteImport.update({
   id: '/answer',
   path: '/answer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildRoute = BuildRouteImport.update({
+  id: '/build',
+  path: '/build',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -50,6 +62,8 @@ const StartRoute = StartRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/answer': typeof AnswerRoute
+  '/build': typeof BuildRoute
+  '/checkout': typeof CheckoutRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
   '/pricing': typeof PricingRoute
@@ -58,6 +72,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/answer': typeof AnswerRoute
+  '/build': typeof BuildRoute
+  '/checkout': typeof CheckoutRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
   '/pricing': typeof PricingRoute
@@ -67,6 +83,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/answer': typeof AnswerRoute
+  '/build': typeof BuildRoute
+  '/checkout': typeof CheckoutRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
   '/pricing': typeof PricingRoute
@@ -74,13 +92,31 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/answer' | '/faq' | '/how-it-works' | '/pricing' | '/start'
+  fullPaths:
+    | '/'
+    | '/answer'
+    | '/build'
+    | '/checkout'
+    | '/faq'
+    | '/how-it-works'
+    | '/pricing'
+    | '/start'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/answer' | '/faq' | '/how-it-works' | '/pricing' | '/start'
+  to:
+    | '/'
+    | '/answer'
+    | '/build'
+    | '/checkout'
+    | '/faq'
+    | '/how-it-works'
+    | '/pricing'
+    | '/start'
   id:
     | '__root__'
     | '/'
     | '/answer'
+    | '/build'
+    | '/checkout'
     | '/faq'
     | '/how-it-works'
     | '/pricing'
@@ -90,6 +126,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnswerRoute: typeof AnswerRoute
+  BuildRoute: typeof BuildRoute
+  CheckoutRoute: typeof CheckoutRoute
   FaqRoute: typeof FaqRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PricingRoute: typeof PricingRoute
@@ -110,6 +148,20 @@ declare module '@tanstack/react-router' {
       path: '/answer'
       fullPath: '/answer'
       preLoaderRoute: typeof AnswerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build': {
+      id: '/build'
+      path: '/build'
+      fullPath: '/build'
+      preLoaderRoute: typeof BuildRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -146,6 +198,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnswerRoute: AnswerRoute,
+  BuildRoute: BuildRoute,
+  CheckoutRoute: CheckoutRoute,
   FaqRoute: FaqRoute,
   HowItWorksRoute: HowItWorksRoute,
   PricingRoute: PricingRoute,
