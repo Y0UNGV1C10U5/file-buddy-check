@@ -109,7 +109,7 @@ function Index() {
               </p>
             </div>
 
-            <div className="relative pb-14 pr-16 sm:pr-28">
+            <div className="relative mx-auto w-full max-w-md pb-16 lg:max-w-none">
               <img
                 src={heroImage}
                 width={1280}
@@ -117,7 +117,7 @@ function Index() {
                 alt="An unlawful detainer summons and complaint from the Superior Court of California lying on a kitchen table next to house keys"
                 className="w-full border-2 border-ink-foreground/30 object-cover"
               />
-              <figure className="absolute -bottom-2 right-0 w-40 rotate-6 border-4 border-ink bg-background shadow-slab sm:w-56">
+              <figure className="absolute -bottom-6 -right-2 w-[58%] -rotate-6 border-4 border-ink bg-background p-1 shadow-slab sm:-right-6">
                 <img
                   src={noticeImage}
                   width={912}
@@ -125,14 +125,15 @@ function Index() {
                   alt="A three day notice to pay rent or quit served on a tenant by a landlord"
                   className="w-full object-cover"
                 />
-                <figcaption className="bg-ink px-2 py-1 text-center font-display text-[10px] uppercase leading-tight text-ink-foreground sm:text-xs">
-                  3-day notice
+                <figcaption className="bg-ink px-2 py-1 text-center font-display text-[10px] uppercase leading-tight text-ink-foreground sm:text-sm">
+                  3-day notice to pay or quit
                 </figcaption>
               </figure>
-              <p className="absolute bottom-0 left-0 max-w-[60%] border-2 border-ink bg-signal px-4 py-3 font-display text-lg uppercase leading-tight text-signal-foreground">
-                Got papers? Answer them. Get it on record.
+              <p className="absolute -bottom-4 left-0 max-w-[46%] border-2 border-ink bg-signal px-3 py-2 font-display text-sm uppercase leading-tight text-signal-foreground sm:text-lg">
+                Got papers? Answer them.
               </p>
             </div>
+
 
           </div>
         </section>
