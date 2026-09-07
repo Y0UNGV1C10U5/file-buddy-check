@@ -33,14 +33,15 @@ export async function buildDocx(blocks: Block[]): Promise<Blob> {
             ? AlignmentType.RIGHT
             : AlignmentType.LEFT,
       spacing: { line: 480, lineRule: "auto" },
-      indent: block.indent ? { left: block.indent * 120 } : undefined,
+      ...(block.indent ? { indent: { left: block.indent * 120 } } : {}),
       children: [
         new TextRun({
           text: block.text,
-          bold: block.bold,
-          underline: block.underline ? {} : undefined,
+          bold: block.bold ?? false,
+          ...(block.underline ? { underline: {} } : {}),
         }),
       ],
+
     });
   });
 
