@@ -19,6 +19,8 @@
   --font-display: "Archivo Black", "Arial Black", system-ui, sans-serif;
   --font-sans: "Barlow", system-ui, -apple-system, sans-serif;
   --font-mono: "Barlow Semi Condensed", ui-monospace, monospace;
+  --font-ui: "Inter", system-ui, -apple-system, sans-serif;
+  --font-court: "Courier Prime", "Courier New", ui-monospace, monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -47,6 +49,11 @@
   --color-signal-foreground: var(--signal-foreground);
   --color-caution: var(--caution);
   --color-go: var(--go);
+
+  --color-paper: var(--paper);
+  --color-paper-ink: var(--paper-ink);
+  --color-lasc: var(--lasc);
+  --color-seal: var(--seal);
 
   --shadow-slab: 6px 6px 0 0 var(--ink);
   --shadow-slab-signal: 6px 6px 0 0 var(--signal);
