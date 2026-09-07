@@ -9,31 +9,33 @@ interface Milestone {
 const NO_ANSWER: Milestone[] = [
   { day: 0, label: "Papers served", detail: "The court case against you starts." },
   {
-    day: 5,
+    day: 14,
     label: "Your deadline passes",
-    detail: "You file nothing. The court hears only the landlord's side.",
+    detail:
+      "You get 10 court days to answer — weekends and court holidays are not counted, so that lands around day 14. You file nothing.",
   },
   {
-    day: 6,
+    day: 15,
     label: "Default entered",
     detail: "The landlord asks the clerk to rule against you. No hearing, no judge.",
   },
   {
-    day: 10,
+    day: 19,
     label: "Judgment for the landlord",
     detail: "Possession, unpaid rent and costs are awarded against you.",
   },
   {
-    day: 12,
+    day: 21,
     label: "Sheriff notice on the door",
     detail: "A 5-day notice to vacate is posted at the property.",
   },
   {
-    day: 17,
+    day: 26,
     label: "Lockout",
-    detail: "The sheriff removes you. Roughly two and a half weeks from day one.",
+    detail: "The sheriff removes you. Under four weeks from day one.",
   },
 ];
+
 
 const ANSWER: Milestone[] = [
   { day: 0, label: "Papers served", detail: "The court case against you starts." },
