@@ -21,3 +21,10 @@
 ## Reference
 - Input template fields captured from Proper_OS_LASC_Pleading_Input_Template.docx
 - AB 2347 / CCP 1167 10-court-day rule confirmed (effective Jan 1, 2025)
+
+## Phase 0 — design-only showcase (done)
+- [x] Deadline checker shows every counted/skipped day with reasons
+- [x] Timeline: do nothing = day 0/10-14/15/20/25/30; answer = 70-80 days
+- [x] /start mode chooser, /build 3-column hero shot, /checkout 5 cards ($197 preselected)
+- [x] Pleading sheet restyled to LASC 28-line reference; demo fixture in src/lib/demo-data.ts
+- [ ] Phase 1: real .odt/.docx generation, Stripe, AI coach, discovery logic
