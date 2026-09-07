@@ -40,10 +40,12 @@ const NO_ANSWER: Milestone[] = [
 const ANSWER: Milestone[] = [
   { day: 0, label: "Papers served", detail: "The court case against you starts." },
   {
-    day: 5,
+    day: 14,
     label: "Your answer is filed",
-    detail: "Your side of the story is on the record. No default can be entered.",
+    detail:
+      "Filed inside the 10 court days. Your side of the story is on the record and no default can be entered.",
   },
+
   {
     day: 15,
     label: "Trial is requested",
