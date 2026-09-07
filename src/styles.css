@@ -96,6 +96,12 @@
   --signal-foreground: oklch(0.99 0.005 90);
   --caution: oklch(0.72 0.16 70);
   --go: oklch(0.52 0.13 155);
+
+  /* Kitchen-table legal defense palette */
+  --paper: #fffef7;
+  --paper-ink: #1a1a1a;
+  --lasc: #003366;
+  --seal: #fff3cd;
 }
 
 .dark {
