@@ -144,6 +144,8 @@ export interface Block {
   indent?: number;
   /** Force the block to start on a fresh line even if empty. */
   blank?: boolean;
+  /** Preview-only: paint this block as a newly added defense. */
+  highlight?: boolean;
 }
 
 const blank = (): Block => ({ text: "", blank: true });
@@ -331,6 +333,7 @@ export interface LaidOutLine {
   align: BlockAlign;
   bold: boolean;
   underline: boolean;
+  highlight: boolean;
 }
 
 export type Page = LaidOutLine[];
@@ -368,7 +371,13 @@ export function paginate(blocks: Block[], linesPerPage = LINES_PER_PAGE): Page[]
 
   for (const block of blocks) {
     if (block.blank) {
-      push({ text: "", align: "left", bold: false, underline: false });
+      push({
+        text: "",
+        align: "left",
+        bold: false,
+        underline: false,
+        highlight: false,
+      });
       continue;
     }
     const indent = " ".repeat(block.indent ?? 0);
@@ -379,6 +388,7 @@ export function paginate(blocks: Block[], linesPerPage = LINES_PER_PAGE): Page[]
         align: block.align ?? "left",
         bold: block.bold ?? false,
         underline: block.underline ?? false,
+        highlight: block.highlight ?? false,
       });
     }
   }
@@ -390,6 +400,7 @@ export function paginate(blocks: Block[], linesPerPage = LINES_PER_PAGE): Page[]
       align: "left",
       bold: false,
       underline: false,
+      highlight: false,
     });
   }
   pages.push(page);

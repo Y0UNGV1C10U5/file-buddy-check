@@ -12,7 +12,7 @@ const NO_ANSWER: Milestone[] = [
     day: 14,
     label: "Your deadline passes",
     detail:
-      "You get 10 court days to answer — weekends and court holidays are not counted, so that lands around day 14. You file nothing.",
+      "You get 10 court days to answer — weekends and court holidays are not counted, so it lands somewhere between day 10 and day 14. You file nothing.",
   },
   {
     day: 15,
@@ -20,22 +20,21 @@ const NO_ANSWER: Milestone[] = [
     detail: "The landlord asks the clerk to rule against you. No hearing, no judge.",
   },
   {
-    day: 19,
+    day: 20,
     label: "Judgment for the landlord",
     detail: "Possession, unpaid rent and costs are awarded against you.",
   },
   {
-    day: 21,
+    day: 25,
     label: "Sheriff notice on the door",
     detail: "A 5-day notice to vacate is posted at the property.",
   },
   {
-    day: 26,
+    day: 30,
     label: "Lockout",
-    detail: "The sheriff removes you. Under four weeks from day one.",
+    detail: "The sheriff removes you. About a month from day one.",
   },
 ];
-
 
 const ANSWER: Milestone[] = [
   { day: 0, label: "Papers served", detail: "The court case against you starts." },
@@ -45,26 +44,25 @@ const ANSWER: Milestone[] = [
     detail:
       "Filed inside the 10 court days. Your side of the story is on the record and no default can be entered.",
   },
-
   {
-    day: 15,
+    day: 20,
     label: "Trial is requested",
     detail: "Either side asks the court to set a trial date.",
   },
   {
-    day: 40,
+    day: 45,
     label: "Trial date",
     detail: "You appear and a judge hears both sides. Many cases settle before this.",
   },
   {
-    day: 55,
+    day: 65,
     label: "If you lose at trial",
     detail: "Judgment is entered — but weeks later, with a chance to be heard first.",
   },
   {
-    day: 62,
+    day: 80,
     label: "Lockout at the earliest",
-    detail: "Two months or more, and only after a judge actually listened.",
+    detail: "Seventy to eighty days, and only after a judge actually listened.",
   },
 ];
 
