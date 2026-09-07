@@ -181,3 +181,19 @@
 @utility rule-thick {
   border-top: 4px solid var(--ink);
 }
+
+@utility paper-sheet {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 18% 24%, rgba(120, 105, 80, 0.13) 0.6px, transparent 0.7px),
+    radial-gradient(circle at 72% 61%, rgba(120, 105, 80, 0.11) 0.5px, transparent 0.6px),
+    radial-gradient(circle at 41% 82%, rgba(120, 105, 80, 0.1) 0.7px, transparent 0.8px),
+    radial-gradient(circle at 88% 12%, rgba(120, 105, 80, 0.09) 0.5px, transparent 0.6px);
+  background-size: 140px 140px, 90px 90px, 190px 190px, 60px 60px;
+  color: var(--paper-ink);
+}
+
+@utility court-type {
+  font-family: var(--font-court);
+  font-variant-ligatures: none;
+}
