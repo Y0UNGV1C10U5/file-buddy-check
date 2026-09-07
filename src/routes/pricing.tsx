@@ -79,6 +79,39 @@ const PLANS = [
   },
 ];
 
+const ADDONS = [
+  {
+    name: "Fight Kit — Discovery Pack",
+    price: "$149",
+    cadence: "one time, after your answer is filed",
+    pitch: "Make the landlord answer questions, under oath, on a clock.",
+    features: [
+      "Request for Admissions written from your story",
+      "Request for Production of documents — the lease, ledger, repair records",
+      "Form Interrogatories UD-106 filled in for your case",
+      "Proof of service for each one",
+      "Plain-English guide to what to do with the replies",
+    ],
+    note:
+      "More than half of landlords miss the reply window. Anything they fail to deny on time can be treated as admitted.",
+  },
+  {
+    name: "AI coach",
+    price: "$79",
+    cadence: "one case · 50,000 words of coaching",
+    pitch: "Someone to explain the letters at 2am, in normal words.",
+    features: [
+      "Ask what any court document means",
+      "Help turning what happened into clear, dated sentences",
+      "Reminders of what is due and when",
+      "Never invents a rule — if it is not sure, it says so and points you to free legal aid",
+    ],
+    note:
+      "Guidance only. Our coach is not a lawyer and does not give legal advice or tell you what to claim.",
+  },
+];
+
+
 function Pricing() {
   return (
     <div className="min-h-screen">
