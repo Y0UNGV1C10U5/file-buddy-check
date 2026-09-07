@@ -54,11 +54,12 @@ const PLANS = [
       "Live preview before you pay",
       "Filing checklist for your courthouse",
     ],
-    cta: "Coming soon",
-    to: "/" as const,
-    hash: "deadline",
+    cta: "Build my answer",
+    to: "/answer" as const,
+    hash: "",
     emphasis: true,
   },
+
   {
     name: "Unlimited",
     price: "$97",
