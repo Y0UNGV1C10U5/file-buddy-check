@@ -98,7 +98,7 @@ function Index() {
                   Check my deadline <ArrowRight className="size-5" />
                 </a>
                 <Link
-                  to="/answer"
+                  to="/start"
                   className="inline-flex items-center border-2 border-ink-foreground px-6 py-4 font-display text-lg uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
                 >
                   Build my answer
