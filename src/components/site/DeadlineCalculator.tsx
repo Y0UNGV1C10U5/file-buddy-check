@@ -128,43 +128,50 @@ export function DeadlineCalculator() {
             </p>
           ) : null}
 
-          <button
-            type="button"
-            onClick={() => setShowWork((v) => !v)}
-            className="mt-6 flex items-center gap-2 eyebrow underline-offset-4 hover:underline"
-          >
+          <p className="mt-6 flex items-center gap-2 eyebrow text-signal">
             <CalendarDays className="size-4" />
-            {showWork ? "Hide the count" : "Show me the count, day by day"}
-          </button>
+            Every day we counted
+          </p>
 
-          {showWork ? (
-            <div className="mt-4 border-2 border-ink">
-              <p className="border-b-2 border-ink bg-accent px-4 py-3 text-sm">
-                Service complete {formatLongDate(result.completionDate)} (
-                {result.method.authority}). Counting starts the next day. Weekends and
-                California court holidays do not count.
-              </p>
-              <ul className="divide-y divide-border">
-                {result.days.map((day) => (
+          <div className="mt-3 border-2 border-ink">
+            <p className="border-b-2 border-ink bg-accent px-4 py-3 text-sm">
+              Service complete {formatLongDate(result.completionDate)} (
+              {result.method.authority}). Counting starts the next day. Weekends and
+              California court holidays are skipped — you can see each one below.
+            </p>
+            <ul className="divide-y divide-border">
+              {result.days.map((day) => {
+                const holiday = holidayName(day.date);
+                return (
                   <li
                     key={toISODate(day.date)}
                     className={`flex items-center justify-between gap-4 px-4 py-2 text-sm ${
                       day.counted ? "" : "bg-muted text-muted-foreground"
                     }`}
                   >
-                    <span className="font-mono">{formatLongDate(day.date)}</span>
+                    <span className="font-mono">{shortDate(day.date)}</span>
                     <span
                       className={
-                        day.counted ? "font-semibold text-signal" : "text-right"
+                        day.counted
+                          ? "text-right font-semibold text-signal"
+                          : "text-right"
                       }
                     >
-                      {day.counted ? day.courtDayNumber : day.reason}
+                      {day.counted
+                        ? `Court day ${day.courtDayNumber} of 10`
+                        : holiday
+                          ? `${holiday} — court holiday, skipped`
+                          : "Weekend, skipped"}
                     </span>
                   </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+                );
+              })}
+            </ul>
+            <p className="border-t-2 border-ink bg-ink px-4 py-3 font-mono text-sm uppercase text-ink-foreground">
+              {result.days.filter((d) => !d.counted).length} days skipped ·{" "}
+              {result.days.filter((d) => d.counted).length} court days counted
+            </p>
+          </div>
 
           <p className="mt-6 text-xs text-muted-foreground">
             Based on Code of Civil Procedure § 1167 as amended by AB 2347, effective
