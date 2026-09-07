@@ -8,8 +8,10 @@
 
 ## Later
 - [ ] Accounts + storage (Lovable Cloud)
-- [ ] Template download + online fill + upload parsing (.docx/.doc/.odt/.txt)
-- [ ] 28-line pleading generation (Rule 2.108) → DOCX/ODT/PDF + POS-030, live preview
+- [x] Template download + online fill + upload parsing (.docx/.odt/.txt) — /answer
+- [x] 28-line pleading generation (Rule 2.108) → DOCX/ODT/PDF + POS-030, live preview
+- [ ] Fight Kit Discovery Pack ($149) + AI coach add-on ($79 / 50k tokens) — priced on /pricing, not yet generated
+
 - [ ] Stripe: $79 single, $97/mo unlimited; AI token metering tiers
 - [ ] AI coach with hard token caps and citation-or-abstain rule
 - [ ] Admin dashboard
