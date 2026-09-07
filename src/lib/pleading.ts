@@ -144,6 +144,8 @@ export interface Block {
   indent?: number;
   /** Force the block to start on a fresh line even if empty. */
   blank?: boolean;
+  /** Preview-only: paint this block as a newly added defense. */
+  highlight?: boolean;
 }
 
 const blank = (): Block => ({ text: "", blank: true });
@@ -331,6 +333,7 @@ export interface LaidOutLine {
   align: BlockAlign;
   bold: boolean;
   underline: boolean;
+  highlight: boolean;
 }
 
 export type Page = LaidOutLine[];
