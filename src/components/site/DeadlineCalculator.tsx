@@ -4,15 +4,23 @@ import {
   SERVICE_METHODS,
   calculateDeadline,
   formatLongDate,
+  holidayName,
   parseDateInput,
   toISODate,
   type ServiceMethod,
 } from "@/lib/deadline";
 
+function shortDate(date: Date): string {
+  return date.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+  });
+}
+
 export function DeadlineCalculator() {
   const [dateValue, setDateValue] = useState("");
   const [method, setMethod] = useState<ServiceMethod>("personal");
-  const [showWork, setShowWork] = useState(false);
 
   const serviceDate = parseDateInput(dateValue);
   const result = useMemo(
