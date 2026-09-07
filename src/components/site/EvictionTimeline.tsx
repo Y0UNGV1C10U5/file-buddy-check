@@ -143,7 +143,7 @@ export function EvictionTimeline() {
     <div className="grid gap-6 lg:grid-cols-2">
       <Track
         eyebrow="If you do nothing"
-        title="Out in about two weeks"
+        title="Out in under a month"
         tone="bad"
         milestones={NO_ANSWER}
         footnote="Silence is treated as agreement. The landlord wins without a judge ever hearing why you stopped paying or what was wrong with the place."
