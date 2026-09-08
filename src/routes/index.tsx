@@ -317,6 +317,85 @@ function Index() {
           </div>
         </section>
 
+        {/* Speed */}
+        <section className="border-b-4 border-ink bg-caution py-16 text-ink">
+          <div className="container-page grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="eyebrow">No queue. No posting. No morning wait.</p>
+              <h2 className="mt-3 text-4xl sm:text-5xl">
+                As fast as you're ready to pay.
+              </h2>
+              <p className="mt-4 max-w-xl">
+                Fill in the boxes tonight and your pack comes back in about twenty
+                minutes — signed, formatted and ready to print. Need it sooner because
+                the counter opens at 8:30am? Rush puts it in your hands inside the hour,
+                whatever time it is.
+              </p>
+            </div>
+            <div className="grid gap-3 self-center">
+              {[
+                ["11:12pm", "You start filling in the boxes"},
+              ].length ? null : null}
+              {[
+                ["11:12pm", "You start filling in the boxes"],
+                ["11:34pm", "You pay"],
+                ["11:52pm", "Your pack lands in your inbox, ready to print"],
+                ["8:35am", "You're at the filing window"],
+              ].map(([time, what]) => (
+                <p
+                  key={time}
+                  className="flex gap-4 border-2 border-ink bg-card px-4 py-3 text-sm text-foreground"
+                >
+                  <span className="w-20 shrink-0 font-mono text-xs uppercase">
+                    {time}
+                  </span>
+                  <span>{what}</span>
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Discovery leverage */}
+        <section className="border-b-4 border-ink bg-background py-16">
+          <div className="container-page grid gap-10 lg:grid-cols-2">
+            <div>
+              <p className="eyebrow text-signal">The part most tenants never hear</p>
+              <h2 className="mt-3 text-4xl sm:text-5xl">
+                What you get out of them
+                <br />
+                <span className="text-signal">you keep.</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                An eviction case moves fast, and that clock runs on your landlord too.
+                Once you send discovery, they have a short window to answer under oath and
+                produce the ledger, the inspection records, the repair requests they say
+                never happened. Let it lapse and those facts can be deemed admitted.
+              </p>
+              <p className="mt-4 text-muted-foreground">
+                That record doesn't vanish when the case ends. Whichever way possession
+                goes, you walk away holding a dated, signed account of how they ran the
+                place — and that's the ground people stand on later when they go after
+                deposits, habitability and damages.
+              </p>
+            </div>
+            <div className="grid content-center gap-3">
+              {[
+                "Their rent ledger, in writing",
+                "Every repair complaint on file",
+                "Who inspected the unit, and when",
+                "Admissions they can't walk back",
+                "A dated record of what they ignored",
+              ].map((item) => (
+                <p key={item} className="border-2 border-ink bg-card px-4 py-3 text-sm">
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         {/* Defenses */}
         <section className="container-page py-16">
           <div className="grid gap-10 lg:grid-cols-2">
