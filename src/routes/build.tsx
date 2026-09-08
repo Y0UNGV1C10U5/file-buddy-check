@@ -86,13 +86,20 @@ function BuildPage() {
   );
 
   const blocks = useMemo(
-    () => answerBodyBlocks(data, { enhance, defenseTexts }),
+    () => attachmentBlocks(data, { enhance, defenseTexts }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [data, enhance, defenseTexts.join("|")],
   );
 
+  const formDefenses = BUILD_DEFENSES.map((d) => ({
+    code: d.code,
+    formLabel: d.formLabel,
+    checked: defenses.includes(d.id),
+  }));
+
   const caption = captionFields(data);
   const stepLabel = WIZARD_STEPS[step] ?? WIZARD_STEPS[0]!;
+
 
   return (
     <div className="min-h-screen">
