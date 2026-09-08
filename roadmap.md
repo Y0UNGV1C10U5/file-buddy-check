@@ -55,3 +55,4 @@
 - [ ] Afterpay/Klarna instalments (already shown on /checkout as 4x $124.25)
 - [ ] Zelle — likely NOT supported by any checkout provider (bank-to-bank, no merchant API). Fallback: manual "pay by Zelle" instructions with manual order confirmation, or drop it.
 - [ ] Show accepted-payment icons on /checkout in Phase 0 design
+- [ ] Venmo (usually available via PayPal)

@@ -50,9 +50,14 @@ const FAQS = [
     a: "No. We are a registered legal document assistant. We prepare documents and give legal information. We do not give legal advice, choose your defenses for you, or represent you in court.",
   },
   {
-    q: "What is 28-line pleading paper?",
-    a: "California courts require documents on numbered paper with a specific caption, line numbering down the left margin and a footer. California Rule of Court 2.108 sets the format. Getting it wrong can get your filing rejected at the window. We handle the formatting so you can focus on what happened.",
+    q: "Is the answer on pleading paper?",
+    a: "No — the answer itself is an official Judicial Council tick-box form, UD-105. You do not download it or fill it in by hand: you answer short questions on screen and we fill the boxes for you. Where your own account of events needs more room, it goes on an attached page (MC-025) on 28-line pleading paper, and later documents like motions, stipulations and discovery use pleading paper too.",
   },
+  {
+    q: "What is 28-line pleading paper?",
+    a: "California courts require certain documents on numbered paper with a specific caption, line numbering down the left margin and a footer. California Rule of Court 2.108 sets the format. Getting it wrong can get a filing rejected at the window, so we handle the formatting.",
+  },
+
   {
     q: "What defenses can I raise?",
     a: "Common ones include improper service of the notice, a defective notice (wrong amount, wrong address, missing AB 1482 language), the place not being kept livable, retaliation, and discrimination. Our form lists them in plain English so you can tick what fits your situation.",
