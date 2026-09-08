@@ -49,6 +49,8 @@
   --color-signal-foreground: var(--signal-foreground);
   --color-caution: var(--caution);
   --color-go: var(--go);
+  --color-go-foreground: var(--go-foreground);
+  --color-go-soft: var(--go-soft);
 
   --color-paper: var(--paper);
   --color-paper-ink: var(--paper-ink);
@@ -96,6 +98,8 @@
   --signal-foreground: oklch(0.99 0.005 90);
   --caution: oklch(0.72 0.16 70);
   --go: oklch(0.52 0.13 155);
+  --go-foreground: oklch(0.99 0.01 155);
+  --go-soft: oklch(0.95 0.04 155);
 
   /* Kitchen-table legal defense palette */
   --paper: #fffef7;
