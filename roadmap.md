@@ -78,3 +78,16 @@
 - Quiet premium positioning: discovery is framed as an asset you keep regardless of the eviction outcome — landlord must respond on a short clock, lapses can be deemed admitted, the produced record becomes the basis of a later civil claim for damages/habitability/deposit. Never say "revenge" outright.
 - Speed as a selling point: standard pack ready ~20 min, rush inside 60 min, any hour. Homepage timeline 11:12pm -> 8:35am at the filing window.
 - [ ] Phase 1: A/B the $697 top tier vs $497; test rush bump attach rate; post-purchase upsell email for Discovery Pack to $97 buyers
+
+## Parked marketing copy (removed from launch site Sep 8 2026 — re-add post-launch)
+Removed from homepage + checkout to keep launch scope to the $220 answer only.
+- "What you get out of them, you keep" discovery-leverage section:
+  - Eviction clock runs on the landlord too; discovery answers are under oath on a short window.
+  - Lapsed responses can be deemed admitted.
+  - The record survives the case: rent ledger in writing, every repair complaint on file, who inspected the unit and when, admissions they can't walk back, a dated record of what they ignored.
+  - Ground for later claims on deposits, habitability and damages.
+- Checkout "After your answer is in — discovery, motions and settlement coming soon" block.
+- Also parked: Settlement & Seal Pack (keeping the case off public/tenant-screening listings), AI coach, token meter.
+
+## New task (Sep 8 2026)
+- [x] Add settlement statistics section: filing an answer alone shifts outcomes — most UD cases resolve by settlement/stipulation on far better terms (move-out time, reduced or waived back rent, neutral judgment) once the tenant appears. Framing: the answer is the leverage; help them build a strong one.
