@@ -405,6 +405,55 @@ function Index() {
           </div>
         </section>
 
+        {/* Why the answer is the leverage */}
+        <section className="border-b-4 border-ink bg-card py-16">
+          <div className="container-page">
+            <p className="eyebrow text-signal">Why the answer matters this much</p>
+            <h2 className="mt-3 max-w-3xl text-4xl sm:text-5xl">
+              Most of these cases never reach a judge.
+              <br />
+              <span className="text-signal">They get settled — and the answer is what
+              gets you to the table.</span>
+            </h2>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {[
+                [
+                  "About 9 in 10",
+                  "Eviction cases where the tenant never answers end in a default — the landlord wins without anyone hearing your side.",
+                ],
+                [
+                  "The large majority",
+                  "Of cases where the tenant does answer end in a negotiated agreement instead of a trial. Once you're in the case, your landlord has something to lose too.",
+                ],
+                [
+                  "Weeks, not days",
+                  "Settlements routinely buy move-out time, cut or wipe back rent, and keep the judgment neutral — terms nobody offers a tenant who stayed silent.",
+                ],
+              ].map(([stat, text]) => (
+                <div key={stat} className="border-2 border-ink bg-background p-6">
+                  <p className="font-display text-3xl uppercase text-signal">{stat}</p>
+                  <p className="mt-3 text-sm text-muted-foreground">{text}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-8 max-w-3xl text-muted-foreground">
+              That's the whole reason we exist. Your answer is the leverage — so we spend
+              our time helping you build a strong one, in your own words, on the form the
+              court expects. Filing it doesn't make you difficult. It makes you someone
+              they have to deal with.
+            </p>
+            <p className="mt-3 max-w-3xl text-xs text-muted-foreground">
+              Figures reflect general patterns in California unlawful detainer cases and
+              are not a promise about your case. We're not lawyers and this isn't legal
+              advice.
+            </p>
+          </div>
+        </section>
+
+
+
 
 
         {/* Defenses */}
