@@ -146,6 +146,12 @@ function Index() {
                 >
                   Check my deadline <ArrowRight className="size-5" />
                 </a>
+                <a
+                  href="#service-check"
+                  className="inline-flex items-center gap-2 border-2 border-ink-foreground px-6 py-4 font-display text-lg uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
+                >
+                  Was I served properly?
+                </a>
                 <Link
                   to="/start"
                   className="inline-flex items-center border-2 border-ink-foreground px-6 py-4 font-display text-lg uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
