@@ -208,28 +208,38 @@ function Index() {
                 <br />
                 side of the story
                 <br />
-                <span className="text-signal">onto pleading paper.</span>
+                <span className="text-signal">onto form UD-105.</span>
               </h2>
             </div>
             <div className="space-y-6">
               <div className="slab p-6">
                 <p className="font-display text-2xl uppercase">
-                  What is pleading paper?
+                  What is form UD-105?
                 </p>
                 <p className="mt-3 text-muted-foreground">
-                  It is the special page courts use — 28 numbered lines down the left
-                  side, your name and case details in a set spot at the top, wide
-                  margins, one particular font and spacing. A court clerk can reject
-                  papers that are not on it, even when everything you wrote is true.
+                  It is the official Answer for an eviction case — a Judicial Council
+                  form with tick boxes. You say who you are, deny what the landlord
+                  claims, and tick the reasons you should not be evicted. That form,
+                  not a letter, is what stops a default.
                 </p>
               </div>
               <div className="slab p-6">
                 <p className="font-display text-2xl uppercase">What we do</p>
                 <p className="mt-3 text-muted-foreground">
-                  You tell us what happened in your own words — no legal language
-                  needed. We turn that into a written answer laid out on proper
-                  pleading paper, in the format the Superior Court of California
-                  accepts, so it can be filed and put on the record.
+                  You tell us what happened in your own words. We fill out the UD-105
+                  for you — the right boxes ticked — and put your account on the
+                  attached page (MC-025) that goes with it, so nothing you want the
+                  judge to know gets squeezed out.
+                </p>
+              </div>
+              <div className="slab p-6">
+                <p className="font-display text-2xl uppercase">
+                  Where pleading paper comes in
+                </p>
+                <p className="mt-3 text-muted-foreground">
+                  Anything beyond the answer — the attachment page, motions,
+                  stipulations, discovery — goes on 28-numbered-line pleading paper,
+                  the layout California courts require. We handle that formatting too.
                 </p>
               </div>
               <div className="slab p-6">
@@ -243,6 +253,7 @@ function Index() {
             </div>
           </div>
         </section>
+
 
         {/* Calculator */}
         <section id="deadline" className="scroll-mt-20 bg-background py-16">
