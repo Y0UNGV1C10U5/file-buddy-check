@@ -321,9 +321,10 @@ function BuildPage() {
             </div>
 
             <p className="mt-4 text-xs text-muted-foreground">
-              Ticking a box drops the matching paragraph into the document, highlighted
-              in yellow so you can see exactly what changed.
+              Ticking a box here ticks the matching box on form UD-105, and the facts
+              behind it appear on the attached page, highlighted in yellow.
             </p>
+
 
             <Link
               to="/checkout"
