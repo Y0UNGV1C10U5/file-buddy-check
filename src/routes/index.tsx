@@ -503,15 +503,18 @@ function Index() {
                 <span className="text-signal">Pay when you want the files.</span>
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Open the form and answer the boxes in your own words. As you type, you
-                watch your answer build on the real court form, page one and all. Nothing
-                to install, nothing charged, and you can stop and come back — your
-                answers stay on your own device.
+                Open the form and answer the boxes in your own words. You watch page one
+                of the real court form build on screen as you type. Nothing to install,
+                nothing charged, and you can come back and change your answers as many
+                times as you like for the whole ten days you have to respond.
               </p>
               <p className="mt-4 text-muted-foreground">
-                When it looks right, pay ${220} and we send the finished pack — print-ready
-                PDFs plus editable Word and OpenDocument copies — back within the hour.
+                The on-screen preview is a look, not a download — no files leave our hands
+                before payment. When it looks right, pay ${220} and the finished pack —
+                print-ready PDFs plus editable Word and OpenDocument copies — comes back
+                within the hour.
               </p>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   to="/build"
