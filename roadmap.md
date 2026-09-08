@@ -28,3 +28,11 @@
 - [x] /start mode chooser, /build 3-column hero shot, /checkout 5 cards ($197 preselected)
 - [x] Pleading sheet restyled to LASC 28-line reference; demo fixture in src/lib/demo-data.ts
 - [ ] Phase 1: real .odt/.docx generation, Stripe, AI coach, discovery logic
+
+## Phase 2 — app stores (after website launch)
+- [ ] Step 1: home-screen install (manifest + icons) — free, works now on Android/iPhone
+- [ ] Step 2: Capacitor wrapper for Google Play ($25 one-off) and App Store ($99/yr)
+- [ ] Native polish so Apple accepts it (not just a website in a shell): offline draft access, push reminders for the deadline, file picker/share sheet, camera scan of the notice
+- [ ] Payments: keep purchases on the web to avoid 15-30% store commission
+- [ ] Store assets: listing copy, screenshots, privacy policy URL, data-safety form
+
