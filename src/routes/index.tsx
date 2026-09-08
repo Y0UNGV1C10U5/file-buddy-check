@@ -289,14 +289,15 @@ function Index() {
               </div>
               <div className="slab p-6">
                 <p className="font-display text-2xl uppercase">
-                  Where pleading paper comes in
+                  What comes back to you
                 </p>
                 <p className="mt-3 text-muted-foreground">
-                  Anything beyond the answer — the attachment page, motions,
-                  stipulations, discovery — goes on 28-numbered-line pleading paper,
-                  the layout California courts require. We handle that formatting too.
+                  Your completed UD-105 with the attached page carrying your account,
+                  the proof of service, and a fee waiver request if you need one — all
+                  print-ready, plus editable copies if you want to change a word.
                 </p>
               </div>
+
               <div className="slab p-6">
                 <p className="font-display text-2xl uppercase">What we are not</p>
                 <p className="mt-3 text-muted-foreground">
