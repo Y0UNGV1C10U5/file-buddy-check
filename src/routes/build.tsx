@@ -206,36 +206,49 @@ function BuildPage() {
             </ol>
           </section>
 
-          {/* CENTER — the sheet */}
+          {/* CENTER — the form */}
           <section>
             <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
               <p className="eyebrow text-signal">
-                {mode === "guided" ? "Court version — live" : "Edit doc mode"}
+                {mode === "guided" ? "Your answer — live" : "Edit doc mode"}
               </p>
               <p className="font-mono text-xs uppercase text-muted-foreground">
-                LASC · rule 2.108 · 28 lines
+                Form UD-105 + attachment MC-025
               </p>
             </div>
 
             {mode === "guided" ? (
-              <PleadingSheet
-                caption={caption}
-                blocks={blocks}
-              />
+              <div className="space-y-6">
+                <UD105Sheet
+                  caption={caption}
+                  defenses={formDefenses}
+                  story={story}
+                />
+                <div>
+                  <p className="mb-2 font-mono text-xs uppercase text-muted-foreground">
+                    Attachment 3.k — your facts, on 28-line pleading paper
+                  </p>
+                  <PleadingSheet caption={caption} blocks={blocks} />
+                </div>
+              </div>
             ) : (
               <div className="paper-sheet border-2 border-ink p-4 sm:p-6">
                 <p className="court-type text-[10px] uppercase text-paper-ink/60">
-                  Editable document — each box maps to a numbered line
+                  Editable document — each box maps to an item on form UD-105
                 </p>
                 <div className="mt-4 space-y-2">
                   {[
-                    { line: "1-6", label: "Caption block", value: DEMO_PLEADING.fullName },
-                    { line: "8", label: "Case number", value: DEMO_PLEADING.caseNumber },
-                    { line: "9", label: "Plaintiff", value: DEMO_PLEADING.plaintiffs },
-                    { line: "11", label: "Defendant", value: DEMO_PLEADING.defendants },
-                    { line: "14", label: "Title", value: DEMO_PLEADING.title },
+                    { line: "Party", label: "Your name", value: DEMO_PLEADING.fullName },
+                    {
+                      line: "Case",
+                      label: "Case number",
+                      value: DEMO_PLEADING.caseNumber,
+                    },
+                    { line: "Plaintiff", label: "Plaintiff", value: DEMO_PLEADING.plaintiffs },
+                    { line: "Defendant", label: "Defendant", value: DEMO_PLEADING.defendants },
+                    { line: "Item 2", label: "Denial", value: "General denial" },
                   ].map((row) => (
-                    <div key={row.line} className="grid grid-cols-[3rem_1fr] gap-2">
+                    <div key={row.line} className="grid grid-cols-[5rem_1fr] gap-2">
                       <span className="court-type text-right text-[10px] text-paper-ink/60">
                         {row.line}
                       </span>
@@ -246,9 +259,9 @@ function BuildPage() {
                       />
                     </div>
                   ))}
-                  <div className="grid grid-cols-[3rem_1fr] gap-2">
+                  <div className="grid grid-cols-[5rem_1fr] gap-2">
                     <span className="court-type text-right text-[10px] text-paper-ink/60">
-                      16+
+                      Item 3.k
                     </span>
                     <textarea
                       value={story}
@@ -260,6 +273,7 @@ function BuildPage() {
                 </div>
               </div>
             )}
+
           </section>
 
           {/* RIGHT — defences */}
