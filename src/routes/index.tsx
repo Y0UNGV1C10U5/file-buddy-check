@@ -323,13 +323,13 @@ function Index() {
             <div>
               <p className="eyebrow">No queue. No posting. No morning wait.</p>
               <h2 className="mt-3 text-4xl sm:text-5xl">
-                As fast as you're ready to pay.
+                Within the hour. Guaranteed.
               </h2>
               <p className="mt-4 max-w-xl">
-                Fill in the boxes tonight and your pack comes back in about twenty
-                minutes — signed, formatted and ready to print. Need it sooner because
-                the counter opens at 8:30am? Rush puts it in your hands inside the hour,
-                whatever time it is.
+                Fill in the boxes tonight, pay your flat $220, and your filing pack comes
+                back inside sixty minutes — signed, formatted and ready to print. Any
+                hour, weekends included. Answer the questions properly and the clock is
+                on us.
               </p>
             </div>
             <div className="grid gap-3 self-center">
@@ -338,6 +338,7 @@ function Index() {
                 ["11:34pm", "You pay"],
                 ["11:52pm", "Your pack lands in your inbox, ready to print"],
                 ["8:35am", "You're at the filing window"],
+
               ].map(([time, what]) => (
                 <p
                   key={time}

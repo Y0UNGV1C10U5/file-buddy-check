@@ -68,8 +68,10 @@
 - Build order: UD-105 assembly -> zip->courthouse router -> FW-001 auto-attach -> EFSP-agnostic filing adapter (swap InfoTrack/One Legal/in-house).
 - Ship both: print pack (Option A) at launch, e-file hand-off (Option C) via InfoTrack once partner agreement lands. Manual staff filing through an EFSP portal as the bridge.
 
-## Pricing strategy (revised Sep 2026)
-- Ladder: Free deadline check -> $97 Get It On Record -> $197 Fight Kit (preselected) -> $397 Defender -> $697 Full Fight (raised from $497 to lift AOV; 4x $174.25 Afterpay)
+## Pricing strategy (revised Sep 8 2026 — LAUNCH DECISION)
+- LAUNCH = answer only, single flat price $220, all files delivered within the hour (guarantee assumes answers are complete/on point; clock restarts if we must chase major corrections). No tiers, no add-ons at launch.
+- Post-launch ladder (previous plan, kept for later): Discovery Pack, Settlement & Seal, Coach, Full Fight
+
 - Every tier below the top carries a "what you give up" line + one-click step-up button showing only the price DIFFERENCE
 - Order bumps: Rush +$39 (ready within the hour, included in Full Fight), Discovery Pack +$149 (upgrade path from $97 tier), Coach 30 days +$79
 - Running total + instalment figure recalculates live to normalise the bigger number
