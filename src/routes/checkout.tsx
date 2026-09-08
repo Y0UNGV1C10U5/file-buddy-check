@@ -184,7 +184,7 @@ function CheckoutPage() {
   const daysLeft = 4;
   const urgent = daysLeft < 7;
 
-  const plan = PLANS.find((p) => p.id === selected) ?? PLANS[2];
+  const plan: Plan = PLANS.find((p) => p.id === selected) ?? (PLANS[2] as Plan);
   const nextPlan = PLANS.find((p) => p.id === plan.nextId);
 
   const activeAddOns = useMemo(
