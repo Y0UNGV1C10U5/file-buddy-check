@@ -50,13 +50,10 @@ const FAQS = [
     a: "No. We are a registered legal document assistant. We prepare documents and give legal information. We do not give legal advice, choose your defenses for you, or represent you in court.",
   },
   {
-    q: "Is the answer on pleading paper?",
-    a: "No — the answer itself is an official Judicial Council tick-box form, UD-105. You do not download it or fill it in by hand: you answer short questions on screen and we fill the boxes for you. Where your own account of events needs more room, it goes on an attached page (MC-025) on 28-line pleading paper, and later documents like motions, stipulations and discovery use pleading paper too.",
+    q: "What form is the answer on?",
+    a: "The official Judicial Council tick-box form, UD-105. You do not download it or fill it in by hand: you answer short questions on screen and we fill the boxes for you. Where your own account of events needs more room, it continues on the attached page that goes with the form, formatted the way the court expects.",
   },
-  {
-    q: "What is 28-line pleading paper?",
-    a: "California courts require certain documents on numbered paper with a specific caption, line numbering down the left margin and a footer. California Rule of Court 2.108 sets the format. Getting it wrong can get a filing rejected at the window, so we handle the formatting.",
-  },
+
 
   {
     q: "What defenses can I raise?",
