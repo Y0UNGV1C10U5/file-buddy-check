@@ -291,6 +291,12 @@ function Index() {
           </div>
         </section>
 
+        <UrgencyBand
+          kicker="Knowing the date doesn't file anything"
+          headline="Every day you sit on it is a day of the ten gone."
+          body="The pack takes minutes to fill in and comes back inside the hour. Waiting until the last afternoon is how people miss it."
+        />
+
         {/* Timeline comparison */}
         <section className="border-y-4 border-ink bg-background py-16">
           <div className="container-page">
@@ -307,6 +313,13 @@ function Index() {
             </div>
           </div>
         </section>
+
+        <UrgencyBand
+          kicker="One of those two calendars is a choice"
+          headline="Get your answer prepared now, not the night before."
+          body="Thinking about it is the expensive option. $220, done tonight, files back within the hour."
+        />
+
 
 
 
