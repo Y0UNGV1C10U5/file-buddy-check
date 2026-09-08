@@ -334,9 +334,6 @@ function Index() {
             </div>
             <div className="grid gap-3 self-center">
               {[
-                ["11:12pm", "You start filling in the boxes"},
-              ].length ? null : null}
-              {[
                 ["11:12pm", "You start filling in the boxes"],
                 ["11:34pm", "You pay"],
                 ["11:52pm", "Your pack lands in your inbox, ready to print"],
