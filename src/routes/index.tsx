@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Your story, on proper 28-line pleading paper the California Superior Court accepts. Check your deadline free.",
+          "Your side of the story on the official Answer — Judicial Council form UD-105 — ready for the LA Superior Court. Check your deadline free.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
