@@ -31,11 +31,12 @@ export const Route = createFileRoute("/")({
 });
 
 const STEPS = [
-  { icon: FileText, label: "Download", text: "A simple form, no legalese." },
-  { icon: Gavel, label: "Fill", text: "Your story, your words." },
-  { icon: Upload, label: "Upload", text: "We format it for the court." },
+  { icon: Gavel, label: "Check", text: "Your deadline, free, in seconds." },
+  { icon: FileText, label: "Answer", text: "Short questions, on screen." },
+  { icon: Upload, label: "Fills itself", text: "Form UD-105, as you type." },
   { icon: ShieldCheck, label: "File", text: "Get it on the record." },
 ];
+
 
 const DEFENSES = [
   "The notice was never properly served",
