@@ -422,7 +422,7 @@ function Index() {
             <div className="self-center border-2 border-ink bg-card shadow-slab">
               <div className="flex items-center justify-between border-b-2 border-ink bg-ink px-5 py-3 text-ink-foreground">
                 <p className="eyebrow">One night, start to filing window</p>
-                <span className="font-mono text-xs uppercase">83 min</span>
+                <span className="font-mono text-xs uppercase">6 steps</span>
               </div>
               <ol className="relative px-5 py-5">
                 <span
@@ -430,11 +430,37 @@ function Index() {
                   className="absolute left-[2.35rem] top-8 bottom-8 w-0.5 bg-ink/20"
                 />
                 {[
-                  ["11:12pm", "You start filling in the boxes"],
-                  ["11:34pm", "You pay"],
-                  ["11:52pm", "Your pack lands in your inbox, ready to print"],
-                  ["8:35am", "You're at the filing window"],
-                ].map(([time, what], i, arr) => (
+                  [
+                    "11:12pm",
+                    "1. Tell your side",
+                    "You start filling in the boxes — dates, the notice, what actually happened.",
+                  ],
+                  [
+                    "11:30pm",
+                    "2. We check it's enough",
+                    "We read back every box and flag anything thin, missing or contradictory before you spend a cent.",
+                  ],
+                  [
+                    "11:34pm",
+                    "3. You pay $220",
+                    "Flat fee, once, only when your answers are complete enough to proceed.",
+                  ],
+                  [
+                    "11:52pm",
+                    "4. Your pack lands",
+                    "Signed and formatted UD-105, attached page, POS-030 and fee-waiver forms — PDFs plus editable Word and OpenDocument copies.",
+                  ],
+                  [
+                    "11:58pm",
+                    "5. Pick how you file",
+                    "We coach you step by step through e-filing online, or you print and walk it in.",
+                  ],
+                  [
+                    "8:35am",
+                    "6. You're at the filing window",
+                    "Papers in hand at whichever LA County courthouse handles your address — we tell you which one and what to hand over.",
+                  ],
+                ].map(([time, title, what], i, arr) => (
                   <li
                     key={time}
                     className="relative flex items-start gap-4 py-3 group"
@@ -454,12 +480,14 @@ function Index() {
                       <span className="block font-mono text-xs uppercase tracking-widest text-signal">
                         {time}
                       </span>
-                      <span className="block text-sm text-foreground">{what}</span>
+                      <span className="block font-semibold text-foreground">{title}</span>
+                      <span className="block text-sm text-muted-foreground">{what}</span>
                     </span>
                   </li>
                 ))}
               </ol>
             </div>
+
 
           </div>
         </section>
