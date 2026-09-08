@@ -432,7 +432,7 @@ function BuildPage() {
               />
               <div>
                 <p className="mb-2 font-mono text-xs uppercase text-muted-foreground">
-                  Attachment 3.k — your facts, on 28-line pleading paper
+                  Attachment — your facts, in your own words
                 </p>
                 <PleadingSheet caption={caption} blocks={blocks} />
               </div>

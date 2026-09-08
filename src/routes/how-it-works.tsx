@@ -39,7 +39,7 @@ const STEPS = [
   },
   {
     title: "Watch the form fill itself in",
-    body: "Beside your questions you see the real UD-105 as the court sees it, plus the attached page (MC-025) on 28-line pleading paper carrying your own account of events.",
+    body: "Beside your questions you see the real UD-105 as the court sees it, plus the attached page carrying your own account of events.",
   },
   {
     title: "File it",
