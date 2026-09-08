@@ -5,7 +5,9 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { PleadingSheet } from "@/components/site/PleadingSheet";
 import { UD105Sheet } from "@/components/site/UD105Sheet";
+import { StartGate } from "@/components/site/StartGate";
 import { attachmentBlocks, captionFields } from "@/lib/pleading-preview";
+
 import {
   BUILD_DEFENSES,
   DEMO_FIELDS,
