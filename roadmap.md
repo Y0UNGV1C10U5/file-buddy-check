@@ -27,7 +27,11 @@
 - [x] Timeline: do nothing = day 0/10-14/15/20/25/30; answer = 70-80 days
 - [x] /start mode chooser, /build 3-column hero shot, /checkout 5 cards ($197 preselected)
 - [x] Pleading sheet restyled to LASC 28-line reference; demo fixture in src/lib/demo-data.ts
-- [ ] Phase 1: real .odt/.docx generation, Stripe, AI coach, discovery logic
+- [x] CORRECTION: the Answer is Judicial Council form UD-105 (tick boxes), NOT pleading paper.
+      Pleading paper = MC-025 attachment + motions/stipulations/discovery in higher packages.
+- [x] Everything filled in on-screen via form fields — no template download, no upload/resubmit
+- [ ] Phase 1: real UD-105 + MC-025 generation, Stripe, AI coach, discovery logic
+
 
 ## Phase 2 — app stores (after website launch)
 - [ ] Step 1: home-screen install (manifest + icons) — free, works now on Android/iPhone
