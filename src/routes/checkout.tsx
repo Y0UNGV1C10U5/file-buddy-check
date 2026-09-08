@@ -33,7 +33,7 @@ export const Route = createFileRoute("/checkout")({
 
 const INCLUDED = [
   "Answer — official Judicial Council form UD-105, filled in for you",
-  "Your side of the story on an MC-025 attachment, on 28-line pleading paper",
+  "Your side of the story on the attached page that goes with the form",
   "Proof of service (POS-030), ready to sign",
   "Fee waiver form FW-001 attached by default",
   "A filing checklist and the right courthouse for your property",

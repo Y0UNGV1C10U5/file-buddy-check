@@ -86,7 +86,7 @@ export function PleadingSheet({
           </div>
 
           <p className="court-type mt-3 text-center text-[7px] uppercase tracking-wide text-paper-ink/60 sm:text-[9px]">
-            Page {pageIndex + 1} of {pages.length} — 28-line pleading paper, Cal. Rules
+            Page {pageIndex + 1} of {pages.length} — attachment page, Cal. Rules
             of Court rule 2.108
           </p>
         </div>
