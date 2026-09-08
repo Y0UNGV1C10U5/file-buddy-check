@@ -710,15 +710,22 @@ function Index() {
             </div>
 
             <div className="slab p-6 sm:p-8">
-              <p className="eyebrow text-signal">Things worth raising</p>
-              <ul className="mt-4 space-y-3">
+              <p className="eyebrow text-signal">Some reasons your eviction paperwork might be wrong</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                We check for these — and more — while you fill in your answer.
+              </p>
+              <ul className="mt-5 space-y-4">
                 {DEFENSES.map((item) => (
-                  <li key={item} className="flex gap-3 border-b border-border pb-3">
+                  <li key={item.label} className="flex gap-3 border-b border-border pb-4">
                     <span className="font-display text-signal">→</span>
-                    <span>{item}</span>
+                    <div>
+                      <p className="font-semibold">{item.label}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{item.text}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
+
               <p className="mt-5 text-sm text-muted-foreground">
                 Any of these can matter. We help you say them properly; we do not decide
                 your case for you.
