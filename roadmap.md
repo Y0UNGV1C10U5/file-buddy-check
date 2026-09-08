@@ -91,3 +91,13 @@ Removed from homepage + checkout to keep launch scope to the $220 answer only.
 
 ## New task (Sep 8 2026)
 - [x] Add settlement statistics section: filing an answer alone shifts outcomes — most UD cases resolve by settlement/stipulation on far better terms (move-out time, reduced or waived back rent, neutral judgment) once the tenant appears. Framing: the answer is the leverage; help them build a strong one.
+
+## Sep 8 2026 — answer-leverage rework + free service check
+- [x] Homepage headline "File your answer."; 9-in-10 default stat as a full red block
+- [x] Landlord-cost/leverage copy: contested case = lawyer fees + no rent = they settle
+- [x] Green-tick list of what tenants get (time, rent cut/waived, neutral judgment, deposit, repairs)
+- [x] Free service-validity checker (/#service-check, src/lib/service-check.ts): posted-no-mail,
+      posting without court order, sub-service to non-adult, mail-only without signed ack.
+      Always ends on "bad service only counts if you file the answer".
+- [x] Repeated urgency bands (buy now, $220) after the deadline calculator and the timeline
+- [ ] AI sales chatbot — decision pending (see chat)
