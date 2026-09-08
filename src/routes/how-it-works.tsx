@@ -30,22 +30,23 @@ const STEPS = [
     body: "Enter the day you were served. We count 10 court days the way the court counts them — skipping weekends and court holidays. Write the date on your wall.",
   },
   {
-    title: "Download the form",
-    body: "A plain Word document with every field the court needs: your details, the case number, the parties, your story, and a list of common defenses to tick.",
+    title: "Answer short questions on screen",
+    body: "Nothing to download, nothing to print, nothing to send back. You type into simple boxes — your name, the case number, what happened — and you can stop and come back.",
   },
   {
-    title: "Write it in your own words",
-    body: "Fill it in at the kitchen table, on your phone, or online here. No Latin, no legal phrasing required. Say what happened.",
+    title: "Tick the reasons that fit",
+    body: "Improper notice, wrong amount, repairs ignored, retaliation. Each one you tick ticks the matching box on the official answer form, UD-105.",
   },
   {
-    title: "Upload it back",
-    body: "We read your document and lay it onto 28-line California pleading paper with the proper caption, case table and footer, following Rule of Court 2.108.",
+    title: "Watch the form fill itself in",
+    body: "Beside your questions you see the real UD-105 as the court sees it, plus the attached page (MC-025) on 28-line pleading paper carrying your own account of events.",
   },
   {
-    title: "Download and file",
-    body: "You get an editable Word file, an ODT, a print-ready PDF, and a POS-030 proof of service. Take it to the clerk, e-file it, or mail it.",
+    title: "File it",
+    body: "You get a print-ready set with a proof of service, and instructions for filing it — at the courthouse window or online.",
   },
 ];
+
 
 function HowItWorks() {
   return (

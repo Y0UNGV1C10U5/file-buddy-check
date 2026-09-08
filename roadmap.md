@@ -27,7 +27,11 @@
 - [x] Timeline: do nothing = day 0/10-14/15/20/25/30; answer = 70-80 days
 - [x] /start mode chooser, /build 3-column hero shot, /checkout 5 cards ($197 preselected)
 - [x] Pleading sheet restyled to LASC 28-line reference; demo fixture in src/lib/demo-data.ts
-- [ ] Phase 1: real .odt/.docx generation, Stripe, AI coach, discovery logic
+- [x] CORRECTION: the Answer is Judicial Council form UD-105 (tick boxes), NOT pleading paper.
+      Pleading paper = MC-025 attachment + motions/stipulations/discovery in higher packages.
+- [x] Everything filled in on-screen via form fields — no template download, no upload/resubmit
+- [ ] Phase 1: real UD-105 + MC-025 generation, Stripe, AI coach, discovery logic
+
 
 ## Phase 2 — app stores (after website launch)
 - [ ] Step 1: home-screen install (manifest + icons) — free, works now on Android/iPhone
@@ -36,3 +40,30 @@
 - [ ] Payments: web checkout for ad traffic; also offer in-app purchase for store sign-ups (accept 15-30% cut for legitimacy) — price in-app tiers ~15-20% higher, no links to web pricing inside the app
 - [ ] Store assets: listing copy, screenshots, privacy policy URL, data-safety form
 
+
+## Filing hand-off (decide before launch)
+- [ ] Option A: output print-ready PDFs + list of every LA County location/window that accepts UD filings, with hours and what to bring
+- [ ] Option B: step-by-step "set up a One Legal account and e-file it now" walkthrough
+- [ ] Option C (best UX): warm hand-off via e-filer API — needs a provider with API access certified for LA County Superior Court
+- [ ] Research + compare: One Legal, InfoTrack, Green Filing, File & ServeXpress, Odyssey eFileCA (Tyler) EFSP route
+
+## Payment methods (Phase 1, when payments go live)
+- [ ] Card (Visa/Mastercard/Amex)
+- [ ] Cash App Pay
+- [ ] PayPal
+- [ ] ACH bank debit
+- [ ] Afterpay/Klarna instalments (already shown on /checkout as 4x $124.25)
+- [ ] Zelle — likely NOT supported by any checkout provider (bank-to-bank, no merchant API). Fallback: manual "pay by Zelle" instructions with manual order confirmation, or drop it.
+- [ ] Show accepted-payment icons on /checkout in Phase 0 design
+- [ ] Venmo (usually available via PayPal)
+
+### Filing research findings (Sep 2026)
+- LA Superior Court runs Tyler Odyssey eFileCA. E-filing is mandatory for attorneys, OPTIONAL for self-represented tenants — so print-and-file stays valid.
+- InfoTrack: only EFSP actively marketing a developer/agent-facing API into eFileCA. Partner program + OAuth. Best fast path.
+- One Legal: approved EFSP, integration API exists but partner/sales-led (practice-management oriented).
+- Becoming our own Tyler-certified EFSP: 3-6+ months certification. Long-term only.
+- Filing fee for defendant's first appearance ~$225-240; FW-001 fee waiver removes court fee but not EFSP transaction fee — auto-attach FW-001 by default.
+- Courthouse is assigned by PROPERTY ZIP CODE (Local Rule 2.3 / Appendix 2.D) — build address -> courthouse router, don't let tenants pick.
+- UPL: register as Legal Document Assistant in LA County, $25k bond, client disclosures. Complete forms at client's direction; never choose defences for them (People v. Landlords Professional Services).
+- Build order: UD-105 assembly -> zip->courthouse router -> FW-001 auto-attach -> EFSP-agnostic filing adapter (swap InfoTrack/One Legal/in-house).
+- Ship both: print pack (Option A) at launch, e-file hand-off (Option C) via InfoTrack once partner agreement lands. Manual staff filing through an EFSP portal as the bridge.

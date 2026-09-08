@@ -56,7 +56,7 @@ const PLANS: Plan[] = [
     price: 97,
     tagline: "Your answer, filed-ready.",
     features: [
-      "Answer — Unlawful Detainer on 28-line paper",
+      "Answer — official form UD-105, filled in for you",
       "Proof of service (POS-030)",
       "Filing checklist for your courthouse",
     ],

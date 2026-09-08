@@ -112,3 +112,56 @@ export function answerBodyBlocks(
 
   return blocks;
 }
+
+/**
+ * Attachment 3.k (form MC-025) — the continuation page that carries the
+ * tenant's own account and the facts behind each ticked defence. This is the
+ * part that lives on 28-line pleading paper; the answer itself is UD-105.
+ */
+export function attachmentBlocks(
+  data: PleadingData,
+  options: BodyOptions & { defenseLabels?: string[] },
+): Block[] {
+  const blocks: Block[] = [];
+
+  blocks.push({ text: "ATTACHMENT 3.k (MC-025)", align: "center", bold: true });
+  blocks.push({
+    text: "FACTS SUPPORTING DEFENDANT'S AFFIRMATIVE DEFENSES",
+    align: "center",
+    bold: true,
+  });
+  blocks.push(blank());
+
+  let n = 1;
+  for (const p of paragraphs(data.story)) {
+    blocks.push({
+      text: options.enhance
+        ? `${n++}. Defendant alleges that ${p.startsWith("I ") ? p : `${p.charAt(0).toLowerCase()}${p.slice(1)}`}`
+        : `${n++}. ${p}`,
+    });
+    blocks.push(blank());
+  }
+
+  for (const text of options.defenseTexts) {
+    blocks.push({
+      text: `${n++}. ${text}`,
+      highlight: options.highlightDefenses ?? true,
+    });
+    blocks.push(blank());
+  }
+
+  blocks.push({
+    text: "I declare under penalty of perjury under the laws of the State of California that the foregoing is true and correct.",
+  });
+  blocks.push(blank());
+  blocks.push({ text: `Dated: ${data.verificationDate || "____________________"}` });
+  blocks.push(blank());
+  blocks.push({ text: "____________________________________", align: "right" });
+  blocks.push({
+    text: `${data.fullName || "Defendant"}, Defendant In Pro Per`,
+    align: "right",
+  });
+
+  return blocks;
+}
+
