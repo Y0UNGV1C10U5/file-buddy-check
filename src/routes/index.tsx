@@ -48,13 +48,32 @@ const STEPS = [
 
 
 const DEFENSES = [
-  "The notice was never properly served",
-  "The notice had the wrong amount or wrong address",
-  "Required AB 1482 language was missing",
-  "Repairs were ignored and the place was not livable",
-  "You were punished for complaining (retaliation)",
-  "You were treated differently because of who you are",
+  {
+    label: "The notice was never properly served",
+    text: "If it was taped to your door, the law also requires a copy in the mail. No mailing, and the clock may never have started.",
+  },
+  {
+    label: "The notice had the wrong amount or wrong address",
+    text: "A three-day notice that demands more than you actually owe, or names the wrong unit, can be bad on its face.",
+  },
+  {
+    label: "Required AB 1482 language was missing",
+    text: "AB 1482 is California's statewide rent cap and just-cause law (Civil Code 1946.2). If your home is covered, the landlord has to state the just cause for ending your tenancy in the notice, and many notices carry a required written disclosure about these protections. If that language is missing when it should be there, the paperwork may not support the case.",
+  },
+  {
+    label: "Repairs were ignored and the place was not livable",
+    text: "Mold, leaks, no heat, no hot water, pests — if you asked and nothing happened, that belongs in your answer.",
+  },
+  {
+    label: "You were punished for complaining (retaliation)",
+    text: "If the eviction landed soon after you reported repairs or contacted an inspector, timing matters.",
+  },
+  {
+    label: "You were treated differently because of who you are",
+    text: "Family status, disability, race, source of income and more are protected.",
+  },
 ];
+
 
 const NOTICE_TIMELINE = [
   {
