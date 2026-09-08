@@ -88,7 +88,7 @@ export const BUILD_DEFENSES = [
 ] as const;
 
 
-/** Twelve guided-mode steps; step 5 is the one we show. */
+/** Twelve on-screen steps; step 5 is the one we show in screenshots. */
 export const WIZARD_STEPS = [
   "Your name",
   "Your address",
@@ -101,8 +101,61 @@ export const WIZARD_STEPS = [
   "Your defences",
   "Proof of service",
   "Sign and date",
-  "Review and download",
+  "Review",
 ] as const;
+
+/** Every box the tenant fills in on screen. Nothing is uploaded or downloaded. */
+export interface BuildFields {
+  fullName: string;
+  street: string;
+  cityStateZip: string;
+  phone: string;
+  email: string;
+  caseNumber: string;
+  plaintiff: string;
+  courthouse: string;
+  story: string;
+  noticeType: string;
+  noticeDate: string;
+  noticeServed: string;
+  monthlyRent: string;
+  amountDemanded: string;
+  amountOwed: string;
+  lastPayment: string;
+  repairs: string;
+  serviceMethod: string;
+  serverName: string;
+  signName: string;
+  signDate: string;
+}
+
+export type FieldKey = keyof BuildFields;
+
+export const DEMO_FIELDS: BuildFields = {
+  fullName: "Maria R. Delgado",
+  street: "1428 E 4th Street, Apt 3",
+  cityStateZip: "Los Angeles, CA 90033",
+  phone: "(323) 555-0142",
+  email: "maria.r@example.com",
+  caseNumber: "24STUD01234",
+  plaintiff: "Maple Properties LLC",
+  courthouse: "Stanley Mosk Courthouse, Dept. 94",
+  story: DEMO_STORY,
+  noticeType: "3-day notice to pay rent or quit",
+  noticeDate: "May 12, 2026",
+  noticeServed: "Taped to the door",
+  monthlyRent: "$2,000",
+  amountDemanded: "$2,000",
+  amountOwed: "$1,400",
+  lastPayment: "$600 on May 1",
+  repairs:
+    "There has been mold in the bathroom since March and I asked for repairs twice.",
+  serviceMethod: "By mail",
+  serverName: "A friend over 18",
+  signName: "Maria R. Delgado",
+  signDate: "September 8, 2026",
+};
+
 
 export const SOCIAL_PROOF =
   "Maria from Boyle Heights filed at 11:47pm and stopped a default.";
