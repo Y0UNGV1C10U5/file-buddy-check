@@ -503,15 +503,18 @@ function Index() {
                 <span className="text-signal">Pay when you want the files.</span>
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Open the form and answer the boxes in your own words. As you type, you
-                watch your answer build on the real court form, page one and all. Nothing
-                to install, nothing charged, and you can stop and come back — your
-                answers stay on your own device.
+                Open the form and answer the boxes in your own words. You watch page one
+                of the real court form build on screen as you type. Nothing to install,
+                nothing charged, and you can come back and change your answers as many
+                times as you like for the whole ten days you have to respond.
               </p>
               <p className="mt-4 text-muted-foreground">
-                When it looks right, pay ${220} and we send the finished pack — print-ready
-                PDFs plus editable Word and OpenDocument copies — back within the hour.
+                The on-screen preview is a look, not a download — no files leave our hands
+                before payment. When it looks right, pay ${220} and the finished pack —
+                print-ready PDFs plus editable Word and OpenDocument copies — comes back
+                within the hour.
               </p>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   to="/build"
@@ -536,11 +539,12 @@ function Index() {
               </div>
               <ul className="divide-y-2 divide-ink/10">
                 {[
-                  ["01", "See page one of your form as you type"],
+                  ["01", "Watch page one build on screen as you type"],
                   ["02", "No card, no account, nothing charged to look"],
-                  ["03", "Your draft saves on your own device"],
-                  ["04", "Pay only when you want the finished files"],
-                  ["05", "Print-ready PDFs plus editable Word and ODT"],
+                  ["03", "Edit as often as you like across your ten response days"],
+                  ["04", "Preview only — no files, no downloads before payment"],
+                  ["05", "Pay $220 and the finished pack comes back within the hour"],
+
                 ].map(([n, item]) => (
                   <li
                     key={n}
