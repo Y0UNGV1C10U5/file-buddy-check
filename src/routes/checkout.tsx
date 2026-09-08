@@ -232,19 +232,24 @@ function CheckoutPage() {
             </div>
           </div>
 
-          {/* What comes later */}
+          {/* Try before you pay */}
           <div className="mt-12 border-2 border-ink bg-accent p-6 sm:p-8">
-            <p className="eyebrow text-signal">After your answer is in</p>
+            <p className="eyebrow text-signal">Free to look</p>
             <h2 className="mt-2 max-w-3xl text-3xl sm:text-4xl">
-              Discovery, motions and settlement come next — and they're coming soon.
+              Fill it in first. Pay when you want the files.
             </h2>
             <p className="mt-4 max-w-3xl text-muted-foreground">
-              Once you're on record, the next stage is asking your landlord questions they
-              have to answer under oath, on a short clock. Whatever they hand over is
-              yours to keep, however the eviction goes. We're launching with the answer
-              only — the rest opens shortly after, and everyone on the list hears first.
+              Answer the boxes and watch your form build in front of you. Nothing is
+              charged until you ask for the finished pack.
             </p>
+            <Link
+              to="/build"
+              className="mt-6 inline-flex items-center gap-2 border-2 border-ink bg-signal px-6 py-4 font-display uppercase text-signal-foreground shadow-slab transition-transform hover:-translate-y-1"
+            >
+              Start filling it in — free
+            </Link>
           </div>
+
         </section>
       </main>
 
