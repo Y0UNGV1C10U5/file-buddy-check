@@ -133,6 +133,24 @@ function CheckoutPage() {
                 back to you fast and the clock restarts when you reply.
               </p>
 
+              <p className="mt-4 border-2 border-ink bg-seal p-4 text-sm text-paper-ink">
+                <strong className="font-display uppercase">
+                  Accepted-on-the-paperwork guarantee.
+                </strong>{" "}
+                If the LA Superior Court knocks your pack back on a technicality — wrong
+                form, wrong format, wrong line count, a signature block in the wrong place
+                — we fix it free, and if it still won't go through you get your money
+                back.
+              </p>
+
+              <p className="mt-3 text-xs text-muted-foreground">
+                This covers our drafting and formatting only. It doesn't cover a rejection
+                over what your case actually says — the facts, the defenses you chose, a
+                missed deadline, or anything the court decides on the substance. We're not
+                lawyers and this isn't legal advice.
+              </p>
+
+
               <p className="mt-4 font-mono text-xs uppercase text-muted-foreground">
                 Or 4 payments of ${instalment} with Afterpay
               </p>
