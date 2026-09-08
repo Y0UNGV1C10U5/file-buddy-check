@@ -56,3 +56,14 @@
 - [ ] Zelle — likely NOT supported by any checkout provider (bank-to-bank, no merchant API). Fallback: manual "pay by Zelle" instructions with manual order confirmation, or drop it.
 - [ ] Show accepted-payment icons on /checkout in Phase 0 design
 - [ ] Venmo (usually available via PayPal)
+
+### Filing research findings (Sep 2026)
+- LA Superior Court runs Tyler Odyssey eFileCA. E-filing is mandatory for attorneys, OPTIONAL for self-represented tenants — so print-and-file stays valid.
+- InfoTrack: only EFSP actively marketing a developer/agent-facing API into eFileCA. Partner program + OAuth. Best fast path.
+- One Legal: approved EFSP, integration API exists but partner/sales-led (practice-management oriented).
+- Becoming our own Tyler-certified EFSP: 3-6+ months certification. Long-term only.
+- Filing fee for defendant's first appearance ~$225-240; FW-001 fee waiver removes court fee but not EFSP transaction fee — auto-attach FW-001 by default.
+- Courthouse is assigned by PROPERTY ZIP CODE (Local Rule 2.3 / Appendix 2.D) — build address -> courthouse router, don't let tenants pick.
+- UPL: register as Legal Document Assistant in LA County, $25k bond, client disclosures. Complete forms at client's direction; never choose defences for them (People v. Landlords Professional Services).
+- Build order: UD-105 assembly -> zip->courthouse router -> FW-001 auto-attach -> EFSP-agnostic filing adapter (swap InfoTrack/One Legal/in-house).
+- Ship both: print pack (Option A) at launch, e-file hand-off (Option C) via InfoTrack once partner agreement lands. Manual staff filing through an EFSP portal as the bridge.
