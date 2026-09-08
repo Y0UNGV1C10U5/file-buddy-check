@@ -399,25 +399,48 @@ function Index() {
                 on us.
               </p>
             </div>
-            <div className="grid gap-3 self-center">
-              {[
-                ["11:12pm", "You start filling in the boxes"],
-                ["11:34pm", "You pay"],
-                ["11:52pm", "Your pack lands in your inbox, ready to print"],
-                ["8:35am", "You're at the filing window"],
-
-              ].map(([time, what]) => (
-                <p
-                  key={time}
-                  className="flex gap-4 border-2 border-ink bg-card px-4 py-3 text-sm text-foreground"
-                >
-                  <span className="w-20 shrink-0 font-mono text-xs uppercase">
-                    {time}
-                  </span>
-                  <span>{what}</span>
-                </p>
-              ))}
+            <div className="self-center border-2 border-ink bg-card shadow-slab">
+              <div className="flex items-center justify-between border-b-2 border-ink bg-ink px-5 py-3 text-ink-foreground">
+                <p className="eyebrow">One night, start to filing window</p>
+                <span className="font-mono text-xs uppercase">83 min</span>
+              </div>
+              <ol className="relative px-5 py-5">
+                <span
+                  aria-hidden
+                  className="absolute left-[2.35rem] top-8 bottom-8 w-0.5 bg-ink/20"
+                />
+                {[
+                  ["11:12pm", "You start filling in the boxes"],
+                  ["11:34pm", "You pay"],
+                  ["11:52pm", "Your pack lands in your inbox, ready to print"],
+                  ["8:35am", "You're at the filing window"],
+                ].map(([time, what], i, arr) => (
+                  <li
+                    key={time}
+                    className="relative flex items-start gap-4 py-3 group"
+                  >
+                    <span
+                      className={`relative z-10 mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border-2 border-ink ${
+                        i === arr.length - 1 ? "bg-signal" : "bg-card"
+                      }`}
+                    >
+                      <span
+                        className={`size-1.5 rounded-full ${
+                          i === arr.length - 1 ? "bg-signal-foreground" : "bg-ink"
+                        }`}
+                      />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block font-mono text-xs uppercase tracking-widest text-signal">
+                        {time}
+                      </span>
+                      <span className="block text-sm text-foreground">{what}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
             </div>
+
           </div>
         </section>
 
