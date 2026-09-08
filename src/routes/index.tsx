@@ -547,52 +547,56 @@ function Index() {
 
             {/* Cost to the landlord */}
             <div className="mt-6 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="border-2 border-ink bg-background p-6 sm:p-8">
-                <p className="eyebrow text-signal">What changes when you answer</p>
+              <div className="border-4 border-go bg-go-soft p-6 sm:p-8">
+                <p className="eyebrow text-go">What changes when you answer</p>
                 <h3 className="mt-3 font-display text-3xl uppercase leading-tight sm:text-4xl">
                   It gets expensive for them — fast.
                 </h3>
-                <p className="mt-4 text-muted-foreground">
-                  An uncontested eviction is a cheap paperwork exercise. A contested one
-                  is not. Once your answer is on file they have to pay their lawyer to
-                  read it, respond to it, request a trial date, prepare witnesses and
-                  show up. Every extra week is another week with no rent coming in and
-                  legal fees going out.
+                <p className="mt-4 text-foreground/80">
+                  Representing yourself costs you nothing but your time. For the
+                  landlord it is the opposite: an uncontested eviction is a cheap
+                  paperwork exercise, a contested one runs into the thousands. Once your
+                  answer is on file they pay their lawyer to read it, respond to it,
+                  request a trial date, prepare witnesses and turn up on the day — with
+                  no rent coming in the whole time.
                 </p>
-                <p className="mt-4 text-muted-foreground">
-                  That arithmetic is your leverage. It is why the large majority of
-                  answered cases end in a negotiated deal instead of a trial — settling
-                  with you is simply cheaper than beating you.
+                <p className="mt-4 text-foreground/80">
+                  That arithmetic is where your leverage comes from. A clear, well-built
+                  answer is what puts it in your hands.
                 </p>
                 <p className="mt-4 font-display text-xl uppercase leading-tight">
                   $220 today buys you a seat at that table.
                 </p>
               </div>
 
-              <div className="border-2 border-ink bg-background p-6 sm:p-8">
-                <p className="eyebrow text-signal">What tenants actually walk away with</p>
+              <div className="border-4 border-go bg-go-soft p-6 sm:p-8">
+                <p className="eyebrow text-go">
+                  What some tenants and landlords routinely settle on before trial
+                </p>
                 <ul className="mt-4 space-y-3">
                   {[
-                    "Weeks — often months — of extra time in the home instead of days",
-                    "Back rent cut down, or written off completely, as part of the deal",
-                    "A neutral judgment, or the case dismissed, rather than an eviction against your name",
-                    "A move-out date you chose, not a sheriff's notice you didn't",
-                    "Your deposit dealt with in writing instead of quietly kept",
-                    "Repairs and habitability problems finally on the record",
-                    "Breathing room to find somewhere decent instead of anywhere at all",
+                    "Extra weeks — sometimes months — in the home instead of days",
+                    "Back rent reduced, or written off, as part of the deal",
+                    "A neutral judgment, or a dismissal, rather than an eviction on your name",
+                    "A move-out date agreed between you, not a sheriff's notice",
+                    "The deposit dealt with in writing instead of quietly kept",
+                    "Repairs and habitability problems put on the record",
+                    "Time to find somewhere decent instead of anywhere at all",
                   ].map((item) => (
-                    <li key={item} className="flex gap-3 border-b border-border pb-3">
-                      <Check className="mt-0.5 size-5 shrink-0 text-[color:var(--ok,#1a7f37)]" />
+                    <li key={item} className="flex gap-3 border-b border-go/25 pb-3">
+                      <Check className="mt-0.5 size-5 shrink-0 text-go" />
                       <span className="text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-4 text-sm text-muted-foreground">
-                  None of these are on offer to a tenant who stayed silent. Every one of
-                  them is a negotiation that only exists because an answer was filed.
+                <p className="mt-4 text-sm text-foreground/70">
+                  These are the kinds of terms that get negotiated in answered cases —
+                  not a guarantee, and never on the table for a tenant who stayed
+                  silent. Every one of them exists because an answer was filed.
                 </p>
               </div>
             </div>
+
 
             <div className="mt-8 flex flex-wrap items-center gap-4 border-2 border-ink bg-ink p-6 text-ink-foreground">
               <p className="font-display text-2xl uppercase leading-tight">
