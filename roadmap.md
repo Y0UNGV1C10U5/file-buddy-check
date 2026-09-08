@@ -33,6 +33,6 @@
 - [ ] Step 1: home-screen install (manifest + icons) — free, works now on Android/iPhone
 - [ ] Step 2: Capacitor wrapper for Google Play ($25 one-off) and App Store ($99/yr)
 - [ ] Native polish so Apple accepts it (not just a website in a shell): offline draft access, push reminders for the deadline, file picker/share sheet, camera scan of the notice
-- [ ] Payments: keep purchases on the web to avoid 15-30% store commission
+- [ ] Payments: web checkout for ad traffic; also offer in-app purchase for store sign-ups (accept 15-30% cut for legitimacy) — price in-app tiers ~15-20% higher, no links to web pricing inside the app
 - [ ] Store assets: listing copy, screenshots, privacy policy URL, data-safety form
 
