@@ -354,36 +354,48 @@ function Index() {
           </div>
         </section>
 
-        {/* Discovery leverage */}
+        {/* Start it now */}
         <section className="border-b-4 border-ink bg-background py-16">
           <div className="container-page grid gap-10 lg:grid-cols-2">
             <div>
-              <p className="eyebrow text-signal">The part most tenants never hear</p>
+              <p className="eyebrow text-signal">Free to start</p>
               <h2 className="mt-3 text-4xl sm:text-5xl">
-                What you get out of them
+                Start filling it in now.
                 <br />
-                <span className="text-signal">you keep.</span>
+                <span className="text-signal">Pay when you want the files.</span>
               </h2>
               <p className="mt-4 text-muted-foreground">
-                An eviction case moves fast, and that clock runs on your landlord too.
-                Once you send discovery, they have a short window to answer under oath and
-                produce the ledger, the inspection records, the repair requests they say
-                never happened. Let it lapse and those facts can be deemed admitted.
+                Open the form and answer the boxes in your own words. As you type, you
+                watch your answer build on the real court form, page one and all. Nothing
+                to install, nothing charged, and you can stop and come back — your
+                answers stay on your own device.
               </p>
               <p className="mt-4 text-muted-foreground">
-                That record doesn't vanish when the case ends. Whichever way possession
-                goes, you walk away holding a dated, signed account of how they ran the
-                place — and that's the ground people stand on later when they go after
-                deposits, habitability and damages.
+                When it looks right, pay ${220} and we send the finished pack — print-ready
+                PDFs plus editable Word and OpenDocument copies — back within the hour.
               </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/build"
+                  className="inline-flex items-center gap-2 border-2 border-ink bg-signal px-6 py-4 font-display uppercase text-signal-foreground shadow-slab transition-transform hover:-translate-y-1"
+                >
+                  Start filling it in — free
+                </Link>
+                <Link
+                  to="/checkout"
+                  className="inline-flex items-center gap-2 border-2 border-ink bg-background px-6 py-4 font-display uppercase shadow-slab transition-transform hover:-translate-y-1"
+                >
+                  See what you get
+                </Link>
+              </div>
             </div>
             <div className="grid content-center gap-3">
               {[
-                "Their rent ledger, in writing",
-                "Every repair complaint on file",
-                "Who inspected the unit, and when",
-                "Admissions they can't walk back",
-                "A dated record of what they ignored",
+                "See page one of your form as you type",
+                "No card, no account, nothing charged to look",
+                "Your draft saves on your own device",
+                "Pay only when you want the finished files",
+                "Print-ready PDFs plus editable Word and ODT",
               ].map((item) => (
                 <p key={item} className="border-2 border-ink bg-card px-4 py-3 text-sm">
                   {item}
@@ -392,6 +404,7 @@ function Index() {
             </div>
           </div>
         </section>
+
 
 
         {/* Defenses */}
