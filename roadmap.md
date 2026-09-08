@@ -101,3 +101,8 @@ Removed from homepage + checkout to keep launch scope to the $220 answer only.
       Always ends on "bad service only counts if you file the answer".
 - [x] Repeated urgency bands (buy now, $220) after the deadline calculator and the timeline
 - [ ] AI sales chatbot — decision pending (see chat)
+
+## Lead gate (Phase 0 shape, backend in Phase 1)
+- /build is hard-gated: email + mobile, six-digit code to each, plus a photo of the 3-day notice and/or the unlawful detainer.
+- Phase 0 has no real sending/verification — wire Cloud (auth + storage + email/SMS) behind StartGate in Phase 1, and OCR the notice dates.
+- Deadline checker and service check stay FREE and ungated on the homepage: they are the ad hook and the goodwill play. Contact capture happens at the moment they act, not before they trust us.

@@ -5,7 +5,9 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { PleadingSheet } from "@/components/site/PleadingSheet";
 import { UD105Sheet } from "@/components/site/UD105Sheet";
+import { StartGate } from "@/components/site/StartGate";
 import { attachmentBlocks, captionFields } from "@/lib/pleading-preview";
+
 import {
   BUILD_DEFENSES,
   DEMO_FIELDS,
@@ -18,6 +20,8 @@ import {
 
 
 const STORAGE_KEY = "ud-build-draft-v2";
+const GATE_KEY = "ud-gate-v1";
+
 const MAX_SHORT = 120;
 const MAX_LONG = 2000;
 
@@ -50,6 +54,13 @@ function BuildPage() {
   const [fields, setFields] = useState<Fields>(DEMO_FIELDS);
   const [enhance, setEnhance] = useState(true);
   const [defenses, setDefenses] = useState<string[]>(["defective", "habitability"]);
+  const [unlocked, setUnlocked] = useState(false);
+
+  // Remember that this browser already verified, so they aren't re-gated on return.
+  useEffect(() => {
+    if (window.localStorage.getItem(GATE_KEY) === "1") setUnlocked(true);
+  }, []);
+
 
   // Draft is remembered in this browser only. Nothing leaves the device.
   useEffect(() => {
@@ -316,6 +327,17 @@ function BuildPage() {
       <SiteHeader />
 
       <main className="bg-background">
+        {!unlocked ? (
+          <StartGate
+            onUnlock={(id) => {
+              setFields((f) => ({ ...f, email: id.email, phone: id.phone }));
+              setUnlocked(true);
+              window.localStorage.setItem(GATE_KEY, "1");
+            }}
+          />
+        ) : (
+        <>
+
         {/* Toolbar */}
         <div className="border-b-2 border-ink bg-ink text-ink-foreground">
           <div className="container-page flex flex-wrap items-center justify-between gap-4 py-3">
@@ -477,7 +499,10 @@ function BuildPage() {
             </Link>
           </section>
         </div>
+        </>
+        )}
       </main>
+
 
       <SiteFooter />
     </div>
