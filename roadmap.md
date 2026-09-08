@@ -46,3 +46,12 @@
 - [ ] Option B: step-by-step "set up a One Legal account and e-file it now" walkthrough
 - [ ] Option C (best UX): warm hand-off via e-filer API — needs a provider with API access certified for LA County Superior Court
 - [ ] Research + compare: One Legal, InfoTrack, Green Filing, File & ServeXpress, Odyssey eFileCA (Tyler) EFSP route
+
+## Payment methods (Phase 1, when payments go live)
+- [ ] Card (Visa/Mastercard/Amex)
+- [ ] Cash App Pay
+- [ ] PayPal
+- [ ] ACH bank debit
+- [ ] Afterpay/Klarna instalments (already shown on /checkout as 4x $124.25)
+- [ ] Zelle — likely NOT supported by any checkout provider (bank-to-bank, no merchant API). Fallback: manual "pay by Zelle" instructions with manual order confirmation, or drop it.
+- [ ] Show accepted-payment icons on /checkout in Phase 0 design
