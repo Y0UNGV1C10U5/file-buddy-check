@@ -12,8 +12,10 @@ import {
   DEMO_PLEADING,
   FILED_THIS_WEEK,
   WIZARD_STEPS,
+  type BuildFields,
   type FieldKey,
 } from "@/lib/demo-data";
+
 
 const STORAGE_KEY = "ud-build-draft-v2";
 const MAX_SHORT = 120;
