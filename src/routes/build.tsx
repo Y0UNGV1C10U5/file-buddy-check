@@ -316,6 +316,17 @@ function BuildPage() {
       <SiteHeader />
 
       <main className="bg-background">
+        {!unlocked ? (
+          <StartGate
+            onUnlock={(id) => {
+              setFields((f) => ({ ...f, email: id.email, phone: id.phone }));
+              setUnlocked(true);
+              window.localStorage.setItem(GATE_KEY, "1");
+            }}
+          />
+        ) : (
+        <>
+
         {/* Toolbar */}
         <div className="border-b-2 border-ink bg-ink text-ink-foreground">
           <div className="container-page flex flex-wrap items-center justify-between gap-4 py-3">
