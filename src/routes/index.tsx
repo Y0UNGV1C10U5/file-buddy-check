@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Landlord trying to evict you in Los Angeles? We put your side of the story onto court-accepted pleading paper, and you can check your filing deadline free.",
+          "Landlord trying to evict you in Los Angeles? We put your side of the story onto the official Answer — form UD-105 — and you can check your filing deadline free.",
       },
       { property: "og:title", content: "Unlawfully Detained — Stand Up and Fight" },
       {
