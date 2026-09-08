@@ -10,7 +10,8 @@ import {
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { PleadingSheet } from "@/components/site/PleadingSheet";
-import { answerBodyBlocks, captionFields } from "@/lib/pleading-preview";
+import { UD105Sheet } from "@/components/site/UD105Sheet";
+import { attachmentBlocks, captionFields } from "@/lib/pleading-preview";
 import {
   BUILD_DEFENSES,
   DEMO_PLEADING,
@@ -33,13 +34,13 @@ export const Route = createFileRoute("/build")({
       {
         name: "description",
         content:
-          "Type your story on the left and watch it land on real LASC 28-line pleading paper. Tick a defence and it appears in the document.",
+          "Type your story on the left and watch the boxes tick themselves on form UD-105, with your facts on the attached MC-025 page.",
       },
-      { property: "og:title", content: "Your words, on court paper, live" },
+      { property: "og:title", content: "Your words, on form UD-105, live" },
       {
         property: "og:description",
         content:
-          "Box-by-box questions on one side, the filed-ready 28-line answer on the other.",
+          "Box-by-box questions on one side, the filled-in UD-105 answer and its attachment page on the other.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,6 +48,7 @@ export const Route = createFileRoute("/build")({
   }),
   component: BuildPage,
 });
+
 
 function BuildPage() {
   const { mode: initialMode } = Route.useSearch();
