@@ -539,11 +539,12 @@ function Index() {
               </div>
               <ul className="divide-y-2 divide-ink/10">
                 {[
-                  ["01", "See page one of your form as you type"],
+                  ["01", "Watch page one build on screen as you type"],
                   ["02", "No card, no account, nothing charged to look"],
-                  ["03", "Your draft saves on your own device"],
-                  ["04", "Pay only when you want the finished files"],
-                  ["05", "Print-ready PDFs plus editable Word and ODT"],
+                  ["03", "Edit as often as you like across your ten response days"],
+                  ["04", "Preview only — no files, no downloads before payment"],
+                  ["05", "Pay $220 and the finished pack comes back within the hour"],
+
                 ].map(([n, item]) => (
                   <li
                     key={n}
