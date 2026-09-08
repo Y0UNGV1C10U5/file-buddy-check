@@ -54,6 +54,13 @@ function BuildPage() {
   const [fields, setFields] = useState<Fields>(DEMO_FIELDS);
   const [enhance, setEnhance] = useState(true);
   const [defenses, setDefenses] = useState<string[]>(["defective", "habitability"]);
+  const [unlocked, setUnlocked] = useState(false);
+
+  // Remember that this browser already verified, so they aren't re-gated on return.
+  useEffect(() => {
+    if (window.localStorage.getItem(GATE_KEY) === "1") setUnlocked(true);
+  }, []);
+
 
   // Draft is remembered in this browser only. Nothing leaves the device.
   useEffect(() => {
