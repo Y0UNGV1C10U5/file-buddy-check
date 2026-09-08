@@ -488,7 +488,10 @@ function BuildPage() {
             </Link>
           </section>
         </div>
+        </>
+        )}
       </main>
+
 
       <SiteFooter />
     </div>
