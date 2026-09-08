@@ -20,6 +20,8 @@ import {
 
 
 const STORAGE_KEY = "ud-build-draft-v2";
+const GATE_KEY = "ud-gate-v1";
+
 const MAX_SHORT = 120;
 const MAX_LONG = 2000;
 
