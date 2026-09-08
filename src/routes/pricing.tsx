@@ -11,12 +11,12 @@ export const Route = createFileRoute("/pricing")({
       {
         name: "description",
         content:
-          "Flat prices for your eviction answer: free deadline check, $97 answer on form UD-105, $197 Fight Kit, $397 Defender, $497 Ultimate.",
+          "One flat price: $220 for your answer to an unlawful detainer on form UD-105, with your attachment and proof of service, ready within the hour.",
       },
       { property: "og:title", content: "Pricing — Unlawfully Detained" },
       {
         property: "og:description",
-        content: "Free deadline check, $97 answer, $197 Fight Kit, $397 Defender.",
+        content: "$220 flat for your eviction answer, ready within the hour.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
