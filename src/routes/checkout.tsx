@@ -38,7 +38,9 @@ const INCLUDED = [
   "Fee waiver form FW-001 attached by default",
   "A filing checklist and the right courthouse for your property",
   "Print-ready PDFs — nothing posted, nothing queued",
+  "Editable Word (.docx) and OpenDocument (.odt) copies, so you can change a line yourself",
 ];
+
 
 const PRICE = 220;
 
