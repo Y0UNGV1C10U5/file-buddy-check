@@ -43,7 +43,7 @@ export const Route = createFileRoute("/build")({
   component: BuildPage,
 });
 
-type Fields = Record<FieldKey, string>;
+type Fields = BuildFields;
 
 function BuildPage() {
   const [step, setStep] = useState(4);

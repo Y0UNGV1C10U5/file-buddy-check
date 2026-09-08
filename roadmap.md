@@ -40,3 +40,9 @@
 - [ ] Payments: web checkout for ad traffic; also offer in-app purchase for store sign-ups (accept 15-30% cut for legitimacy) — price in-app tiers ~15-20% higher, no links to web pricing inside the app
 - [ ] Store assets: listing copy, screenshots, privacy policy URL, data-safety form
 
+
+## Filing hand-off (decide before launch)
+- [ ] Option A: output print-ready PDFs + list of every LA County location/window that accepts UD filings, with hours and what to bring
+- [ ] Option B: step-by-step "set up a One Legal account and e-file it now" walkthrough
+- [ ] Option C (best UX): warm hand-off via e-filer API — needs a provider with API access certified for LA County Superior Court
+- [ ] Research + compare: One Legal, InfoTrack, Green Filing, File & ServeXpress, Odyssey eFileCA (Tyler) EFSP route
