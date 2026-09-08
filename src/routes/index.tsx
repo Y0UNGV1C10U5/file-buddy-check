@@ -48,13 +48,32 @@ const STEPS = [
 
 
 const DEFENSES = [
-  "The notice was never properly served",
-  "The notice had the wrong amount or wrong address",
-  "Required AB 1482 language was missing",
-  "Repairs were ignored and the place was not livable",
-  "You were punished for complaining (retaliation)",
-  "You were treated differently because of who you are",
+  {
+    label: "The notice was never properly served",
+    text: "If it was taped to your door, the law also requires a copy in the mail. No mailing, and the clock may never have started.",
+  },
+  {
+    label: "The notice had the wrong amount or wrong address",
+    text: "A three-day notice that demands more than you actually owe, or names the wrong unit, can be bad on its face.",
+  },
+  {
+    label: "Required AB 1482 language was missing",
+    text: "AB 1482 is California's statewide rent cap and just-cause law (Civil Code 1946.2). If your home is covered, the landlord has to state the just cause for ending your tenancy in the notice, and many notices carry a required written disclosure about these protections. If that language is missing when it should be there, the paperwork may not support the case.",
+  },
+  {
+    label: "Repairs were ignored and the place was not livable",
+    text: "Mold, leaks, no heat, no hot water, pests — if you asked and nothing happened, that belongs in your answer.",
+  },
+  {
+    label: "You were punished for complaining (retaliation)",
+    text: "If the eviction landed soon after you reported repairs or contacted an inspector, timing matters.",
+  },
+  {
+    label: "You were treated differently because of who you are",
+    text: "Family status, disability, race, source of income and more are protected.",
+  },
 ];
+
 
 const NOTICE_TIMELINE = [
   {
@@ -691,15 +710,22 @@ function Index() {
             </div>
 
             <div className="slab p-6 sm:p-8">
-              <p className="eyebrow text-signal">Things worth raising</p>
-              <ul className="mt-4 space-y-3">
+              <p className="eyebrow text-signal">Some reasons your eviction paperwork might be wrong</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                We check for these — and more — while you fill in your answer.
+              </p>
+              <ul className="mt-5 space-y-4">
                 {DEFENSES.map((item) => (
-                  <li key={item} className="flex gap-3 border-b border-border pb-3">
+                  <li key={item.label} className="flex gap-3 border-b border-border pb-4">
                     <span className="font-display text-signal">→</span>
-                    <span>{item}</span>
+                    <div>
+                      <p className="font-semibold">{item.label}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{item.text}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
+
               <p className="mt-5 text-sm text-muted-foreground">
                 Any of these can matter. We help you say them properly; we do not decide
                 your case for you.
