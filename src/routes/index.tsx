@@ -409,36 +409,98 @@ function Index() {
         <section className="border-b-4 border-ink bg-card py-16">
           <div className="container-page">
             <p className="eyebrow text-signal">Why the answer matters this much</p>
-            <h2 className="mt-3 max-w-3xl text-4xl sm:text-5xl">
-              Most of these cases never reach a judge.
-              <br />
-              <span className="text-signal">They get settled — and the answer is what
-              gets you to the table.</span>
+            <h2 className="mt-3 max-w-3xl text-5xl sm:text-7xl">
+              File your answer.
             </h2>
+            <p className="mt-4 max-w-2xl text-lg">
+              The moment you file, this stops being a formality and starts being a case
+              your landlord has to pay a lawyer to run.
+            </p>
 
-            <div className="mt-10 grid gap-4 md:grid-cols-3">
-              {[
-                [
-                  "About 9 in 10",
-                  "Eviction cases where the tenant never answers end in a default — the landlord wins without anyone hearing your side.",
-                ],
-                [
-                  "The large majority",
-                  "Of cases where the tenant does answer end in a negotiated agreement instead of a trial. Once you're in the case, your landlord has something to lose too.",
-                ],
-                [
-                  "Weeks, not days",
-                  "Settlements routinely buy move-out time, cut or wipe back rent, and keep the judgment neutral — terms nobody offers a tenant who stayed silent.",
-                ],
-              ].map(([stat, text]) => (
-                <div key={stat} className="border-2 border-ink bg-background p-6">
-                  <p className="font-display text-3xl uppercase text-signal">{stat}</p>
-                  <p className="mt-3 text-sm text-muted-foreground">{text}</p>
-                </div>
-              ))}
+            {/* Red mark — the do-not-do-this stat */}
+            <div className="mt-8 border-4 border-signal bg-signal p-6 text-signal-foreground sm:p-8">
+              <p className="flex items-center gap-3 eyebrow">
+                <AlertTriangle className="size-5" />
+                Do not let this be you
+              </p>
+              <p className="mt-3 font-display text-5xl uppercase leading-none sm:text-7xl">
+                About 9 in 10
+              </p>
+              <p className="mt-4 max-w-2xl text-lg opacity-95">
+                Eviction cases where the tenant never answers end in a default. No
+                hearing, no negotiation, no judge hearing a word from you — the landlord
+                simply wins, usually within a fortnight, and the lockout follows.
+              </p>
             </div>
 
-            <p className="mt-8 max-w-3xl text-muted-foreground">
+            {/* Cost to the landlord */}
+            <div className="mt-6 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="border-2 border-ink bg-background p-6 sm:p-8">
+                <p className="eyebrow text-signal">What changes when you answer</p>
+                <h3 className="mt-3 font-display text-3xl uppercase leading-tight sm:text-4xl">
+                  It gets expensive for them — fast.
+                </h3>
+                <p className="mt-4 text-muted-foreground">
+                  An uncontested eviction is a cheap paperwork exercise. A contested one
+                  is not. Once your answer is on file they have to pay their lawyer to
+                  read it, respond to it, request a trial date, prepare witnesses and
+                  show up. Every extra week is another week with no rent coming in and
+                  legal fees going out.
+                </p>
+                <p className="mt-4 text-muted-foreground">
+                  That arithmetic is your leverage. It is why the large majority of
+                  answered cases end in a negotiated deal instead of a trial — settling
+                  with you is simply cheaper than beating you.
+                </p>
+                <p className="mt-4 font-display text-xl uppercase leading-tight">
+                  $220 today buys you a seat at that table.
+                </p>
+              </div>
+
+              <div className="border-2 border-ink bg-background p-6 sm:p-8">
+                <p className="eyebrow text-signal">What tenants actually walk away with</p>
+                <ul className="mt-4 space-y-3">
+                  {[
+                    "Weeks — often months — of extra time in the home instead of days",
+                    "Back rent cut down, or written off completely, as part of the deal",
+                    "A neutral judgment, or the case dismissed, rather than an eviction against your name",
+                    "A move-out date you chose, not a sheriff's notice you didn't",
+                    "Your deposit dealt with in writing instead of quietly kept",
+                    "Repairs and habitability problems finally on the record",
+                    "Breathing room to find somewhere decent instead of anywhere at all",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3 border-b border-border pb-3">
+                      <Check className="mt-0.5 size-5 shrink-0 text-[color:var(--ok,#1a7f37)]" />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  None of these are on offer to a tenant who stayed silent. Every one of
+                  them is a negotiation that only exists because an answer was filed.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4 border-2 border-ink bg-ink p-6 text-ink-foreground">
+              <p className="font-display text-2xl uppercase leading-tight">
+                Your deadline is not going to move. Start it now.
+              </p>
+              <Link
+                to="/build"
+                className="inline-flex items-center gap-2 border-2 border-ink-foreground bg-signal px-6 py-4 font-display uppercase text-signal-foreground transition-transform hover:-translate-y-1"
+              >
+                Start my answer <ArrowRight className="size-5" />
+              </Link>
+              <Link
+                to="/checkout"
+                className="inline-flex items-center gap-2 border-2 border-ink-foreground px-6 py-4 font-display uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
+              >
+                Get it done — $220
+              </Link>
+            </div>
+
+            <p className="mt-6 max-w-3xl text-muted-foreground">
               That's the whole reason we exist. Your answer is the leverage — so we spend
               our time helping you build a strong one, in your own words, on the form the
               court expects. Filing it doesn't make you difficult. It makes you someone
@@ -451,6 +513,38 @@ function Index() {
             </p>
           </div>
         </section>
+
+        {/* Service validity check */}
+        <section
+          id="service-check"
+          className="scroll-mt-20 border-b-4 border-ink bg-background py-16"
+        >
+          <div className="container-page grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p className="eyebrow text-signal">Free win, no strings</p>
+              <h2 className="mt-3 text-4xl sm:text-5xl">
+                Taped to your door
+                <br />
+                and never posted?
+                <br />
+                <span className="text-signal">That may not be service at all.</span>
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                Landlords and their servers cut corners on this constantly. Door only,
+                no mailed copy. Posting with no judge's order behind it. Papers handed
+                to whoever happened to answer the door. Each of those is a step
+                California requires, and a missing step is something you can raise.
+              </p>
+              <p className="mt-4 text-muted-foreground">
+                Check it here for nothing. If it's bad on its face, we'll say so — and
+                then tell you the uncomfortable part: it only counts if you file your
+                answer and put it in writing.
+              </p>
+            </div>
+            <ServiceCheck />
+          </div>
+        </section>
+
 
 
 
