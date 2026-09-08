@@ -456,19 +456,40 @@ function Index() {
                 </Link>
               </div>
             </div>
-            <div className="grid content-center gap-3">
-              {[
-                "See page one of your form as you type",
-                "No card, no account, nothing charged to look",
-                "Your draft saves on your own device",
-                "Pay only when you want the finished files",
-                "Print-ready PDFs plus editable Word and ODT",
-              ].map((item) => (
-                <p key={item} className="border-2 border-ink bg-card px-4 py-3 text-sm">
-                  {item}
-                </p>
-              ))}
+            <div className="self-center border-2 border-ink bg-card shadow-slab">
+              <div className="flex items-center justify-between gap-3 border-b-2 border-ink bg-ink px-5 py-3 text-ink-foreground">
+                <p className="eyebrow">What it costs to look</p>
+                <span className="border-2 border-signal bg-signal px-2 py-0.5 font-display text-sm uppercase text-signal-foreground">
+                  $0
+                </span>
+              </div>
+              <ul className="divide-y-2 divide-ink/10">
+                {[
+                  ["01", "See page one of your form as you type"],
+                  ["02", "No card, no account, nothing charged to look"],
+                  ["03", "Your draft saves on your own device"],
+                  ["04", "Pay only when you want the finished files"],
+                  ["05", "Print-ready PDFs plus editable Word and ODT"],
+                ].map(([n, item]) => (
+                  <li
+                    key={n}
+                    className="group flex items-start gap-4 px-5 py-4 transition-colors hover:bg-accent"
+                  >
+                    <span className="mt-0.5 font-mono text-xs font-bold text-signal">
+                      {n}
+                    </span>
+                    <span className="flex-1 text-sm font-medium leading-snug">
+                      {item}
+                    </span>
+                    <Check className="mt-0.5 size-4 shrink-0 text-go" />
+                  </li>
+                ))}
+              </ul>
+              <p className="border-t-2 border-ink bg-muted px-5 py-3 text-xs uppercase tracking-widest text-muted-foreground">
+                $220 only when you ask for the files
+              </p>
             </div>
+
           </div>
         </section>
 
