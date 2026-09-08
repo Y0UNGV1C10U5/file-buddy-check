@@ -67,3 +67,12 @@
 - UPL: register as Legal Document Assistant in LA County, $25k bond, client disclosures. Complete forms at client's direction; never choose defences for them (People v. Landlords Professional Services).
 - Build order: UD-105 assembly -> zip->courthouse router -> FW-001 auto-attach -> EFSP-agnostic filing adapter (swap InfoTrack/One Legal/in-house).
 - Ship both: print pack (Option A) at launch, e-file hand-off (Option C) via InfoTrack once partner agreement lands. Manual staff filing through an EFSP portal as the bridge.
+
+## Pricing strategy (revised Sep 2026)
+- Ladder: Free deadline check -> $97 Get It On Record -> $197 Fight Kit (preselected) -> $397 Defender -> $697 Full Fight (raised from $497 to lift AOV; 4x $174.25 Afterpay)
+- Every tier below the top carries a "what you give up" line + one-click step-up button showing only the price DIFFERENCE
+- Order bumps: Rush +$39 (ready within the hour, included in Full Fight), Discovery Pack +$149 (upgrade path from $97 tier), Coach 30 days +$79
+- Running total + instalment figure recalculates live to normalise the bigger number
+- Quiet premium positioning: discovery is framed as an asset you keep regardless of the eviction outcome — landlord must respond on a short clock, lapses can be deemed admitted, the produced record becomes the basis of a later civil claim for damages/habitability/deposit. Never say "revenge" outright.
+- Speed as a selling point: standard pack ready ~20 min, rush inside 60 min, any hour. Homepage timeline 11:12pm -> 8:35am at the filing window.
+- [ ] Phase 1: A/B the $697 top tier vs $497; test rush bump attach rate; post-purchase upsell email for Discovery Pack to $97 buyers
