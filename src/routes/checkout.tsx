@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Check, Clock, Lock, ShieldCheck, Star, Users, Zap } from "lucide-react";
+import { Check, Clock, Lock, ShieldCheck, Zap } from "lucide-react";
 import { toast } from "sonner";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { FILED_THIS_WEEK } from "@/lib/demo-data";
+
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
