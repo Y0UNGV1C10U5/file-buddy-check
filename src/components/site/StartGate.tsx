@@ -166,9 +166,10 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
               </button>
             </div>
           )}
-        </div>
 
-        <div className="slab mt-6 p-5 sm:p-7">
+          <hr className="my-7 border-t-2 border-ink/15" />
+
+
           <p className="flex items-center gap-2 font-display text-xl uppercase leading-tight">
             <ImagePlus className="size-5 text-signal" /> Photograph your papers
           </p>
