@@ -134,6 +134,31 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
             </label>
           </div>
 
+          <label className="mt-4 block">
+            <span className="flex items-center gap-2 text-sm font-semibold">
+              <MapPin className="size-4 text-signal" /> ZIP code of the home
+            </span>
+            <span className="block text-xs text-muted-foreground">
+              Los Angeles County only at the moment. This is how we work out your
+              courthouse.
+            </span>
+            <input
+              inputMode="numeric"
+              value={zip}
+              maxLength={5}
+              onChange={(e) => setZip(digits(e.target.value).slice(0, 5))}
+              placeholder="90026"
+              className={`${inputClass} font-mono tracking-widest`}
+            />
+            {county === "la" ? (
+              <span className="mt-1 block text-xs font-semibold text-signal">
+                Los Angeles County — we cover you.
+              </span>
+            ) : null}
+          </label>
+
+
+
           {!sent ? (
             <button
               type="button"
