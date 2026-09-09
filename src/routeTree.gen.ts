@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as R3DayNoticeRouteImport } from './routes/3-day-notice'
 import { Route as BuildRouteImport } from './routes/build'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -20,6 +21,11 @@ import { Route as StartRouteImport } from './routes/start'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R3DayNoticeRoute = R3DayNoticeRouteImport.update({
+  id: '/3-day-notice',
+  path: '/3-day-notice',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BuildRoute = BuildRouteImport.update({
@@ -55,6 +61,7 @@ const StartRoute = StartRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/3-day-notice': typeof R3DayNoticeRoute
   '/build': typeof BuildRoute
   '/checkout': typeof CheckoutRoute
   '/faq': typeof FaqRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/3-day-notice': typeof R3DayNoticeRoute
   '/build': typeof BuildRoute
   '/checkout': typeof CheckoutRoute
   '/faq': typeof FaqRoute
@@ -74,6 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/3-day-notice': typeof R3DayNoticeRoute
   '/build': typeof BuildRoute
   '/checkout': typeof CheckoutRoute
   '/faq': typeof FaqRoute
@@ -85,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/3-day-notice'
     | '/build'
     | '/checkout'
     | '/faq'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/3-day-notice'
     | '/build'
     | '/checkout'
     | '/faq'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/3-day-notice'
     | '/build'
     | '/checkout'
     | '/faq'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R3DayNoticeRoute: typeof R3DayNoticeRoute
   BuildRoute: typeof BuildRoute
   CheckoutRoute: typeof CheckoutRoute
   FaqRoute: typeof FaqRoute
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/3-day-notice': {
+      id: '/3-day-notice'
+      path: '/3-day-notice'
+      fullPath: '/3-day-notice'
+      preLoaderRoute: typeof R3DayNoticeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/build': {
@@ -177,6 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R3DayNoticeRoute: R3DayNoticeRoute,
   BuildRoute: BuildRoute,
   CheckoutRoute: CheckoutRoute,
   FaqRoute: FaqRoute,
