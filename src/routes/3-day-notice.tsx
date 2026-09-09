@@ -7,6 +7,8 @@ import {
   Check,
   ImagePlus,
   Mail,
+  MapPin,
+
   ShieldCheck,
   Smartphone,
   X,
