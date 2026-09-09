@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Your side of the story on the official Answer — Judicial Council form UD-105 — ready for the LA Superior Court. Check your deadline free.",
+          "Your side of the story on the official Answer — Judicial Council form UD-105 — ready for the LA Superior Court. Free paper check: valid service and your exact deadline.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
 });
 
 const STEPS = [
-  { icon: Gavel, label: "Check", text: "Your deadline, free, in seconds." },
+  { icon: Gavel, label: "Check", text: "Service valid? Deadline? Free, in seconds." },
   { icon: FileText, label: "Answer", text: "Short questions, on screen." },
   { icon: Upload, label: "Fills itself", text: "Form UD-105, as you type." },
   { icon: ShieldCheck, label: "File", text: "Get it on the record." },
@@ -163,7 +163,7 @@ function Index() {
                   href="#deadline"
                   className="inline-flex items-center gap-2 border-2 border-signal bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
                 >
-                  Check my deadline <ArrowRight className="size-5" />
+                  Free paper check <ArrowRight className="size-5" />
                 </a>
                 <a
                   href="#service-check"
@@ -241,7 +241,7 @@ function Index() {
                 href="#deadline"
                 className="mt-8 inline-flex items-center gap-2 border-2 border-ink bg-background px-6 py-4 font-display uppercase shadow-slab transition-transform hover:-translate-y-1"
               >
-                Already been served? Check your deadline
+                Already been served? Free paper check
                 <ArrowRight className="size-5" />
               </a>
             </div>
@@ -790,7 +790,7 @@ function Index() {
               href="#deadline"
               className="mt-8 inline-block border-2 border-ink-foreground bg-ink px-8 py-5 font-display text-xl uppercase text-ink-foreground transition-transform hover:-translate-y-1"
             >
-              Check my deadline
+              Free paper check
             </a>
           </div>
         </section>
