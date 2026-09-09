@@ -704,12 +704,8 @@ function Index() {
               >
                 Start my answer <ArrowRight className="size-5" />
               </Link>
-              <Link
-                to="/checkout"
-                className="inline-flex items-center gap-2 border-2 border-ink-foreground px-6 py-4 font-display uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
-              >
-                Get it done — $220
-              </Link>
+
+
             </div>
 
             <p className="mt-6 max-w-3xl text-muted-foreground">
@@ -788,12 +784,13 @@ function Index() {
             <p className="mx-auto mt-5 max-w-xl text-lg opacity-90">
               Ten court days is enough time — if you start today.
             </p>
-            <a
-              href="#deadline"
+            <Link
+              to="/build"
               className="mt-8 inline-block border-2 border-ink-foreground bg-ink px-8 py-5 font-display text-xl uppercase text-ink-foreground transition-transform hover:-translate-y-1"
             >
-              Free paper check
-            </a>
+              Start my answer — free to fill in
+            </Link>
+
           </div>
         </section>
       </main>
