@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Lock, Sparkles, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, Lock, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { PleadingSheet } from "@/components/site/PleadingSheet";
@@ -12,11 +12,11 @@ import {
   BUILD_DEFENSES,
   DEMO_FIELDS,
   DEMO_PLEADING,
-  FILED_THIS_WEEK,
   WIZARD_STEPS,
   type BuildFields,
   type FieldKey,
 } from "@/lib/demo-data";
+
 
 
 const STORAGE_KEY = "ud-build-draft-v2";
@@ -345,8 +345,9 @@ function BuildPage() {
               Case {fields.caseNumber || "—"} · Draft saved on this device
             </p>
             <span className="flex items-center gap-2 font-mono text-xs uppercase opacity-75">
-              <Users className="size-4" /> {FILED_THIS_WEEK} filed this week in LA County
+              <Lock className="size-4" /> Nothing charged until you ask for the files
             </span>
+
           </div>
         </div>
 
