@@ -109,6 +109,7 @@ function NoticePage() {
   const postedNoMail = how === "posted" && mailed === "no";
   const subNoMail = how === "substituted" && mailed === "no";
   const flagged = postedNoMail || subNoMail;
+  const county = checkLaZip(zip);
 
   function register() {
     if (!servedDate) {
@@ -119,13 +120,22 @@ function NoticePage() {
       setError("We need a working email address and a mobile we can text.");
       return;
     }
+    if (county === "incomplete") {
+      setError("Add the ZIP code of the home the notice is about.");
+      return;
+    }
     setError("");
     window.localStorage.setItem(
       STORE_KEY,
-      JSON.stringify({ served: toISODate(servedDate), kind }),
+      JSON.stringify({ served: toISODate(servedDate), kind, zip }),
     );
+    if (county === "outside") {
+      setWaitlisted(true);
+      return;
+    }
     setRegistered(true);
   }
+
 
   function addFiles(list: FileList | null) {
     if (!list) return;
