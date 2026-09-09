@@ -163,25 +163,13 @@ function Index() {
                   href="#deadline"
                   className="inline-flex items-center gap-2 border-2 border-signal bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
                 >
-                  Free paper check <ArrowRight className="size-5" />
+                  Check my papers — free <ArrowRight className="size-5" />
                 </a>
-                <a
-                  href="#service-check"
-                  className="inline-flex items-center gap-2 border-2 border-ink-foreground px-6 py-4 font-display text-lg uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
-                >
-                  Was I served properly?
-                </a>
-                <Link
-                  to="/start"
-                  className="inline-flex items-center border-2 border-ink-foreground px-6 py-4 font-display text-lg uppercase transition-colors hover:bg-ink-foreground hover:text-ink"
-                >
-                  Build my answer
-                </Link>
-
               </div>
               <p className="mt-6 eyebrow opacity-60">
                 Free to check · No account · No card
               </p>
+
             </div>
 
             <div className="relative mx-auto w-full max-w-md pb-16 lg:max-w-none">
@@ -396,7 +384,29 @@ function Index() {
             </div>
             <DeadlineCalculator />
           </div>
+
+          <div className="container-page mt-12">
+            <div className="flex flex-wrap items-center justify-between gap-6 border-4 border-ink bg-ink p-6 text-ink-foreground sm:p-8">
+              <div className="max-w-xl">
+                <p className="eyebrow text-signal">Now the part that counts</p>
+                <p className="mt-2 font-display text-3xl uppercase leading-tight">
+                  Knowing the date changes nothing. Filing the answer does.
+                </p>
+                <p className="mt-3 text-sm opacity-85">
+                  Start filling it in free — you only pay $220 when you want the
+                  finished files.
+                </p>
+              </div>
+              <Link
+                to="/build"
+                className="inline-flex items-center gap-2 border-2 border-ink-foreground bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
+              >
+                Start my answer <ArrowRight className="size-5" />
+              </Link>
+            </div>
+          </div>
         </section>
+
 
 
         <UrgencyBand
@@ -422,11 +432,8 @@ function Index() {
           </div>
         </section>
 
-        <UrgencyBand
-          kicker="One of those two calendars is a choice"
-          headline="Get your answer prepared now, not the night before."
-          body="Thinking about it is the expensive option. $220, done tonight, files back within the hour."
-        />
+
+
 
 
 
