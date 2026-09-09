@@ -80,10 +80,12 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
           Two contacts and a photo. Then the form opens.
         </h1>
         <p className="mt-3 text-muted-foreground">
-          Your deadline is counted in court days and it does not wait for anybody. We
-          hold your email and mobile so we can warn you before it runs out, and we read
-          the dates straight off your notice instead of asking you to type them twice.
+          About fifteen minutes, free to fill in. Your deadline is counted in court
+          days and it does not wait for anybody — we hold your email and mobile so we
+          can warn you before it runs out, and we read the dates straight off your
+          notice instead of asking you to type them twice.
         </p>
+
 
         <div className="slab mt-7 p-5 sm:p-7">
           <div className="grid gap-4 sm:grid-cols-2">
@@ -166,9 +168,10 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
               </button>
             </div>
           )}
-        </div>
 
-        <div className="slab mt-6 p-5 sm:p-7">
+          <hr className="my-7 border-t-2 border-ink/15" />
+
+
           <p className="flex items-center gap-2 font-display text-xl uppercase leading-tight">
             <ImagePlus className="size-5 text-signal" /> Photograph your papers
           </p>

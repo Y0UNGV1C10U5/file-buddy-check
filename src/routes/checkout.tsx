@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Check, Clock, Lock, ShieldCheck, Star, Users, Zap } from "lucide-react";
+import { Check, Clock, Lock, ShieldCheck, Zap } from "lucide-react";
 import { toast } from "sonner";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { FILED_THIS_WEEK } from "@/lib/demo-data";
+
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
@@ -46,10 +46,6 @@ const PRICE = 220;
 
 function CheckoutPage() {
   const [email, setEmail] = useState("");
-  // Showcase state: pretend the visitor's deadline is close.
-  const daysLeft = 4;
-  const urgent = daysLeft < 7;
-  const instalment = (PRICE / 4).toFixed(2);
 
   function join() {
     if (!email.trim()) {
@@ -65,17 +61,6 @@ function CheckoutPage() {
       <SiteHeader />
 
       <main className="bg-background">
-        {urgent ? (
-          <div className="border-b-2 border-ink bg-signal py-3 text-signal-foreground">
-            <div className="container-page flex flex-wrap items-center justify-center gap-3 text-center">
-              <Clock className="size-5" />
-              <p className="font-display text-lg uppercase">
-                Only {daysLeft} days left to file your answer
-              </p>
-            </div>
-          </div>
-        ) : null}
-
         <section className="border-b-4 border-ink bg-ink py-12 text-ink-foreground">
           <div className="container-page">
             <p className="eyebrow text-signal">One price. One job. Done tonight.</p>
@@ -84,16 +69,17 @@ function CheckoutPage() {
             </h1>
             <p className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 opacity-80">
               <span className="flex items-center gap-2">
-                <Users className="size-5" /> {FILED_THIS_WEEK} tenants filed this week in
-                LA County
-              </span>
-              <span className="flex items-center gap-2">
                 <Zap className="size-5 text-caution" /> No queue — pay at 11pm, print by
                 midnight
+              </span>
+              <span className="flex items-center gap-2">
+                <Clock className="size-5" /> Nothing charged until you ask for the files
               </span>
             </p>
           </div>
         </section>
+
+
 
         <section className="container-page py-12">
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -151,9 +137,6 @@ function CheckoutPage() {
               </p>
 
 
-              <p className="mt-4 font-mono text-xs uppercase text-muted-foreground">
-                Or 4 payments of ${instalment} with Afterpay
-              </p>
             </div>
 
             {/* Sign up */}
@@ -219,15 +202,15 @@ function CheckoutPage() {
                   </p>
                 </div>
                 <div className="border-2 border-ink bg-background p-5">
-                  <Star className="size-6 text-caution" />
+                  <Lock className="size-6 text-go" />
                   <p className="mt-2 font-display text-lg uppercase">
-                    Pay in 4 with Afterpay or Klarna
+                    Card payment at launch
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Interest free. Card, PayPal, Venmo, Cash App Pay and bank debit at
-                    launch.
+                    One flat charge of ${PRICE}. No subscription, no add-ons.
                   </p>
                 </div>
+
               </div>
             </div>
           </div>

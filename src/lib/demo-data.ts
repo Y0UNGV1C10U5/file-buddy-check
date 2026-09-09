@@ -157,7 +157,4 @@ export const DEMO_FIELDS: BuildFields = {
 };
 
 
-export const SOCIAL_PROOF =
-  "Maria from Boyle Heights filed at 11:47pm and stopped a default.";
 
-export const FILED_THIS_WEEK = 127;
