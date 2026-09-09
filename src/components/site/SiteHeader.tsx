@@ -3,10 +3,12 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const NAV = [
+  { to: "/3-day-notice", label: "3-day notice" },
   { to: "/how-it-works", label: "How it works" },
   { to: "/checkout", label: "Pricing" },
   { to: "/faq", label: "FAQ" },
 ] as const;
+
 
 
 

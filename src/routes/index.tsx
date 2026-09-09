@@ -220,13 +220,22 @@ function Index() {
                 If the notice has the wrong amount, the wrong address, or was never
                 handed over properly, that can matter later in court.
               </p>
-              <a
-                href="#deadline"
-                className="mt-8 inline-flex items-center gap-2 border-2 border-ink bg-background px-6 py-4 font-display uppercase shadow-slab transition-transform hover:-translate-y-1"
-              >
-                Already been served? Free paper check
-                <ArrowRight className="size-5" />
-              </a>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/3-day-notice"
+                  className="inline-flex items-center gap-2 border-2 border-ink bg-signal px-6 py-4 font-display uppercase text-signal-foreground shadow-slab transition-transform hover:-translate-y-1"
+                >
+                  Register my 3-day notice — free
+                  <ArrowRight className="size-5" />
+                </Link>
+                <a
+                  href="#deadline"
+                  className="inline-flex items-center gap-2 border-2 border-ink bg-background px-6 py-4 font-display uppercase shadow-slab transition-transform hover:-translate-y-1"
+                >
+                  Already been served? Free paper check
+                </a>
+              </div>
+
             </div>
 
             <div className="slab p-6 sm:p-8">

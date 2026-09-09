@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
-import { Check, ImagePlus, Mail, ShieldCheck, Smartphone, X } from "lucide-react";
+import { Check, ImagePlus, Mail, MapPin, ShieldCheck, Smartphone, X } from "lucide-react";
+import { checkLaZip } from "@/lib/la-county";
+
 
 /**
  * Hard gate in front of the builder.
@@ -24,6 +26,7 @@ function digits(v: string) {
 export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [zip, setZip] = useState("");
   const [sent, setSent] = useState(false);
   const [emailCode, setEmailCode] = useState("");
   const [smsCode, setSmsCode] = useState("");
@@ -34,10 +37,19 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
   const emailOk = EMAIL_RE.test(email.trim());
   const phoneOk = PHONE_RE.test(digits(phone));
   const codesOk = emailCode.trim().length === 6 && smsCode.trim().length === 6;
+  const county = checkLaZip(zip);
 
   function send() {
     if (!emailOk || !phoneOk) {
       setError("We need a working email address and a mobile number we can text.");
+      return;
+    }
+    if (county !== "la") {
+      setError(
+        county === "incomplete"
+          ? "Add the ZIP code of the home the case is about."
+          : "We only prepare filings for Los Angeles County right now. Check the ZIP — if it's right, register on the notice page and we'll tell you when we open in your county.",
+      );
       return;
     }
     setError("");
@@ -68,6 +80,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
       notices: notices.map((n) => n.url),
     });
   }
+
 
   const inputClass =
     "mt-1 w-full border-2 border-ink bg-background px-3 py-3 text-base outline-none focus:border-signal";
@@ -120,6 +133,31 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
               />
             </label>
           </div>
+
+          <label className="mt-4 block">
+            <span className="flex items-center gap-2 text-sm font-semibold">
+              <MapPin className="size-4 text-signal" /> ZIP code of the home
+            </span>
+            <span className="block text-xs text-muted-foreground">
+              Los Angeles County only at the moment. This is how we work out your
+              courthouse.
+            </span>
+            <input
+              inputMode="numeric"
+              value={zip}
+              maxLength={5}
+              onChange={(e) => setZip(digits(e.target.value).slice(0, 5))}
+              placeholder="90026"
+              className={`${inputClass} font-mono tracking-widest`}
+            />
+            {county === "la" ? (
+              <span className="mt-1 block text-xs font-semibold text-signal">
+                Los Angeles County — we cover you.
+              </span>
+            ) : null}
+          </label>
+
+
 
           {!sent ? (
             <button
