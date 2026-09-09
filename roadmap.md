@@ -8,6 +8,11 @@
 
 ## Later
 - [ ] Accounts + storage (Lovable Cloud)
+- [x] Top-of-funnel: /3-day-notice SEO landing page — free notice check (3 court days per AB 2347), earliest filing date, register email/mobile/photo for countdown + reminders
+- [ ] Real reminders (email/SMS) off the registered notice date — needs Cloud
+- [x] LA County only at launch: ZIP check on the notice page and the builder gate
+- [ ] Waitlist capture for out-of-county ZIPs (store them; expand county by county)
+
 - [x] Template download + online fill + upload parsing (.docx/.odt/.txt) — /answer
 - [x] 28-line pleading generation (Rule 2.108) → DOCX/ODT/PDF + POS-030, live preview
 - [ ] Fight Kit Discovery Pack ($149) + AI coach add-on ($79 / 50k tokens) — priced on /pricing, not yet generated
