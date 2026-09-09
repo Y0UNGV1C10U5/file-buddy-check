@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Your side of the story on the official Answer — Judicial Council form UD-105 — ready for the LA Superior Court. Check your deadline free.",
+          "Your side of the story on the official Answer — Judicial Council form UD-105 — ready for the LA Superior Court. Free paper check: valid service and your exact deadline.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
 });
 
 const STEPS = [
-  { icon: Gavel, label: "Check", text: "Your deadline, free, in seconds." },
+  { icon: Gavel, label: "Check", text: "Service valid? Deadline? Free, in seconds." },
   { icon: FileText, label: "Answer", text: "Short questions, on screen." },
   { icon: Upload, label: "Fills itself", text: "Form UD-105, as you type." },
   { icon: ShieldCheck, label: "File", text: "Get it on the record." },
@@ -163,7 +163,7 @@ function Index() {
                   href="#deadline"
                   className="inline-flex items-center gap-2 border-2 border-signal bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
                 >
-                  Check my deadline <ArrowRight className="size-5" />
+                  Free paper check <ArrowRight className="size-5" />
                 </a>
                 <a
                   href="#service-check"
@@ -241,7 +241,7 @@ function Index() {
                 href="#deadline"
                 className="mt-8 inline-flex items-center gap-2 border-2 border-ink bg-background px-6 py-4 font-display uppercase shadow-slab transition-transform hover:-translate-y-1"
               >
-                Already been served? Check your deadline
+                Already been served? Free paper check
                 <ArrowRight className="size-5" />
               </a>
             </div>
@@ -330,17 +330,59 @@ function Index() {
         </section>
 
 
-        {/* Calculator */}
+        {/* Free Paper Check: service validity + deadline */}
         <section id="deadline" className="scroll-mt-20 bg-background py-16">
-          <div className="container-page grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div id="service-check" className="container-page scroll-mt-20">
+            <p className="eyebrow text-signal">Free paper check · no card, no account</p>
+            <h2 className="mt-3 max-w-3xl text-4xl sm:text-5xl">
+              The Eviction Paper Check:
+              <br />
+              <span className="text-signal">were you even served properly</span>
+              <br />
+              — and how long have you got?
+            </h2>
+            <p className="mt-5 max-w-2xl text-muted-foreground">
+              Two free checks in about ninety seconds. First, whether the way those papers
+              reached you is even valid under California law. Then the exact date your
+              answer is due, counted the way the clerk counts it.
+            </p>
+          </div>
+
+          <div className="container-page mt-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <h2 className="text-4xl sm:text-5xl">
+              <p className="eyebrow text-signal">Step 1 · Free win, no strings</p>
+              <h3 className="mt-3 text-3xl sm:text-4xl">
+                Taped to your door
+                <br />
+                and never posted?
+                <br />
+                <span className="text-signal">That may not be service at all.</span>
+              </h3>
+              <p className="mt-5 text-muted-foreground">
+                Landlords and their servers cut corners on this constantly. Door only,
+                no mailed copy. Posting with no judge's order behind it. Papers handed
+                to whoever happened to answer the door. Each of those is a step
+                California requires, and a missing step is something you can raise.
+              </p>
+              <p className="mt-4 text-muted-foreground">
+                Check it here for nothing. If it's bad on its face, we'll say so — and
+                then tell you the uncomfortable part: it only counts if you file your
+                answer and put it in writing.
+              </p>
+            </div>
+            <ServiceCheck />
+          </div>
+
+          <div className="container-page mt-16 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p className="eyebrow text-signal">Step 2 · Your clock</p>
+              <h3 className="mt-3 text-3xl sm:text-4xl">
                 The clock started
                 <br />
                 the day after
                 <br />
                 <span className="text-signal">you were served.</span>
-              </h2>
+              </h3>
               <p className="mt-5 text-muted-foreground">
                 Weekends do not count. Court holidays do not count. That is why the date
                 on your papers can be misleading — and why we count it the way the clerk
@@ -355,6 +397,7 @@ function Index() {
             <DeadlineCalculator />
           </div>
         </section>
+
 
         <UrgencyBand
           kicker="Knowing the date doesn't file anything"
@@ -681,36 +724,6 @@ function Index() {
           </div>
         </section>
 
-        {/* Service validity check */}
-        <section
-          id="service-check"
-          className="scroll-mt-20 border-b-4 border-ink bg-background py-16"
-        >
-          <div className="container-page grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <div>
-              <p className="eyebrow text-signal">Free win, no strings</p>
-              <h2 className="mt-3 text-4xl sm:text-5xl">
-                Taped to your door
-                <br />
-                and never posted?
-                <br />
-                <span className="text-signal">That may not be service at all.</span>
-              </h2>
-              <p className="mt-5 text-muted-foreground">
-                Landlords and their servers cut corners on this constantly. Door only,
-                no mailed copy. Posting with no judge's order behind it. Papers handed
-                to whoever happened to answer the door. Each of those is a step
-                California requires, and a missing step is something you can raise.
-              </p>
-              <p className="mt-4 text-muted-foreground">
-                Check it here for nothing. If it's bad on its face, we'll say so — and
-                then tell you the uncomfortable part: it only counts if you file your
-                answer and put it in writing.
-              </p>
-            </div>
-            <ServiceCheck />
-          </div>
-        </section>
 
 
 
@@ -777,7 +790,7 @@ function Index() {
               href="#deadline"
               className="mt-8 inline-block border-2 border-ink-foreground bg-ink px-8 py-5 font-display text-xl uppercase text-ink-foreground transition-transform hover:-translate-y-1"
             >
-              Check my deadline
+              Free paper check
             </a>
           </div>
         </section>

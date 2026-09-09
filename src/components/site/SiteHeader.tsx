@@ -41,7 +41,7 @@ export function SiteHeader() {
             hash="deadline"
             className="border-2 border-ink bg-signal px-4 py-2 font-display text-sm uppercase text-signal-foreground transition-transform hover:-translate-y-0.5"
           >
-            Check my deadline
+            Free paper check
           </Link>
         </nav>
 
@@ -75,7 +75,7 @@ export function SiteHeader() {
               className="my-4 border-2 border-ink bg-signal px-4 py-4 text-center font-display text-xl uppercase text-signal-foreground"
               onClick={() => setOpen(false)}
             >
-              Check my deadline
+              Free paper check
             </Link>
           </nav>
         </div>
