@@ -120,13 +120,8 @@ function UrgencyBand({
           >
             Start my answer <ArrowRight className="size-5" />
           </Link>
-          <Link
-            to="/checkout"
-            className="inline-flex items-center border-2 border-ink px-6 py-4 font-display uppercase transition-colors hover:bg-ink hover:text-ink-foreground"
-          >
-            Buy now — $220
-          </Link>
         </div>
+
       </div>
     </section>
   );
