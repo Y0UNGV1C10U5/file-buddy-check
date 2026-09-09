@@ -79,10 +79,13 @@ function NoticePage() {
 
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [zip, setZip] = useState("");
   const [shots, setShots] = useState<{ name: string; url: string }[]>([]);
   const [registered, setRegistered] = useState(false);
+  const [waitlisted, setWaitlisted] = useState(false);
   const [error, setError] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
+
 
   useEffect(() => {
     try {
