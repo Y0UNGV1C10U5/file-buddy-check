@@ -445,6 +445,36 @@ function NoticePage() {
                     </label>
                   </div>
 
+                  <label className="mt-4 block">
+                    <span className="flex items-center gap-2 text-sm font-semibold">
+                      <MapPin className="size-4 text-signal" /> ZIP code of the
+                      home
+                    </span>
+                    <span className="block text-xs text-muted-foreground">
+                      We prepare filings for Los Angeles County only at the
+                      moment. This tells us which courthouse yours belongs to.
+                    </span>
+                    <input
+                      inputMode="numeric"
+                      value={zip}
+                      maxLength={5}
+                      onChange={(e) => setZip(digits(e.target.value).slice(0, 5))}
+                      placeholder="90026"
+                      className={`${inputClass} font-mono tracking-widest`}
+                    />
+                    {county === "la" ? (
+                      <span className="mt-1 block text-xs font-semibold text-signal">
+                        Los Angeles County — we cover you.
+                      </span>
+                    ) : county === "outside" ? (
+                      <span className="mt-1 block text-xs font-semibold">
+                        That looks outside LA County — register anyway and we'll
+                        tell you the day we open there.
+                      </span>
+                    ) : null}
+                  </label>
+
+
                   <p className="mt-5 flex items-center gap-2 font-display text-lg uppercase">
                     <ImagePlus className="size-5 text-signal" /> Photograph the
                     notice (optional)
