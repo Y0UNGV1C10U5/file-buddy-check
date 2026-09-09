@@ -79,7 +79,7 @@ function CheckoutPage() {
           </div>
         </section>
 
-        </section>
+
 
         <section className="container-page py-12">
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
