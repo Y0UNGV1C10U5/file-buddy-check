@@ -19,11 +19,13 @@ import {
   parseDateInput,
   toISODate,
 } from "@/lib/deadline";
+import { checkLaZip } from "@/lib/la-county";
 import {
   NOTICE_KINDS,
   calculateNotice,
   type NoticeKind,
 } from "@/lib/notice";
+
 
 /**
  * Top-of-funnel page. Everyone who ends up in an unlawful detainer case gets a
