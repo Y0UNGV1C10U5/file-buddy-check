@@ -359,7 +359,32 @@ function NoticePage() {
                 us to prepare your answer.
               </p>
 
-              {registered ? (
+              {waitlisted ? (
+                <div className="mt-6 border-2 border-ink bg-background p-5">
+                  <p className="flex items-center gap-2 font-display text-2xl uppercase">
+                    <MapPin className="size-6 text-signal" /> You're outside LA
+                    County
+                  </p>
+                  <p className="mt-3 text-sm">
+                    ZIP {zip} doesn't look like Los Angeles County, and LA is the
+                    only county we prepare filings for right now. Your date and
+                    details are saved — we'll email <strong>{email.trim()}</strong>{" "}
+                    the day we open in your county.
+                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    The counting above still applies everywhere in California, so
+                    keep your dates. If that ZIP is wrong, fix it and register
+                    again.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setWaitlisted(false)}
+                    className="mt-4 font-mono text-xs uppercase underline"
+                  >
+                    Change my ZIP code
+                  </button>
+                </div>
+              ) : registered ? (
                 <div className="mt-6 border-2 border-ink bg-accent p-5">
                   <p className="flex items-center gap-2 font-display text-2xl uppercase">
                     <Check className="size-6 text-signal" /> Notice registered
@@ -383,6 +408,7 @@ function NoticePage() {
                   </p>
                 </div>
               ) : (
+
                 <>
                   <div className="mt-5 grid gap-4 sm:grid-cols-2">
                     <label className="block">
