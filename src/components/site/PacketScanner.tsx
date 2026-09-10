@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, type Dispatch, type SetStateAction } from "react";
 import { AlertTriangle, ArrowDown, ArrowUp, Camera, Check, FileText, X } from "lucide-react";
 import { checkPhoto, qualityMessage, type PhotoQuality } from "@/lib/photo-quality";
 
