@@ -88,12 +88,28 @@ export const BUILD_DEFENSES = [
 ] as const;
 
 
-/** Twelve on-screen steps; step 5 is the one we show in screenshots. */
+/**
+ * Statements the landlord's complaint (form UD-100) normally makes. On UD-105
+ * item 2, anything the tenant does NOT list is treated by the judge as agreed,
+ * so this is the most important part of the form.
+ */
+export const DENIAL_ITEMS = [
+  { id: "amount", code: "3.a", label: "The amount of rent they say is owed" },
+  { id: "notice", code: "4.a", label: "That the notice was correct and complete" },
+  { id: "service", code: "4.b", label: "That the notice was served on me properly" },
+  { id: "expired", code: "5", label: "That the notice ran out before they filed" },
+  { id: "agreement", code: "6.a", label: "The rental agreement terms they describe" },
+  { id: "damages", code: "12", label: "The daily damages or holdover amount claimed" },
+  { id: "fees", code: "13", label: "Their claim for attorney fees" },
+] as const;
+
+/** Thirteen on-screen steps; step 6 is the one we show in screenshots. */
 export const WIZARD_STEPS = [
   "Your name",
   "Your address",
   "How to reach you",
   "Case details",
+  "What the landlord claims",
   "What happened in your own words?",
   "The notice you received",
   "Rent and payments",
@@ -101,8 +117,9 @@ export const WIZARD_STEPS = [
   "Your defences",
   "Proof of service",
   "Sign and date",
-  "Review",
+  "Review and file",
 ] as const;
+
 
 /** Every box the tenant fills in on screen. Nothing is uploaded or downloaded. */
 export interface BuildFields {
