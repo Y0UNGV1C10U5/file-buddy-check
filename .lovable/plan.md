@@ -45,3 +45,13 @@ The uploaded court guide confirms most of what we already say (10 court days, UD
 - Denials are new fields in the existing `BuildFields`/localStorage draft shape; no backend.
 - No change to `deadline.ts` - its 10-court-day maths already matches the guide.
 - Still Phase 0: no generation, no payments, nothing leaves the device.
+
+## Also: replace src/lib/deadline.ts with the uploaded version
+
+Compared line by line against the current file. The uploaded version is a strict improvement and fixes two real counting bugs:
+
+- The current file treats the second Monday in October (Indigenous Peoples' Day) as a court holiday. It is not one — California courts are open. That pushes every affected deadline one day too late, which is the dangerous direction.
+- The current file misses Native American Day (fourth Friday in September), which IS a court holiday.
+- It also fixes a year-boundary case: when January 1 falls on a Saturday it is observed on Friday December 31 of the prior year, which the current lookup silently counted as a working court day.
+
+Everything else — the exported types, service methods, function signatures — is unchanged, so nothing that imports it needs touching. I will drop it in as a straight replacement and run a typecheck.
