@@ -30,6 +30,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
   const [phone, setPhone] = useState("");
   const [zip, setZip] = useState("");
   const [sent, setSent] = useState(false);
+  const [waitlisted, setWaitlisted] = useState(false);
   const [emailCode, setEmailCode] = useState("");
   const [smsCode, setSmsCode] = useState("");
   const [notices, setNotices] = useState<{ name: string; url: string }[]>([]);
@@ -46,17 +47,24 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
       setError("We need a working email address and a mobile number we can text.");
       return;
     }
-    if (county !== "la") {
-      setError(
-        county === "incomplete"
-          ? "Add the ZIP code of the home the case is about."
-          : "We only prepare filings for Los Angeles County right now. Check the ZIP — if it's right, register on the notice page and we'll tell you when we open in your county.",
-      );
+    if (county === "incomplete") {
+      setError("Add the ZIP code of the home the case is about.");
       return;
     }
     setError("");
+    if (county === "outside") {
+      saveWaitlist({
+        email: email.trim(),
+        phone: digits(phone),
+        zip,
+        source: "gate",
+      });
+      setWaitlisted(true);
+      return;
+    }
     setSent(true);
   }
+
 
   function addFiles(list: FileList | null) {
     if (!list) return;
