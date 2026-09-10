@@ -73,7 +73,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
       return;
     }
     if (notices.length === 0) {
-      setError("Add a photo of your notice or court papers so we can read the dates.");
+      setError("Scan at least one page of your notice or court papers so we can read the dates.");
       return;
     }
     setError("");
