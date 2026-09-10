@@ -361,13 +361,13 @@ function NoticePage() {
             <div className="slab p-5 sm:p-7">
               <p className="eyebrow text-signal">Step two — keep the countdown</p>
               <h2 className="mt-2 font-display text-3xl uppercase leading-tight">
-                Register the notice and we watch the clock
+                Register the notice and keep your countdown
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                We hold the date, keep a countdown running, and message you before
-                the day your landlord is allowed to file — and again when your
-                answer is due if they do. Free. Nothing to pay unless you later ask
-                us to prepare your answer.
+                We hold your date and keep the countdown here, so you can come
+                straight back to it instead of recounting. Email and text reminders
+                are coming next. Free either way — nothing to pay unless you later
+                ask us to prepare your answer.
               </p>
 
               {waitlisted ? (
@@ -378,15 +378,16 @@ function NoticePage() {
                   </p>
                   <p className="mt-3 text-sm">
                     ZIP {zip} doesn't look like Los Angeles County, and LA is the
-                    only county we prepare filings for right now. Your date and
-                    details are saved — we'll email <strong>{email.trim()}</strong>{" "}
-                    the day we open in your county.
+                    only county we prepare filings for right now. We've kept your
+                    date and your details — <strong>{email.trim()}</strong> — so
+                    you're on the list for the day we open there.
                   </p>
                   <p className="mt-3 text-sm text-muted-foreground">
                     The counting above still applies everywhere in California, so
                     keep your dates. If that ZIP is wrong, fix it and register
                     again.
                   </p>
+
                   <button
                     type="button"
                     onClick={() => setWaitlisted(false)}
