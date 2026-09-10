@@ -93,13 +93,14 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
       <div className="mx-auto max-w-2xl">
         <p className="eyebrow text-signal">Before you start</p>
         <h1 className="mt-2 text-4xl sm:text-5xl">
-          Two contacts and a photo. Then the form opens.
+          Two contacts and your papers. Then the form opens.
         </h1>
         <p className="mt-3 text-muted-foreground">
-          About fifteen minutes, free to fill in. Your deadline is counted in court
-          days and it does not wait for anybody — we hold your email and mobile so we
-          can reach you about your documents, and we read the dates straight off your
-          notice instead of asking you to type them twice.
+          Free — scanning your papers costs nothing and nothing is charged to look.
+          Stand your phone over each page and shoot the lot. Your deadline is counted
+          in court days and it does not wait for anybody, so we hold your email and
+          mobile to reach you about your documents, and read the dates straight off
+          your papers instead of asking you to type them twice.
         </p>
 
         {waitlisted ? (
