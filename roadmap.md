@@ -118,3 +118,19 @@ Removed from homepage + checkout to keep launch scope to the $220 answer only.
 - Reminder copy softened: countdown is saved locally; real email/SMS reminders still pending Cloud.
 - LA area names (Hollywood, Downtown, Koreatown, South LA, Long Beach, Antelope Valley etc.) added to hero copy for SEO.
 - Expansion order if we ever go beyond LA: San Diego, then Riverside.
+
+## Packet scanner (next, not at launch)
+Why: we need the WHOLE served packet to prepare a good answer, not just the notice.
+A served UD packet is typically: summons SUM-130 (1 page, often double-sided),
+complaint UD-100 (2-4 pages) + UD-101 verification, exhibits (notice, lease),
+blank UD-105 (2 pages), case assignment sheet. Call it 6-12 pages.
+- [ ] Multi-page capture in StartGate: shoot page after page, thumbnails, reorder, remove,
+      page count shown against a checklist (summons / complaint / notice / lease / other).
+      Front-end only, files stay on device until they pay. No backend needed.
+- [ ] Auto-read (Phase 1, needs Cloud): OCR the pages, pre-fill case number, court/branch,
+      plaintiff, defendant(s), served date and method, rent claimed. Tenant confirms every field —
+      we never accept OCR output unreviewed.
+- [ ] Storage + retention: upload to Cloud storage on payment only, private bucket, RLS by user,
+      auto-delete after the case window.
+- [ ] Nice-to-have: deskew/edge cleanup so photos look like scans. Most phones already do this.
+Launch stays as-is: single photo upload of the notice and/or the court papers.
