@@ -140,3 +140,6 @@ Launch stays as-is: single photo upload of the notice and/or the court papers.
 - Scanner ships in the website now. Native app (Play/App Store) stays deferred.
 - Later: free/subscription split — free = intake + checks + on-screen preview;
   paid = $220 one-off answer pack, or a subscription option covering repeat use.
+- Paywall line (2026-09-10): free = scanning, checks, their own raw words,
+  blurred/locked preview. Paid ($220) = drafted defense wording, AI suggestions,
+  finished files. Never show drafted legal wording before payment.
