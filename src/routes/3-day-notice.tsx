@@ -56,8 +56,9 @@ export const Route = createFileRoute("/3-day-notice")({
       {
         property: "og:description",
         content:
-          "Register your 3-day notice to pay or quit. We count the court days, show the first date your landlord can file an unlawful detainer, and remind you before it lands.",
+          "Register your 3-day notice to pay or quit anywhere in LA County — Hollywood, Downtown, Koreatown, South LA, Long Beach, the Valley, Lancaster and Palmdale. We count the court days and show the first date your landlord can file.",
       },
+
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
