@@ -220,6 +220,10 @@ export function PacketScanner({
               );
             })}
           </ul>
+          <p className="mt-3 border-2 border-ink bg-accent p-3 text-sm">
+            One page is enough to get started — you can add the rest of the packet
+            while you fill the form in.
+          </p>
         </>
       ) : null}
     </div>
