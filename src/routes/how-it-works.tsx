@@ -66,9 +66,10 @@ function HowItWorks() {
           <div className="container-page">
             <p className="eyebrow text-signal">The whole thing</p>
             <h1 className="mt-3 text-5xl sm:text-7xl">
-              Download. Fill. Upload.
+              Answer. Check.
               <br />
-              <span className="text-signal">File.</span>
+              <span className="text-signal">File. Serve.</span>
+
             </h1>
             <p className="mt-6 max-w-xl text-lg opacity-80">
               You know your story better than any lawyer does. Our job is to get it onto

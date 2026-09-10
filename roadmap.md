@@ -143,3 +143,13 @@ Launch stays as-is: single photo upload of the notice and/or the court papers.
 - Paywall line (2026-09-10): free = scanning, checks, their own raw words,
   blurred/locked preview. Paid ($220) = drafted defense wording, AI suggestions,
   finished files. Never show drafted legal wording before payment.
+
+## From the official CA self-help Answer guide (Sep 10)
+- [x] Denials step (UD-105 item 2: general vs specific) — unlisted statements count as agreed
+- [x] Honest filing fee ($240–$450, FW-001 waiver) on home, how-it-works, FAQ
+- [x] Missed-deadline card — late answer often possible until landlord files CIV-100
+- [x] Filing checklist: 2 copies, local forms, serve the landlord after filing
+- [x] Multiple tenants — separate answers when defenses differ
+- [x] Motion to quash / demurrer named on the service-check result (needs legal help)
+- [x] deadline.ts replaced (Indigenous Peoples' Day is NOT a court holiday; Native American Day is; Jan 1 year-boundary observance)
+- [x] Removed unearned "registered LA County, $25k bond" footer/FAQ claim — restore only when true
