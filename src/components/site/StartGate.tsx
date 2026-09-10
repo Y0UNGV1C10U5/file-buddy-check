@@ -190,7 +190,14 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
               <span className="mt-1 block text-xs font-semibold text-signal">
                 Los Angeles County — we cover you.
               </span>
+            ) : county === "outside" ? (
+              <span className="mt-1 block text-xs font-semibold">
+                That ZIP is outside Los Angeles County. LA is the only county we
+                prepare filings for right now — carry on and we'll take your
+                details for the day we open there.
+              </span>
             ) : null}
+
           </label>
 
 
