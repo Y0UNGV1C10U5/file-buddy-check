@@ -34,9 +34,8 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
   const [waitlisted, setWaitlisted] = useState(false);
   const [emailCode, setEmailCode] = useState("");
   const [smsCode, setSmsCode] = useState("");
-  const [notices, setNotices] = useState<{ name: string; url: string }[]>([]);
+  const [notices, setNotices] = useState<PacketPage[]>([]);
   const [error, setError] = useState("");
-  const fileRef = useRef<HTMLInputElement>(null);
 
   const emailOk = EMAIL_RE.test(email.trim());
   const phoneOk = PHONE_RE.test(digits(phone));
