@@ -52,11 +52,14 @@ export const Route = createFileRoute("/build")({
 type Fields = BuildFields;
 
 function BuildPage() {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(5);
   const [fields, setFields] = useState<Fields>(DEMO_FIELDS);
   const [enhance, setEnhance] = useState(true);
   const [defenses, setDefenses] = useState<string[]>(["defective", "habitability"]);
+  const [denialMode, setDenialMode] = useState<"general" | "specific">("general");
+  const [denials, setDenials] = useState<string[]>(["3.a", "4.b"]);
   const [unlocked, setUnlocked] = useState(false);
+
 
   // Remember that this browser already verified, so they aren't re-gated on return.
   useEffect(() => {
