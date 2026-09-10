@@ -49,14 +49,21 @@ export function UD105Sheet({
   caption,
   defenses,
   story,
+  denialMode = "general",
+  denials = [],
   className = "",
 }: {
   caption: CaptionFields;
   defenses: UD105Defense[];
   story: string;
+  /** Item 2: deny everything, or list the statements being denied. */
+  denialMode?: "general" | "specific";
+  /** Complaint item numbers being denied, e.g. ["3.a", "4.b"]. */
+  denials?: string[];
   className?: string;
 }) {
   const usedAttachment = story.trim().length > 0;
+
 
   return (
     <div
