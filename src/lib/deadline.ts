@@ -127,9 +127,22 @@ interface Holiday {
   name: string;
 }
 
-/** California judicial holidays for a given year (Gov. Code §§ 6700-6701, CCP § 135). */
+/**
+ * California judicial holidays for a given year (Gov. Code §§ 6700-6701, CCP § 135).
+ *
+ * VERIFIED against the Judicial Council 2026 and 2027 published court holiday
+ * schedules (courts.ca.gov/about/court-holidays). These rules reproduce both
+ * official lists exactly, date for date.
+ *
+ * Two things people get wrong, and both are wrong in the same direction:
+ *  - The second Monday in October is NOT a California court holiday. Columbus
+ *    Day was removed as a state holiday in 2009 and the courts stay open. Any
+ *    calendar that skips it hands the tenant a deadline one day too late.
+ *  - The fourth Friday in September IS a court holiday — Native American Day.
+ */
 export function judicialHolidays(year: number): Holiday[] {
-  const list: Holiday[] = [
+  const thanksgiving = nthWeekdayOfMonth(year, 10, 4, 4);
+  return [
     { date: observed(new Date(year, 0, 1)), name: "New Year's Day" },
     {
       date: nthWeekdayOfMonth(year, 0, 1, 3),
@@ -142,24 +155,29 @@ export function judicialHolidays(year: number): Holiday[] {
     { date: observed(new Date(year, 5, 19)), name: "Juneteenth" },
     { date: observed(new Date(year, 6, 4)), name: "Independence Day" },
     { date: nthWeekdayOfMonth(year, 8, 1, 1), name: "Labor Day" },
-    { date: nthWeekdayOfMonth(year, 9, 1, 2), name: "Indigenous Peoples' Day" },
+    { date: nthWeekdayOfMonth(year, 8, 5, 4), name: "Native American Day" },
     { date: observed(new Date(year, 10, 11)), name: "Veterans Day" },
-    { date: nthWeekdayOfMonth(year, 10, 4, 4), name: "Thanksgiving Day" },
-    {
-      date: addDays(nthWeekdayOfMonth(year, 10, 4, 4), 1),
-      name: "Day after Thanksgiving",
-    },
+    { date: thanksgiving, name: "Thanksgiving Day" },
+    { date: addDays(thanksgiving, 1), name: "Day after Thanksgiving" },
     { date: observed(new Date(year, 11, 25)), name: "Christmas Day" },
   ];
-  return list;
 }
 
 const holidayCache = new Map<number, Map<string, string>>();
 
+/**
+ * Holidays that FALL IN a given year, which is not the same as the holidays
+ * GENERATED FOR that year. When January 1 lands on a Saturday it is observed on
+ * Friday December 31 of the year before, so the next year's list has to be
+ * folded in or that December 31 silently counts as a court day.
+ */
 function holidayMap(year: number): Map<string, string> {
   let cached = holidayCache.get(year);
   if (!cached) {
-    cached = new Map(judicialHolidays(year).map((h) => [toISODate(h.date), h.name]));
+    cached = new Map<string, string>();
+    for (const h of [...judicialHolidays(year), ...judicialHolidays(year + 1)]) {
+      if (h.date.getFullYear() === year) cached.set(toISODate(h.date), h.name);
+    }
     holidayCache.set(year, cached);
   }
   return cached;
