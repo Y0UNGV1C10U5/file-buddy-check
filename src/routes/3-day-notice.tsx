@@ -175,9 +175,18 @@ function NoticePage() {
                 It is not an eviction, and you do not have to move out because of
                 it. It is the paper a landlord has to serve before they are
                 allowed to sue you. Register it here and we will tell you — free —
-                the exact date they can file, whether the three days were counted
-                properly, and we will warn you the moment the court papers are due.
+                the exact date they can file and whether the three days were
+                counted properly.
               </p>
+              <p className="mt-4 max-w-xl text-sm opacity-75">
+                For tenants across Los Angeles County — Hollywood, Downtown and
+                South Park, Koreatown, Westlake and Pico-Union, South LA, Boyle
+                Heights, Van Nuys and the Valley, Long Beach, Inglewood, Compton,
+                and Lancaster and Palmdale in the Antelope Valley. Hollywood
+                (90028) and Downtown (90015) draw more eviction notices than
+                anywhere else in the city.
+              </p>
+
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
                   href="#check"
