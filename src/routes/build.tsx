@@ -555,7 +555,10 @@ function BuildPage() {
                 caption={caption}
                 defenses={formDefenses}
                 story={data.story}
+                denialMode={denialMode}
+                denials={denials}
               />
+
               <div>
                 <p className="mb-2 font-mono text-xs uppercase text-muted-foreground">
                   Attachment — your facts, in your own words
