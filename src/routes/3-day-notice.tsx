@@ -555,10 +555,11 @@ function NoticePage() {
                   </button>
                   <p className="mt-3 flex gap-2 text-xs text-muted-foreground">
                     <ShieldCheck className="size-4 shrink-0" />
-                    We use your email and mobile for your countdown and reminders.
-                    Photos stay on your own device until you ask us to prepare your
-                    files.
+                    We hold your email and mobile so we can reach you about your
+                    case. Photos stay on your own device until you ask us to
+                    prepare your files.
                   </p>
+
                 </>
               )}
             </div>
