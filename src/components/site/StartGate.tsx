@@ -289,9 +289,12 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
 
         <p className="mt-4 flex gap-2 text-xs text-muted-foreground">
           <ShieldCheck className="size-4 shrink-0" />
-          We use your email and mobile for your deadline reminders and your documents.
-          Your photos stay on your own device until you ask us to prepare your files.
+          We hold your email and mobile so we can send your documents. Your photos
+          stay on your own device until you ask us to prepare your files.
         </p>
+        </>
+        )}
+
       </div>
     </div>
   );
