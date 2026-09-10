@@ -132,10 +132,17 @@ function NoticePage() {
       JSON.stringify({ served: toISODate(servedDate), kind, zip }),
     );
     if (county === "outside") {
+      saveWaitlist({
+        email: email.trim(),
+        phone: digits(phone),
+        zip,
+        source: "notice",
+      });
       setWaitlisted(true);
       return;
     }
     setRegistered(true);
+
   }
 
 
