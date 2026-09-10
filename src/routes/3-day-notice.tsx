@@ -402,12 +402,15 @@ function NoticePage() {
                     <Check className="size-6 text-signal" /> Notice registered
                   </p>
                   <p className="mt-3 text-sm">
-                    Countdown running for <strong>{email.trim()}</strong>. We will
-                    text <strong>{phone.trim()}</strong>
+                    Saved against <strong>{email.trim()}</strong> and{" "}
+                    <strong>{phone.trim()}</strong>. Your countdown
                     {result
-                      ? ` before ${formatLongDate(result.earliestFiling)}.`
-                      : "."}
+                      ? ` runs to ${formatLongDate(result.earliestFiling)} —`
+                      : " —"}{" "}
+                    come back to this page any time to see it. Email and text
+                    reminders are coming next.
                   </p>
+
                   <Link
                     to="/build"
                     className="mt-5 inline-flex w-full items-center justify-center gap-2 border-2 border-ink bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
