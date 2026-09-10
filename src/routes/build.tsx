@@ -75,17 +75,25 @@ function BuildPage() {
       const parsed = JSON.parse(saved) as {
         fields?: Partial<Fields>;
         defenses?: string[];
+        denialMode?: "general" | "specific";
+        denials?: string[];
       };
       if (parsed.fields) setFields((f) => ({ ...f, ...parsed.fields }));
       if (Array.isArray(parsed.defenses)) setDefenses(parsed.defenses);
+      if (parsed.denialMode) setDenialMode(parsed.denialMode);
+      if (Array.isArray(parsed.denials)) setDenials(parsed.denials);
     } catch {
       /* ignore a corrupt draft */
     }
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ fields, defenses }));
-  }, [fields, defenses]);
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ fields, defenses, denialMode, denials }),
+    );
+  }, [fields, defenses, denialMode, denials]);
+
 
   function set(key: FieldKey, value: string, max = MAX_SHORT) {
     setFields((f) => ({ ...f, [key]: value.slice(0, max) }));
