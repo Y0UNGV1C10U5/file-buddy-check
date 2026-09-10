@@ -47,7 +47,7 @@ export function PacketScanner({
   onChange,
 }: {
   pages: PacketPage[];
-  onChange: (next: PacketPage[]) => void;
+  onChange: Dispatch<SetStateAction<PacketPage[]>>;
 }) {
   const cameraRef = useRef<HTMLInputElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -55,15 +55,14 @@ export function PacketScanner({
   function add(list: FileList | null) {
     const next = makePages(list, pages.length);
     if (!next.length) return;
-    const combined = [...pages, ...next];
-    onChange(combined);
+    onChange((prev) => [...prev, ...next]);
     // Grade each new photo on-device, then fold the verdict back in.
     next
       .filter((p) => !p.isPdf)
       .forEach((p) => {
         void checkPhoto(p.url).then((quality) => {
-          onChange(
-            combined.map((page) => (page.id === p.id ? { ...page, quality } : page)),
+          onChange((prev) =>
+            prev.map((page) => (page.id === p.id ? { ...page, quality } : page)),
           );
         });
       });
