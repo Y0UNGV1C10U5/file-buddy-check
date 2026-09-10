@@ -249,13 +249,94 @@ function BuildPage() {
         );
       case 4:
         return (
+          <div className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              The landlord's complaint is a list of numbered statements. Anything you
+              do not disagree with, the judge treats as agreed. This is item 2 of the
+              answer form.
+            </p>
+            <div className="space-y-2">
+              {(
+                [
+                  {
+                    id: "general" as const,
+                    label: "I disagree with all of it",
+                    hint: "A general denial. Allowed when the landlord is asking for less than $35,000.",
+                  },
+                  {
+                    id: "specific" as const,
+                    label: "I only disagree with certain parts",
+                    hint: "List the statements you dispute. Everything else counts as agreed.",
+                  },
+                ]
+              ).map((opt) => (
+                <label
+                  key={opt.id}
+                  className={`flex cursor-pointer gap-3 border-2 p-3 text-sm ${
+                    denialMode === opt.id ? "border-ink bg-seal" : "border-border hover:border-ink"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="denial-mode"
+                    checked={denialMode === opt.id}
+                    onChange={() => setDenialMode(opt.id)}
+                    className="mt-0.5 size-4 shrink-0 accent-[var(--signal)]"
+                  />
+                  <span className={denialMode === opt.id ? "text-paper-ink" : ""}>
+                    <span className="font-semibold">{opt.label}</span>
+                    <span className="mt-0.5 block text-xs opacity-70">{opt.hint}</span>
+                  </span>
+                </label>
+              ))}
+            </div>
+
+            {denialMode === "specific" ? (
+              <div className="space-y-2 border-t-2 border-ink pt-4">
+                <p className="text-sm font-semibold">
+                  Which of these do you say is wrong?
+                </p>
+                {DENIAL_ITEMS.map((item) => {
+                  const checked = denials.includes(item.code);
+                  return (
+                    <label
+                      key={item.id}
+                      className={`flex cursor-pointer gap-3 border-2 p-3 text-sm ${
+                        checked ? "border-ink bg-seal" : "border-border hover:border-ink"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() =>
+                          setDenials((prev) =>
+                            prev.includes(item.code)
+                              ? prev.filter((c) => c !== item.code)
+                              : [...prev, item.code],
+                          )
+                        }
+                        className="mt-0.5 size-4 shrink-0 accent-[var(--signal)]"
+                      />
+                      <span className={checked ? "text-paper-ink" : ""}>
+                        <span className="font-mono text-xs opacity-70">{item.code}</span>{" "}
+                        {item.label}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+            ) : null}
+          </div>
+        );
+      case 5:
+        return (
           <Long
             label="What happened, in your own words"
             field="story"
             hint="Plain words are fine. Start a new line for each thing you want the court to know."
           />
         );
-      case 5:
+      case 6:
         return (
           <div className="space-y-4">
             <Choice
@@ -283,7 +364,7 @@ function BuildPage() {
             />
           </div>
         );
-      case 6:
+      case 7:
         return (
           <div className="space-y-4">
             <Text label="Monthly rent" field="monthlyRent" placeholder="$2,000" />
@@ -292,7 +373,7 @@ function BuildPage() {
             <Text label="Last payment you made" field="lastPayment" placeholder="$600 on May 1" />
           </div>
         );
-      case 7:
+      case 8:
         return (
           <Long
             label="Repairs and conditions"
@@ -300,14 +381,14 @@ function BuildPage() {
             hint="Anything broken, unsafe or unhealthy, and when you told the landlord."
           />
         );
-      case 8:
+      case 9:
         return (
           <p className="text-muted-foreground">
             Tick the reasons on the right. Each one ticks the matching box on form
             UD-105 and adds the supporting facts to your attachment page.
           </p>
         );
-      case 9:
+      case 10:
         return (
           <div className="space-y-4">
             <Choice
@@ -318,20 +399,51 @@ function BuildPage() {
             <Text label="Who will deliver it?" field="serverName" hint="Anyone over 18 who is not you." />
           </div>
         );
-      case 10:
+      case 11:
         return (
           <div className="space-y-4">
             <Text label="Type your name to sign" field="signName" />
             <Text label="Date" field="signDate" placeholder="September 8, 2026" />
+            <p className="border-2 border-ink bg-seal p-3 text-sm text-paper-ink">
+              Everyone named on the papers has to sign. If another tenant has different
+              reasons to fight than you do, they need their own answer.
+            </p>
           </div>
         );
       default:
         return (
-          <p className="text-muted-foreground">
-            Check the form on the right. When it looks right, unlock your documents and
-            we prepare the UD-105, the attachment page and the proof of service.
-          </p>
+          <div className="space-y-4 text-sm">
+            <p className="text-muted-foreground">
+              Check the form on the right. When it looks right, unlock your documents and
+              we prepare the UD-105, the attachment page and the proof of service.
+            </p>
+            <div className="border-2 border-ink p-4">
+              <p className="font-display uppercase">When you get to the courthouse</p>
+              <ul className="mt-3 space-y-2 text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">Bring at least 2 copies.</span>{" "}
+                  The court keeps the original, one is yours, one goes to the landlord.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">The filing fee is $240–$450.</span>{" "}
+                  If you can't afford it, hand in a fee waiver request at the same time —
+                  we include the form.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Ask about local forms.</span>{" "}
+                  Some courthouses have their own extra forms. The clerk or the self-help
+                  centre will tell you.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Then serve the landlord.</span>{" "}
+                  Filing is not the end — a copy has to go to the landlord and the proof
+                  of service goes back to the court.
+                </li>
+              </ul>
+            </div>
+          </div>
         );
+
     }
   }
 
