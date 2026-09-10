@@ -208,7 +208,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
               onClick={send}
               className="mt-5 w-full border-2 border-ink bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
             >
-              Send my codes
+              {county === "outside" ? "Put me on the list" : "Send my codes"}
             </button>
           ) : (
             <div className="mt-5">
