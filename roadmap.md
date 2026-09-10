@@ -111,3 +111,10 @@ Removed from homepage + checkout to keep launch scope to the $220 answer only.
 - /build is hard-gated: email + mobile, six-digit code to each, plus a photo of the 3-day notice and/or the unlawful detainer.
 - Phase 0 has no real sending/verification — wire Cloud (auth + storage + email/SMS) behind StartGate in Phase 1, and OCR the notice dates.
 - Deadline checker and service check stay FREE and ungated on the homepage: they are the ad hook and the goodwill play. Contact capture happens at the moment they act, not before they trust us.
+
+## Out-of-county + area SEO (done)
+- Shared waitlist record (src/lib/waitlist.ts) used by /3-day-notice and the builder gate.
+- Non-LA ZIP now gets a friendly waitlist card instead of a red error.
+- Reminder copy softened: countdown is saved locally; real email/SMS reminders still pending Cloud.
+- LA area names (Hollywood, Downtown, Koreatown, South LA, Long Beach, Antelope Valley etc.) added to hero copy for SEO.
+- Expansion order if we ever go beyond LA: San Diego, then Riverside.

@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { Check, ImagePlus, Mail, MapPin, ShieldCheck, Smartphone, X } from "lucide-react";
 import { checkLaZip } from "@/lib/la-county";
+import { saveWaitlist } from "@/lib/waitlist";
+
 
 
 /**
@@ -28,6 +30,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
   const [phone, setPhone] = useState("");
   const [zip, setZip] = useState("");
   const [sent, setSent] = useState(false);
+  const [waitlisted, setWaitlisted] = useState(false);
   const [emailCode, setEmailCode] = useState("");
   const [smsCode, setSmsCode] = useState("");
   const [notices, setNotices] = useState<{ name: string; url: string }[]>([]);
@@ -44,17 +47,24 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
       setError("We need a working email address and a mobile number we can text.");
       return;
     }
-    if (county !== "la") {
-      setError(
-        county === "incomplete"
-          ? "Add the ZIP code of the home the case is about."
-          : "We only prepare filings for Los Angeles County right now. Check the ZIP — if it's right, register on the notice page and we'll tell you when we open in your county.",
-      );
+    if (county === "incomplete") {
+      setError("Add the ZIP code of the home the case is about.");
       return;
     }
     setError("");
+    if (county === "outside") {
+      saveWaitlist({
+        email: email.trim(),
+        phone: digits(phone),
+        zip,
+        source: "gate",
+      });
+      setWaitlisted(true);
+      return;
+    }
     setSent(true);
   }
+
 
   function addFiles(list: FileList | null) {
     if (!list) return;
@@ -95,12 +105,38 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
         <p className="mt-3 text-muted-foreground">
           About fifteen minutes, free to fill in. Your deadline is counted in court
           days and it does not wait for anybody — we hold your email and mobile so we
-          can warn you before it runs out, and we read the dates straight off your
+          can reach you about your documents, and we read the dates straight off your
           notice instead of asking you to type them twice.
         </p>
 
-
+        {waitlisted ? (
+          <div className="slab mt-7 p-5 sm:p-7">
+            <p className="flex items-center gap-2 font-display text-2xl uppercase">
+              <MapPin className="size-6 text-signal" /> We're not in your county yet
+            </p>
+            <p className="mt-3 text-sm">
+              ZIP {zip} doesn't look like Los Angeles County, and LA is the only
+              county we prepare filings for right now. We've kept your details —{" "}
+              <strong>{email.trim()}</strong> — so you're on the list for the day we
+              open where you are.
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              The deadline and service checks you ran still apply everywhere in
+              California, so hold on to your dates. Your answer is still due within
+              ten court days of being served, wherever you live.
+            </p>
+            <button
+              type="button"
+              onClick={() => setWaitlisted(false)}
+              className="mt-4 font-mono text-xs uppercase underline"
+            >
+              Change my ZIP code
+            </button>
+          </div>
+        ) : (
+        <>
         <div className="slab mt-7 p-5 sm:p-7">
+
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block">
               <span className="flex items-center gap-2 text-sm font-semibold">
@@ -154,7 +190,14 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
               <span className="mt-1 block text-xs font-semibold text-signal">
                 Los Angeles County — we cover you.
               </span>
+            ) : county === "outside" ? (
+              <span className="mt-1 block text-xs font-semibold">
+                That ZIP is outside Los Angeles County. LA is the only county we
+                prepare filings for right now — carry on and we'll take your
+                details for the day we open there.
+              </span>
             ) : null}
+
           </label>
 
 
@@ -165,7 +208,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
               onClick={send}
               className="mt-5 w-full border-2 border-ink bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
             >
-              Send my codes
+              {county === "outside" ? "Put me on the list" : "Send my codes"}
             </button>
           ) : (
             <div className="mt-5">
@@ -279,9 +322,12 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
 
         <p className="mt-4 flex gap-2 text-xs text-muted-foreground">
           <ShieldCheck className="size-4 shrink-0" />
-          We use your email and mobile for your deadline reminders and your documents.
-          Your photos stay on your own device until you ask us to prepare your files.
+          We hold your email and mobile so we can send your documents. Your photos
+          stay on your own device until you ask us to prepare your files.
         </p>
+        </>
+        )}
+
       </div>
     </div>
   );

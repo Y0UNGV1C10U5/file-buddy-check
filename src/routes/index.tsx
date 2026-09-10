@@ -153,6 +153,12 @@ function Index() {
                 court hears only your landlord. Tell your side — we take your story and
                 put it on the exact paper the court accepts.
               </p>
+              <p className="mt-4 max-w-lg text-sm opacity-70">
+                Los Angeles County only for now — Hollywood, Downtown, Koreatown,
+                Westlake, South LA, Boyle Heights, East LA, Long Beach, Inglewood,
+                Compton, Van Nuys and the Valley, Pomona, Lancaster and Palmdale.
+              </p>
+
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#deadline"

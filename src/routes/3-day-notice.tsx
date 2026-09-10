@@ -22,6 +22,8 @@ import {
   toISODate,
 } from "@/lib/deadline";
 import { checkLaZip } from "@/lib/la-county";
+import { saveWaitlist } from "@/lib/waitlist";
+
 import {
   NOTICE_KINDS,
   calculateNotice,
@@ -54,8 +56,9 @@ export const Route = createFileRoute("/3-day-notice")({
       {
         property: "og:description",
         content:
-          "Register your 3-day notice to pay or quit. We count the court days, show the first date your landlord can file an unlawful detainer, and remind you before it lands.",
+          "Register your 3-day notice to pay or quit anywhere in LA County — Hollywood, Downtown, Koreatown, South LA, Long Beach, the Valley, Lancaster and Palmdale. We count the court days and show the first date your landlord can file.",
       },
+
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -132,10 +135,17 @@ function NoticePage() {
       JSON.stringify({ served: toISODate(servedDate), kind, zip }),
     );
     if (county === "outside") {
+      saveWaitlist({
+        email: email.trim(),
+        phone: digits(phone),
+        zip,
+        source: "notice",
+      });
       setWaitlisted(true);
       return;
     }
     setRegistered(true);
+
   }
 
 
@@ -166,9 +176,18 @@ function NoticePage() {
                 It is not an eviction, and you do not have to move out because of
                 it. It is the paper a landlord has to serve before they are
                 allowed to sue you. Register it here and we will tell you — free —
-                the exact date they can file, whether the three days were counted
-                properly, and we will warn you the moment the court papers are due.
+                the exact date they can file and whether the three days were
+                counted properly.
               </p>
+              <p className="mt-4 max-w-xl text-sm opacity-75">
+                For tenants across Los Angeles County — Hollywood, Downtown and
+                South Park, Koreatown, Westlake and Pico-Union, South LA, Boyle
+                Heights, Van Nuys and the Valley, Long Beach, Inglewood, Compton,
+                and Lancaster and Palmdale in the Antelope Valley. Hollywood
+                (90028) and Downtown (90015) draw more eviction notices than
+                anywhere else in the city.
+              </p>
+
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
                   href="#check"
@@ -352,13 +371,13 @@ function NoticePage() {
             <div className="slab p-5 sm:p-7">
               <p className="eyebrow text-signal">Step two — keep the countdown</p>
               <h2 className="mt-2 font-display text-3xl uppercase leading-tight">
-                Register the notice and we watch the clock
+                Register the notice and keep your countdown
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                We hold the date, keep a countdown running, and message you before
-                the day your landlord is allowed to file — and again when your
-                answer is due if they do. Free. Nothing to pay unless you later ask
-                us to prepare your answer.
+                We hold your date and keep the countdown here, so you can come
+                straight back to it instead of recounting. Email and text reminders
+                are coming next. Free either way — nothing to pay unless you later
+                ask us to prepare your answer.
               </p>
 
               {waitlisted ? (
@@ -369,15 +388,16 @@ function NoticePage() {
                   </p>
                   <p className="mt-3 text-sm">
                     ZIP {zip} doesn't look like Los Angeles County, and LA is the
-                    only county we prepare filings for right now. Your date and
-                    details are saved — we'll email <strong>{email.trim()}</strong>{" "}
-                    the day we open in your county.
+                    only county we prepare filings for right now. We've kept your
+                    date and your details — <strong>{email.trim()}</strong> — so
+                    you're on the list for the day we open there.
                   </p>
                   <p className="mt-3 text-sm text-muted-foreground">
                     The counting above still applies everywhere in California, so
                     keep your dates. If that ZIP is wrong, fix it and register
                     again.
                   </p>
+
                   <button
                     type="button"
                     onClick={() => setWaitlisted(false)}
@@ -392,12 +412,15 @@ function NoticePage() {
                     <Check className="size-6 text-signal" /> Notice registered
                   </p>
                   <p className="mt-3 text-sm">
-                    Countdown running for <strong>{email.trim()}</strong>. We will
-                    text <strong>{phone.trim()}</strong>
+                    Saved against <strong>{email.trim()}</strong> and{" "}
+                    <strong>{phone.trim()}</strong>. Your countdown
                     {result
-                      ? ` before ${formatLongDate(result.earliestFiling)}.`
-                      : "."}
+                      ? ` runs to ${formatLongDate(result.earliestFiling)} —`
+                      : " —"}{" "}
+                    come back to this page any time to see it. Email and text
+                    reminders are coming next.
                   </p>
+
                   <Link
                     to="/build"
                     className="mt-5 inline-flex w-full items-center justify-center gap-2 border-2 border-ink bg-signal px-6 py-4 font-display text-lg uppercase text-signal-foreground transition-transform hover:-translate-y-1"
@@ -542,10 +565,11 @@ function NoticePage() {
                   </button>
                   <p className="mt-3 flex gap-2 text-xs text-muted-foreground">
                     <ShieldCheck className="size-4 shrink-0" />
-                    We use your email and mobile for your countdown and reminders.
-                    Photos stay on your own device until you ask us to prepare your
-                    files.
+                    We hold your email and mobile so we can reach you about your
+                    case. Photos stay on your own device until you ask us to
+                    prepare your files.
                   </p>
+
                 </>
               )}
             </div>
