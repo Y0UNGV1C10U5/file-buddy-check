@@ -128,11 +128,24 @@ export function UD105Sheet({
           <span className="underline">{caption.defendant}</span>
         </Row>
 
-        <Row checked code="2.">
-          <span className="font-bold">GENERAL DENIAL.</span> Defendant generally
-          denies each statement of the complaint. (Permitted only where the amount
-          demanded is under $35,000.)
-        </Row>
+        <p className="pt-1 font-bold">2. DENIALS</p>
+        <div className="pl-2">
+          <Row checked={denialMode === "general"} code="2.a" highlight>
+            <span className="font-bold">GENERAL DENIAL.</span> Defendant generally
+            denies each statement of the complaint. (Permitted only where the amount
+            demanded is under $35,000.)
+          </Row>
+          <Row checked={denialMode === "specific"} code="2.b" highlight>
+            Defendant admits that all of the statements of the complaint are true
+            EXCEPT the statements in the complaint listed here:{" "}
+            {denialMode === "specific" && denials.length > 0 ? (
+              <span className="bg-seal font-bold">{denials.join(", ")}</span>
+            ) : (
+              <span className="opacity-50">____________________</span>
+            )}
+          </Row>
+        </div>
+
 
         <p className="pt-1 font-bold">3. AFFIRMATIVE DEFENSES</p>
         <p className="pl-4 opacity-70">
