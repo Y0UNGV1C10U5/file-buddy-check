@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How It Works — Answer Your Eviction in 5 Steps" },
+      { title: "How It Works — Answer Your LA Eviction Step by Step" },
       {
         name: "description",
         content:
