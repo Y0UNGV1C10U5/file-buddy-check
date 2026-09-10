@@ -205,10 +205,18 @@ export function ServiceCheck() {
           </div>
 
           <p className="mt-4 text-xs text-muted-foreground">
+            There is another route — a motion to quash service, or a demurrer if the
+            complaint itself is wrong — but those are not tick-box forms and you will
+            almost certainly need a lawyer's help. Filing your answer on time stays the
+            safe move either way.
+          </p>
+
+          <p className="mt-4 text-xs text-muted-foreground">
             General information about California service rules, not legal advice about
             your case. The proof of service filed with the court is the document that
             settles what actually happened.
           </p>
+
         </div>
       ) : (
         <p className="mt-7 border-2 border-dashed border-border p-6 text-center text-muted-foreground">

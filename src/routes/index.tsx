@@ -508,8 +508,9 @@ function Index() {
                   [
                     "11:52pm",
                     "4. Your pack lands",
-                    "Signed and formatted UD-105, attached page, POS-030 and fee-waiver forms — PDFs plus editable Word and OpenDocument copies.",
+                    "Signed and formatted UD-105, attached page, POS-030 and fee-waiver forms — PDFs plus editable Word and OpenDocument copies. The court's own filing fee ($240–$450, waivable) is separate and goes to them, not us.",
                   ],
+
                   [
                     "11:58pm",
                     "5. Pick how you file",
