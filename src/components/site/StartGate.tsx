@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { Check, ImagePlus, Mail, MapPin, ShieldCheck, Smartphone, X } from "lucide-react";
 import { checkLaZip } from "@/lib/la-county";
+import { saveWaitlist } from "@/lib/waitlist";
+
 
 
 /**
