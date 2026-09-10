@@ -254,56 +254,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
           <hr className="my-7 border-t-2 border-ink/15" />
 
 
-          <p className="flex items-center gap-2 font-display text-xl uppercase leading-tight">
-            <ImagePlus className="size-5 text-signal" /> Photograph your papers
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            The three-day notice to pay or quit, and the court papers if they have
-            arrived. Flat on a table, all four corners in shot, dates readable. Add up to
-            four.
-          </p>
-
-          <input
-            ref={fileRef}
-            type="file"
-            accept="image/*,application/pdf"
-            multiple
-            className="hidden"
-            onChange={(e) => addFiles(e.target.files)}
-          />
-          <button
-            type="button"
-            onClick={() => fileRef.current?.click()}
-            className="mt-4 w-full border-2 border-dashed border-ink px-6 py-8 font-display uppercase transition-colors hover:bg-accent"
-          >
-            Take a photo or choose a file
-          </button>
-
-          {notices.length > 0 ? (
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {notices.map((n, i) => (
-                <li
-                  key={n.url}
-                  className="flex items-center gap-3 border-2 border-ink p-2 text-sm"
-                >
-                  <img
-                    src={n.url}
-                    alt={`Notice page ${i + 1}`}
-                    className="size-14 shrink-0 border border-border object-cover"
-                  />
-                  <span className="min-w-0 flex-1 truncate">{n.name}</span>
-                  <button
-                    type="button"
-                    aria-label={`Remove ${n.name}`}
-                    onClick={() => setNotices((list) => list.filter((x) => x.url !== n.url))}
-                    className="border-2 border-border p-1 hover:border-ink"
-                  >
-                    <X className="size-4" />
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          <PacketScanner pages={notices} onChange={setNotices} />
         </div>
 
         {error ? (
