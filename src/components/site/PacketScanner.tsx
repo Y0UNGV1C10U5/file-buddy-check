@@ -1,11 +1,13 @@
-import { useRef } from "react";
-import { ArrowDown, ArrowUp, Camera, FileText, X } from "lucide-react";
+import { useRef, type Dispatch, type SetStateAction } from "react";
+import { AlertTriangle, ArrowDown, ArrowUp, Camera, Check, FileText, X } from "lucide-react";
+import { checkPhoto, qualityMessage, type PhotoQuality } from "@/lib/photo-quality";
 
 /**
  * Multi-page capture for the served packet.
  *
  * Phase 0: everything stays in the browser. Pages are object URLs, never
- * uploaded. Cloud storage and OCR come later.
+ * uploaded, and the quality check runs on-device. Cloud storage and OCR
+ * come later.
  */
 
 export interface PacketPage {
@@ -13,6 +15,7 @@ export interface PacketPage {
   name: string;
   url: string;
   isPdf: boolean;
+  quality?: PhotoQuality;
 }
 
 export const MAX_PAGES = 20;
@@ -44,14 +47,25 @@ export function PacketScanner({
   onChange,
 }: {
   pages: PacketPage[];
-  onChange: (next: PacketPage[]) => void;
+  onChange: Dispatch<SetStateAction<PacketPage[]>>;
 }) {
   const cameraRef = useRef<HTMLInputElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   function add(list: FileList | null) {
     const next = makePages(list, pages.length);
-    if (next.length) onChange([...pages, ...next]);
+    if (!next.length) return;
+    onChange((prev) => [...prev, ...next]);
+    // Grade each new photo on-device, then fold the verdict back in.
+    next
+      .filter((p) => !p.isPdf)
+      .forEach((p) => {
+        void checkPhoto(p.url).then((quality) => {
+          onChange((prev) =>
+            prev.map((page) => (page.id === p.id ? { ...page, quality } : page)),
+          );
+        });
+      });
   }
 
   function move(index: number, delta: number) {
@@ -75,9 +89,10 @@ export function PacketScanner({
         <Camera className="size-5 text-signal" /> Scan your packet
       </p>
       <p className="mt-2 text-sm text-muted-foreground">
-        Shoot every page they handed you or left on your door — most packets run six
-        to twelve pages. Flat on a table, all four corners in shot, dates readable.
-        You can shoot them in any order and drag them straight after.
+        Start with one page — your notice, or the summons — and the form opens. Add
+        the rest of the packet as you go; most run six to twelve pages. Flat on a
+        table, all four corners in shot. We check every shot is sharp enough to read
+        and tell you if a page needs doing again.
       </p>
 
       <ul className="mt-3 grid gap-1 text-xs text-muted-foreground sm:grid-cols-2">
@@ -140,8 +155,14 @@ export function PacketScanner({
             {pages.length} of {MAX_PAGES} pages · in filing order
           </p>
           <ul className="mt-2 grid gap-3 sm:grid-cols-2">
-            {pages.map((p, i) => (
-              <li key={p.id} className="flex items-center gap-3 border-2 border-ink p-2 text-sm">
+            {pages.map((p, i) => {
+              const problem = p.quality ? qualityMessage(p.quality) : null;
+              return (
+              <li
+                key={p.id}
+                className={`border-2 p-2 text-sm ${problem ? "border-signal bg-signal/5" : "border-ink"}`}
+              >
+                <div className="flex items-center gap-3">
                 <span className="grid size-6 shrink-0 place-items-center border-2 border-ink font-mono text-xs">
                   {i + 1}
                 </span>
@@ -185,9 +206,25 @@ export function PacketScanner({
                 >
                   <X className="size-4" />
                 </button>
+                </div>
+                {problem ? (
+                  <p className="mt-2 flex items-start gap-2 font-semibold text-signal">
+                    <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+                    {problem}
+                  </p>
+                ) : p.quality?.verdict === "good" ? (
+                  <p className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                    <Check className="size-4 text-signal" /> Clear enough to read
+                  </p>
+                ) : null}
               </li>
-            ))}
+              );
+            })}
           </ul>
+          <p className="mt-3 border-2 border-ink bg-accent p-3 text-sm">
+            One page is enough to get started — you can add the rest of the packet
+            while you fill the form in.
+          </p>
         </>
       ) : null}
     </div>
