@@ -67,13 +67,6 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
   }
 
 
-  function addFiles(list: FileList | null) {
-    if (!list) return;
-    const next = Array.from(list)
-      .slice(0, 4)
-      .map((f) => ({ name: f.name, url: URL.createObjectURL(f) }));
-    setNotices((n) => [...n, ...next].slice(0, 4));
-  }
 
   function unlock() {
     if (!codesOk) {
