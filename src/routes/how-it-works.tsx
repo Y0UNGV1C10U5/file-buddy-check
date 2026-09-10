@@ -34,6 +34,10 @@ const STEPS = [
     body: "Nothing to download, nothing to print, nothing to send back. You type into simple boxes — your name, the case number, what happened — and you can stop and come back.",
   },
   {
+    title: "Say what you disagree with",
+    body: "The landlord's complaint is a list of numbered claims. Anything you don't dispute, the judge treats as agreed — so we walk you through each one and mark the ones you say are wrong.",
+  },
+  {
     title: "Tick the reasons that fit",
     body: "Improper notice, wrong amount, repairs ignored, retaliation. Each one you tick ticks the matching box on the official answer form, UD-105.",
   },
@@ -43,9 +47,14 @@ const STEPS = [
   },
   {
     title: "File it",
-    body: "You get a print-ready set with a proof of service, and instructions for filing it — at the courthouse window or online.",
+    body: "You get a print-ready set with a proof of service, and instructions for filing it — at the courthouse window or online. Bring at least two copies; the court's filing fee is $240–$450, and we include the fee waiver form if you need it.",
+  },
+  {
+    title: "Give the landlord their copy",
+    body: "Filing isn't the last step. Someone over 18 who isn't you delivers a copy to the landlord or their attorney, signs the proof of service, and that goes to the court.",
   },
 ];
+
 
 
 function HowItWorks() {
