@@ -1,11 +1,13 @@
 import { useRef } from "react";
-import { ArrowDown, ArrowUp, Camera, FileText, X } from "lucide-react";
+import { AlertTriangle, ArrowDown, ArrowUp, Camera, Check, FileText, X } from "lucide-react";
+import { checkPhoto, qualityMessage, type PhotoQuality } from "@/lib/photo-quality";
 
 /**
  * Multi-page capture for the served packet.
  *
  * Phase 0: everything stays in the browser. Pages are object URLs, never
- * uploaded. Cloud storage and OCR come later.
+ * uploaded, and the quality check runs on-device. Cloud storage and OCR
+ * come later.
  */
 
 export interface PacketPage {
@@ -13,6 +15,7 @@ export interface PacketPage {
   name: string;
   url: string;
   isPdf: boolean;
+  quality?: PhotoQuality;
 }
 
 export const MAX_PAGES = 20;
@@ -51,7 +54,19 @@ export function PacketScanner({
 
   function add(list: FileList | null) {
     const next = makePages(list, pages.length);
-    if (next.length) onChange([...pages, ...next]);
+    if (!next.length) return;
+    const combined = [...pages, ...next];
+    onChange(combined);
+    // Grade each new photo on-device, then fold the verdict back in.
+    next
+      .filter((p) => !p.isPdf)
+      .forEach((p) => {
+        void checkPhoto(p.url).then((quality) => {
+          onChange(
+            combined.map((page) => (page.id === p.id ? { ...page, quality } : page)),
+          );
+        });
+      });
   }
 
   function move(index: number, delta: number) {
