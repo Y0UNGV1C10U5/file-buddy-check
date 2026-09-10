@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
-import { Check, ImagePlus, Mail, MapPin, ShieldCheck, Smartphone, X } from "lucide-react";
+import { useState } from "react";
+import { Check, Mail, MapPin, ShieldCheck, Smartphone } from "lucide-react";
 import { checkLaZip } from "@/lib/la-county";
 import { saveWaitlist } from "@/lib/waitlist";
+import { PacketScanner, type PacketPage } from "@/components/site/PacketScanner";
 
 
 
@@ -33,9 +34,8 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
   const [waitlisted, setWaitlisted] = useState(false);
   const [emailCode, setEmailCode] = useState("");
   const [smsCode, setSmsCode] = useState("");
-  const [notices, setNotices] = useState<{ name: string; url: string }[]>([]);
+  const [notices, setNotices] = useState<PacketPage[]>([]);
   const [error, setError] = useState("");
-  const fileRef = useRef<HTMLInputElement>(null);
 
   const emailOk = EMAIL_RE.test(email.trim());
   const phoneOk = PHONE_RE.test(digits(phone));
@@ -66,13 +66,6 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
   }
 
 
-  function addFiles(list: FileList | null) {
-    if (!list) return;
-    const next = Array.from(list)
-      .slice(0, 4)
-      .map((f) => ({ name: f.name, url: URL.createObjectURL(f) }));
-    setNotices((n) => [...n, ...next].slice(0, 4));
-  }
 
   function unlock() {
     if (!codesOk) {
@@ -80,7 +73,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
       return;
     }
     if (notices.length === 0) {
-      setError("Add a photo of your notice or court papers so we can read the dates.");
+      setError("Scan at least one page of your notice or court papers so we can read the dates.");
       return;
     }
     setError("");
@@ -100,13 +93,14 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
       <div className="mx-auto max-w-2xl">
         <p className="eyebrow text-signal">Before you start</p>
         <h1 className="mt-2 text-4xl sm:text-5xl">
-          Two contacts and a photo. Then the form opens.
+          Two contacts and your papers. Then the form opens.
         </h1>
         <p className="mt-3 text-muted-foreground">
-          About fifteen minutes, free to fill in. Your deadline is counted in court
-          days and it does not wait for anybody — we hold your email and mobile so we
-          can reach you about your documents, and we read the dates straight off your
-          notice instead of asking you to type them twice.
+          Free — scanning your papers costs nothing and nothing is charged to look.
+          Stand your phone over each page and shoot the lot. Your deadline is counted
+          in court days and it does not wait for anybody, so we hold your email and
+          mobile to reach you about your documents, and read the dates straight off
+          your papers instead of asking you to type them twice.
         </p>
 
         {waitlisted ? (
@@ -253,56 +247,7 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
           <hr className="my-7 border-t-2 border-ink/15" />
 
 
-          <p className="flex items-center gap-2 font-display text-xl uppercase leading-tight">
-            <ImagePlus className="size-5 text-signal" /> Photograph your papers
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            The three-day notice to pay or quit, and the court papers if they have
-            arrived. Flat on a table, all four corners in shot, dates readable. Add up to
-            four.
-          </p>
-
-          <input
-            ref={fileRef}
-            type="file"
-            accept="image/*,application/pdf"
-            multiple
-            className="hidden"
-            onChange={(e) => addFiles(e.target.files)}
-          />
-          <button
-            type="button"
-            onClick={() => fileRef.current?.click()}
-            className="mt-4 w-full border-2 border-dashed border-ink px-6 py-8 font-display uppercase transition-colors hover:bg-accent"
-          >
-            Take a photo or choose a file
-          </button>
-
-          {notices.length > 0 ? (
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {notices.map((n, i) => (
-                <li
-                  key={n.url}
-                  className="flex items-center gap-3 border-2 border-ink p-2 text-sm"
-                >
-                  <img
-                    src={n.url}
-                    alt={`Notice page ${i + 1}`}
-                    className="size-14 shrink-0 border border-border object-cover"
-                  />
-                  <span className="min-w-0 flex-1 truncate">{n.name}</span>
-                  <button
-                    type="button"
-                    aria-label={`Remove ${n.name}`}
-                    onClick={() => setNotices((list) => list.filter((x) => x.url !== n.url))}
-                    className="border-2 border-border p-1 hover:border-ink"
-                  >
-                    <X className="size-4" />
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          <PacketScanner pages={notices} onChange={setNotices} />
         </div>
 
         {error ? (

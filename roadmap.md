@@ -134,3 +134,9 @@ blank UD-105 (2 pages), case assignment sheet. Call it 6-12 pages.
       auto-delete after the case window.
 - [ ] Nice-to-have: deskew/edge cleanup so photos look like scans. Most phones already do this.
 Launch stays as-is: single photo upload of the notice and/or the court papers.
+
+## Free intake tier (decided 2026-09-10)
+- Packet scanning is FREE and needs no payment: scan, order, keep pages on device.
+- Scanner ships in the website now. Native app (Play/App Store) stays deferred.
+- Later: free/subscription split — free = intake + checks + on-screen preview;
+  paid = $220 one-off answer pack, or a subscription option covering repeat use.
