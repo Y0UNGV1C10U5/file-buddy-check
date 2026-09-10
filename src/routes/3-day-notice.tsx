@@ -22,6 +22,8 @@ import {
   toISODate,
 } from "@/lib/deadline";
 import { checkLaZip } from "@/lib/la-county";
+import { saveWaitlist } from "@/lib/waitlist";
+
 import {
   NOTICE_KINDS,
   calculateNotice,
