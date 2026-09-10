@@ -58,7 +58,9 @@ export function PacketScanner({
     const target = index + delta;
     if (target < 0 || target >= pages.length) return;
     const next = [...pages];
-    const [item] = next.splice(index, 1);
+    const item = next[index];
+    if (!item) return;
+    next.splice(index, 1);
     next.splice(target, 0, item);
     onChange(next);
   }
