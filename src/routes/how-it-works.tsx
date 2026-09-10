@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How It Works — Answer Your Eviction in 5 Steps" },
+      { title: "How It Works — Answer Your LA Eviction Step by Step" },
       {
         name: "description",
         content:
@@ -34,6 +34,10 @@ const STEPS = [
     body: "Nothing to download, nothing to print, nothing to send back. You type into simple boxes — your name, the case number, what happened — and you can stop and come back.",
   },
   {
+    title: "Say what you disagree with",
+    body: "The landlord's complaint is a list of numbered claims. Anything you don't dispute, the judge treats as agreed — so we walk you through each one and mark the ones you say are wrong.",
+  },
+  {
     title: "Tick the reasons that fit",
     body: "Improper notice, wrong amount, repairs ignored, retaliation. Each one you tick ticks the matching box on the official answer form, UD-105.",
   },
@@ -43,9 +47,14 @@ const STEPS = [
   },
   {
     title: "File it",
-    body: "You get a print-ready set with a proof of service, and instructions for filing it — at the courthouse window or online.",
+    body: "You get a print-ready set with a proof of service, and instructions for filing it — at the courthouse window or online. Bring at least two copies; the court's filing fee is $240–$450, and we include the fee waiver form if you need it.",
+  },
+  {
+    title: "Give the landlord their copy",
+    body: "Filing isn't the last step. Someone over 18 who isn't you delivers a copy to the landlord or their attorney, signs the proof of service, and that goes to the court.",
   },
 ];
+
 
 
 function HowItWorks() {
@@ -57,9 +66,10 @@ function HowItWorks() {
           <div className="container-page">
             <p className="eyebrow text-signal">The whole thing</p>
             <h1 className="mt-3 text-5xl sm:text-7xl">
-              Download. Fill. Upload.
+              Answer. Check.
               <br />
-              <span className="text-signal">File.</span>
+              <span className="text-signal">File. Serve.</span>
+
             </h1>
             <p className="mt-6 max-w-xl text-lg opacity-80">
               You know your story better than any lawyer does. Our job is to get it onto

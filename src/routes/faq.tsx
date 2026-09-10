@@ -47,18 +47,33 @@ const FAQS = [
   },
   {
     q: "Are you lawyers?",
-    a: "No. We are a registered legal document assistant. We prepare documents and give legal information. We do not give legal advice, choose your defenses for you, or represent you in court.",
+    a: "No. We are not a law firm and not attorneys. We help you prepare your own court documents and give legal information. We do not give legal advice, choose your defenses for you, or represent you in court.",
   },
   {
     q: "What form is the answer on?",
     a: "The official Judicial Council tick-box form, UD-105. You do not download it or fill it in by hand: you answer short questions on screen and we fill the boxes for you. Where your own account of events needs more room, it continues on the attached page that goes with the form, formatted the way the court expects.",
   },
-
-
+  {
+    q: "What does it cost to actually file?",
+    a: "The court charges a filing fee of about $240 to $450. That is the court's money, not ours. If you cannot afford it, you can hand in a fee waiver request at the same time and the court decides — we include that form in your pack.",
+  },
+  {
+    q: "Do I have to give the landlord a copy?",
+    a: "Yes. Filing at the court is only half of it — a copy of your answer has to be delivered to the landlord or their attorney by someone over 18 who is not you, and the proof of service goes to the court. Your pack includes that form, ready to sign.",
+  },
+  {
+    q: "My roommates are on the papers too. One answer or several?",
+    a: "You can all sign one answer only if you all have the same reasons for fighting it. If one of you has a reason the others do not, that person should file their own. Everyone named who wants to be heard has to be on an answer.",
+  },
+  {
+    q: "How many copies should I bring?",
+    a: "At least two, plus the original. The court keeps the original, you keep one, and one goes to the landlord. Ask the clerk whether your courthouse has its own local forms as well.",
+  },
   {
     q: "What defenses can I raise?",
     a: "Common ones include improper service of the notice, a defective notice (wrong amount, wrong address, missing AB 1482 language), the place not being kept livable, retaliation, and discrimination. Our form lists them in plain English so you can tick what fits your situation.",
   },
+
   {
     q: "Do you work outside Los Angeles?",
     a: "We are starting with LA County Superior Court so we get the local details right. Other California counties are next.",

@@ -53,10 +53,11 @@ export function SiteFooter() {
       <div className="border-t border-ink-foreground/20">
         <div className="container-page py-6">
           <p className="text-xs leading-relaxed opacity-70">
-            Not a law firm, not an attorney. Legal document assistant, registered LA
-            County, $25k bond. Legal information and document preparation only, not legal
+            Not a law firm and not an attorney. We help you prepare your own court
+            documents. Legal information and document preparation only, not legal
             advice.
           </p>
+
           <p className="mt-3 text-xs opacity-50">
             © {new Date().getFullYear()} Unlawfully Detained. Deadline dates are estimates
             based on CCP § 1167 and the California court holiday calendar — always confirm

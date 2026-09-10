@@ -415,7 +415,30 @@ function Index() {
               </Link>
             </div>
           </div>
+
+          <div className="container-page mt-8">
+            <div className="border-4 border-signal bg-card p-6 sm:p-8">
+              <p className="eyebrow text-signal">Already past your date?</p>
+              <p className="mt-2 font-display text-2xl uppercase leading-tight sm:text-3xl">
+                It is usually not over — but today matters.
+              </p>
+              <p className="mt-3 max-w-3xl text-muted-foreground">
+                A late answer can often still be filed, right up until the landlord asks
+                the clerk to enter a default against you. They can do that any time after
+                your deadline passes, so the whole thing turns on who moves first. Fill
+                it in now, and go to a court self-help centre or legal aid the same day
+                if you can.
+              </p>
+              <Link
+                to="/build"
+                className="mt-5 inline-flex items-center gap-2 border-2 border-ink bg-signal px-6 py-4 font-display uppercase text-signal-foreground transition-transform hover:-translate-y-1"
+              >
+                Start it now <ArrowRight className="size-5" />
+              </Link>
+            </div>
+          </div>
         </section>
+
 
 
 
@@ -508,8 +531,9 @@ function Index() {
                   [
                     "11:52pm",
                     "4. Your pack lands",
-                    "Signed and formatted UD-105, attached page, POS-030 and fee-waiver forms — PDFs plus editable Word and OpenDocument copies.",
+                    "Signed and formatted UD-105, attached page, POS-030 and fee-waiver forms — PDFs plus editable Word and OpenDocument copies. The court's own filing fee ($240–$450, waivable) is separate and goes to them, not us.",
                   ],
+
                   [
                     "11:58pm",
                     "5. Pick how you file",
