@@ -198,8 +198,10 @@ function CheckoutPage() {
                     Not a law firm — and we say so
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Registered legal document assistant disclosure on every page.
+                    We prepare your documents. We don't give legal advice or choose your
+                    defences for you, and we say that on every page.
                   </p>
+
                 </div>
                 <div className="border-2 border-ink bg-background p-5">
                   <Lock className="size-6 text-go" />
