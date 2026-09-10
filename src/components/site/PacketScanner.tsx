@@ -154,8 +154,14 @@ export function PacketScanner({
             {pages.length} of {MAX_PAGES} pages · in filing order
           </p>
           <ul className="mt-2 grid gap-3 sm:grid-cols-2">
-            {pages.map((p, i) => (
-              <li key={p.id} className="flex items-center gap-3 border-2 border-ink p-2 text-sm">
+            {pages.map((p, i) => {
+              const problem = p.quality ? qualityMessage(p.quality) : null;
+              return (
+              <li
+                key={p.id}
+                className={`border-2 p-2 text-sm ${problem ? "border-signal bg-signal/5" : "border-ink"}`}
+              >
+                <div className="flex items-center gap-3">
                 <span className="grid size-6 shrink-0 place-items-center border-2 border-ink font-mono text-xs">
                   {i + 1}
                 </span>
@@ -199,8 +205,20 @@ export function PacketScanner({
                 >
                   <X className="size-4" />
                 </button>
+                </div>
+                {problem ? (
+                  <p className="mt-2 flex items-start gap-2 font-semibold text-signal">
+                    <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+                    {problem}
+                  </p>
+                ) : p.quality?.verdict === "good" ? (
+                  <p className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                    <Check className="size-4 text-signal" /> Clear enough to read
+                  </p>
+                ) : null}
               </li>
-            ))}
+              );
+            })}
           </ul>
         </>
       ) : null}
