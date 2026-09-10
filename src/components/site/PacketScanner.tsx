@@ -89,9 +89,10 @@ export function PacketScanner({
         <Camera className="size-5 text-signal" /> Scan your packet
       </p>
       <p className="mt-2 text-sm text-muted-foreground">
-        Shoot every page they handed you or left on your door — most packets run six
-        to twelve pages. Flat on a table, all four corners in shot, dates readable.
-        You can shoot them in any order and drag them straight after.
+        Start with one page — your notice, or the summons — and the form opens. Add
+        the rest of the packet as you go; most run six to twelve pages. Flat on a
+        table, all four corners in shot. We check every shot is sharp enough to read
+        and tell you if a page needs doing again.
       </p>
 
       <ul className="mt-3 grid gap-1 text-xs text-muted-foreground sm:grid-cols-2">
