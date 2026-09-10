@@ -105,12 +105,38 @@ export function StartGate({ onUnlock }: { onUnlock: (id: GateIdentity) => void }
         <p className="mt-3 text-muted-foreground">
           About fifteen minutes, free to fill in. Your deadline is counted in court
           days and it does not wait for anybody — we hold your email and mobile so we
-          can warn you before it runs out, and we read the dates straight off your
+          can reach you about your documents, and we read the dates straight off your
           notice instead of asking you to type them twice.
         </p>
 
-
+        {waitlisted ? (
+          <div className="slab mt-7 p-5 sm:p-7">
+            <p className="flex items-center gap-2 font-display text-2xl uppercase">
+              <MapPin className="size-6 text-signal" /> We're not in your county yet
+            </p>
+            <p className="mt-3 text-sm">
+              ZIP {zip} doesn't look like Los Angeles County, and LA is the only
+              county we prepare filings for right now. We've kept your details —{" "}
+              <strong>{email.trim()}</strong> — so you're on the list for the day we
+              open where you are.
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              The deadline and service checks you ran still apply everywhere in
+              California, so hold on to your dates. Your answer is still due within
+              ten court days of being served, wherever you live.
+            </p>
+            <button
+              type="button"
+              onClick={() => setWaitlisted(false)}
+              className="mt-4 font-mono text-xs uppercase underline"
+            >
+              Change my ZIP code
+            </button>
+          </div>
+        ) : (
+        <>
         <div className="slab mt-7 p-5 sm:p-7">
+
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block">
               <span className="flex items-center gap-2 text-sm font-semibold">
